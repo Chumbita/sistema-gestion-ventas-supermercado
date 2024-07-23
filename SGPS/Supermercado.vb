@@ -1,6 +1,4 @@
-﻿Imports System.Net
-
-Public Class Supermercado
+﻿Public Class Supermercado
     Public Property _nombre As String
     Public Property _usuarios As List(Of Usuario)
     Public Property _categorias As List(Of Categoria)

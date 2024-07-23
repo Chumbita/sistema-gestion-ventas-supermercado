@@ -3,27 +3,43 @@
   "WorkspaceRootPath": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\supermercado.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\supermercado.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\producto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\producto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\producto.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\categoria.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
-      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\categoria.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
-      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\form1.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\usuario.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\usuario.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\usuario.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\carrito.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\formuser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\formuser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|d:\\universidad\\tercer a\u00F1o\\programaci\u00F3n ii\\teor\u00EDa\\proyecto\\sgps\\sgps\\formadmin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\formadmin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\formuser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\formuser.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\formlogin.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\supermercado.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\supermercado.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\categoria.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
+      "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\categoria.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\sgps\\carrito.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}",
       "RelativeMoniker": "D:0:0:{9A45247B-3242-48D7-9458-CEEF5797590E}|SGPS\\SGPS.vbproj|solutionrelative:sgps\\carrito.vb||{2C015C70-C72C-11D0-88C3-00A0C9110049}"
     }
   ],
@@ -34,24 +50,125 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormLogin.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormLogin.vb",
+              "RelativeDocumentMoniker": "SGPS\\FormLogin.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormLogin.vb [Dise\u00F1o]",
+              "RelativeToolTip": "SGPS\\FormLogin.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-18T12:16:21.04Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "FormUser.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormUser.vb",
+              "RelativeDocumentMoniker": "SGPS\\FormUser.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormUser.vb [Dise\u00F1o]",
+              "RelativeToolTip": "SGPS\\FormUser.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-23T12:31:15.198Z",
+              "IsPinned": true,
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FormAdmin.vb [Dise\u00F1o]",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormAdmin.vb",
+              "RelativeDocumentMoniker": "SGPS\\FormAdmin.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormAdmin.vb [Dise\u00F1o]",
+              "RelativeToolTip": "SGPS\\FormAdmin.vb [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-23T13:39:36.469Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormLogin.vb",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormLogin.vb",
+              "RelativeDocumentMoniker": "SGPS\\FormLogin.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormLogin.vb",
+              "RelativeToolTip": "SGPS\\FormLogin.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-23T12:48:15.158Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "FormUser.vb",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormUser.vb",
+              "RelativeDocumentMoniker": "SGPS\\FormUser.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\FormUser.vb",
+              "RelativeToolTip": "SGPS\\FormUser.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-23T12:34:59.614Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Usuario.vb",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Usuario.vb",
+              "RelativeDocumentMoniker": "SGPS\\Usuario.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Usuario.vb",
+              "RelativeToolTip": "SGPS\\Usuario.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-18T12:40:26.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Producto.vb",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Producto.vb",
+              "RelativeDocumentMoniker": "SGPS\\Producto.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Producto.vb",
+              "RelativeToolTip": "SGPS\\Producto.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-18T12:32:20.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Categoria.vb",
+              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Categoria.vb",
+              "RelativeDocumentMoniker": "SGPS\\Categoria.vb",
+              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Categoria.vb",
+              "RelativeToolTip": "SGPS\\Categoria.vb",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
+              "WhenOpened": "2024-07-18T12:36:44.323Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "Supermercado.vb",
               "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Supermercado.vb",
               "RelativeDocumentMoniker": "SGPS\\Supermercado.vb",
               "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Supermercado.vb",
               "RelativeToolTip": "SGPS\\Supermercado.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAYAAAA",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAzwAUAAAAkAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:44:49.784Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-07-18T12:44:49.784Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Carrito.vb",
               "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Carrito.vb",
               "RelativeDocumentMoniker": "SGPS\\Carrito.vb",
@@ -59,59 +176,7 @@
               "RelativeToolTip": "SGPS\\Carrito.vb",
               "ViewState": "AQIAAAAAAAAAAAAAAAAuwAIAAAAsAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:43:08.384Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Usuario.vb",
-              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Usuario.vb",
-              "RelativeDocumentMoniker": "SGPS\\Usuario.vb",
-              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Usuario.vb",
-              "RelativeToolTip": "SGPS\\Usuario.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:40:26.036Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Producto.vb",
-              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Producto.vb",
-              "RelativeDocumentMoniker": "SGPS\\Producto.vb",
-              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Producto.vb",
-              "RelativeToolTip": "SGPS\\Producto.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:32:20.188Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Categoria.vb",
-              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Categoria.vb",
-              "RelativeDocumentMoniker": "SGPS\\Categoria.vb",
-              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Categoria.vb",
-              "RelativeToolTip": "SGPS\\Categoria.vb",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAQAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:36:44.323Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form1.vb [Dise\u00F1o]",
-              "DocumentMoniker": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Form1.vb",
-              "RelativeDocumentMoniker": "SGPS\\Form1.vb",
-              "ToolTip": "D:\\Universidad\\TERCER A\u00D1O\\Programaci\u00F3n II\\Teor\u00EDa\\Proyecto\\SGPS\\SGPS\\Form1.vb [Dise\u00F1o]",
-              "RelativeToolTip": "SGPS\\Form1.vb [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003361|",
-              "WhenOpened": "2024-07-18T12:16:21.04Z",
-              "EditorCaption": " [Dise\u00F1o]"
+              "WhenOpened": "2024-07-18T12:43:08.384Z"
             }
           ]
         }
