@@ -1,0 +1,16 @@
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.exe
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.deps.json
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.runtimeconfig.json
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.dll
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.pdb
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.Form1.resources
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.vbproj.GenerateResource.cache
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.GeneratedMSBuildEditorConfig.editorconfig
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.AssemblyInfoInputs.cache
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.AssemblyInfo.vb
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.vbproj.CoreCompileInputs.cache
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.dll
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\refint\SGPS.dll
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.pdb
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.genruntimeconfig.cache
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\ref\SGPS.dll
