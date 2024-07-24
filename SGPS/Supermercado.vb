@@ -12,18 +12,18 @@
     Public Sub agregar_usuario(usuario As Usuario)
         _usuarios.Add(usuario)
     End Sub
-    Public Sub eliminar_usuario(id_usuario As Integer)
+    Public Sub eliminar_usuario(usuario As String, contraseña As String)
         Dim flag As Boolean = False
-        For Each usuario As Usuario In _usuarios
-            If usuario._id = id_usuario Then
-                _usuarios.Remove(usuario)
+        For Each u As Usuario In Me._usuarios
+            If u._usuario = usuario AndAlso u._contraseña = contraseña Then
+                _usuarios.Remove(u)
                 flag = True
                 Exit For
             End If
         Next
 
         If flag = False Then
-            MsgBox("No se encontró el usuario con el id: " & id_usuario, MsgBoxStyle.Critical, "Error")
+            MsgBox("No se encontró el usuario : " & usuario, MsgBoxStyle.Critical, "Error")
         Else
             MsgBox("Usuario elminado del sistema correctamente", MsgBoxStyle.OkOnly)
         End If

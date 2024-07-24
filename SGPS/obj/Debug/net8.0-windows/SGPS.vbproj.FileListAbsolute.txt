@@ -17,3 +17,21 @@ D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\bin\Debug
 D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.genruntimeconfig.cache
 D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\ref\SGPS.dll
 D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.FormAdmin.resources
+C:\Users\carli\source\repos\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.exe
+C:\Users\carli\source\repos\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.deps.json
+C:\Users\carli\source\repos\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.runtimeconfig.json
+C:\Users\carli\source\repos\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.dll
+C:\Users\carli\source\repos\SGPS\SGPS\bin\Debug\net8.0-windows\SGPS.pdb
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.FormAdmin.resources
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.Form1.resources
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.FormUser.resources
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.vbproj.GenerateResource.cache
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.AssemblyInfoInputs.cache
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.AssemblyInfo.vb
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.vbproj.CoreCompileInputs.cache
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.dll
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\refint\SGPS.dll
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.pdb
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.genruntimeconfig.cache
+C:\Users\carli\source\repos\SGPS\SGPS\obj\Debug\net8.0-windows\ref\SGPS.dll

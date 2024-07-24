@@ -3,7 +3,7 @@
     Dim usuario1 As Usuario
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         supermercado = New Supermercado("Marito SA")
-        usuario1 = New Usuario("carlosolivera", "Carlos Olivera", "marioteamo", 0)
+        usuario1 = New Usuario("carlosolivera", "Carlos Olivera", "marioteamo")
         supermercado.agregar_usuario(usuario1)
     End Sub
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
@@ -36,5 +36,20 @@
             End If
         End If
 
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim nuevoUsuario As Usuario
+        Dim user As String = rgTbUsuario.Text
+        Dim nombre As String = rgTbNombre.Text & " " & rgTbApellido.Text
+        Dim contraseña As String = rgTbContraseña.Text
+
+        nuevoUsuario = New Usuario(user, nombre, contraseña)
+        supermercado.agregar_usuario(nuevoUsuario)
+        MsgBox("Usuario creado con éxito")
+        rgTbUsuario.Text = " "
+        rgTbNombre.Text = " "
+        rgTbApellido.Text = " "
+        rgTbContraseña.Text = " "
     End Sub
 End Class
