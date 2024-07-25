@@ -25,7 +25,7 @@ Partial Class FormAdmin
         Label1 = New Label()
         TextBox1 = New TextBox()
         ComboBox1 = New ComboBox()
-        DataGridView1 = New DataGridView()
+        DGVAdmin = New DataGridView()
         Button1 = New Button()
         Label3 = New Label()
         RadioButton1 = New RadioButton()
@@ -33,19 +33,19 @@ Partial Class FormAdmin
         Button2 = New Button()
         Button3 = New Button()
         Button4 = New Button()
-        rgTbContraseña = New TextBox()
-        rgTbApellido = New TextBox()
-        rgTbNombre = New TextBox()
-        rgTbUsuario = New TextBox()
+        adTbPrecio = New TextBox()
+        adTbMarca = New TextBox()
+        adTbCodigo = New TextBox()
+        adTbNombre = New TextBox()
         Label6 = New Label()
         Label5 = New Label()
         Label4 = New Label()
         Label2 = New Label()
-        TextBox2 = New TextBox()
+        adTbCantidad = New TextBox()
         Label7 = New Label()
         Button5 = New Button()
         GroupBox1 = New GroupBox()
-        CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DGVAdmin, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -73,14 +73,15 @@ Partial Class FormAdmin
         ComboBox1.Size = New Size(180, 28)
         ComboBox1.TabIndex = 2
         ' 
-        ' DataGridView1
+        ' DGVAdmin
         ' 
-        DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(38, 172)
-        DataGridView1.Name = "DataGridView1"
-        DataGridView1.RowHeadersWidth = 51
-        DataGridView1.Size = New Size(565, 188)
-        DataGridView1.TabIndex = 3
+        DGVAdmin.AllowUserToAddRows = False
+        DGVAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DGVAdmin.Location = New Point(38, 172)
+        DGVAdmin.Name = "DGVAdmin"
+        DGVAdmin.RowHeadersWidth = 51
+        DGVAdmin.Size = New Size(677, 188)
+        DGVAdmin.TabIndex = 3
         ' 
         ' Button1
         ' 
@@ -149,33 +150,33 @@ Partial Class FormAdmin
         Button4.Text = "Editar"
         Button4.UseVisualStyleBackColor = True
         ' 
-        ' rgTbContraseña
+        ' adTbPrecio
         ' 
-        rgTbContraseña.Location = New Point(127, 155)
-        rgTbContraseña.Name = "rgTbContraseña"
-        rgTbContraseña.Size = New Size(199, 27)
-        rgTbContraseña.TabIndex = 15
+        adTbPrecio.Location = New Point(127, 155)
+        adTbPrecio.Name = "adTbPrecio"
+        adTbPrecio.Size = New Size(199, 27)
+        adTbPrecio.TabIndex = 15
         ' 
-        ' rgTbApellido
+        ' adTbMarca
         ' 
-        rgTbApellido.Location = New Point(127, 119)
-        rgTbApellido.Name = "rgTbApellido"
-        rgTbApellido.Size = New Size(199, 27)
-        rgTbApellido.TabIndex = 14
+        adTbMarca.Location = New Point(127, 119)
+        adTbMarca.Name = "adTbMarca"
+        adTbMarca.Size = New Size(199, 27)
+        adTbMarca.TabIndex = 14
         ' 
-        ' rgTbNombre
+        ' adTbCodigo
         ' 
-        rgTbNombre.Location = New Point(127, 83)
-        rgTbNombre.Name = "rgTbNombre"
-        rgTbNombre.Size = New Size(199, 27)
-        rgTbNombre.TabIndex = 13
+        adTbCodigo.Location = New Point(127, 83)
+        adTbCodigo.Name = "adTbCodigo"
+        adTbCodigo.Size = New Size(199, 27)
+        adTbCodigo.TabIndex = 13
         ' 
-        ' rgTbUsuario
+        ' adTbNombre
         ' 
-        rgTbUsuario.Location = New Point(127, 47)
-        rgTbUsuario.Name = "rgTbUsuario"
-        rgTbUsuario.Size = New Size(199, 27)
-        rgTbUsuario.TabIndex = 12
+        adTbNombre.Location = New Point(127, 47)
+        adTbNombre.Name = "adTbNombre"
+        adTbNombre.Size = New Size(199, 27)
+        adTbNombre.TabIndex = 12
         ' 
         ' Label6
         ' 
@@ -213,12 +214,12 @@ Partial Class FormAdmin
         Label2.TabIndex = 16
         Label2.Text = "Nombre:"
         ' 
-        ' TextBox2
+        ' adTbCantidad
         ' 
-        TextBox2.Location = New Point(127, 191)
-        TextBox2.Name = "TextBox2"
-        TextBox2.Size = New Size(199, 27)
-        TextBox2.TabIndex = 20
+        adTbCantidad.Location = New Point(127, 191)
+        adTbCantidad.Name = "adTbCantidad"
+        adTbCantidad.Size = New Size(199, 27)
+        adTbCantidad.TabIndex = 20
         ' 
         ' Label7
         ' 
@@ -241,17 +242,17 @@ Partial Class FormAdmin
         ' GroupBox1
         ' 
         GroupBox1.Controls.Add(Button5)
-        GroupBox1.Controls.Add(TextBox2)
+        GroupBox1.Controls.Add(adTbCantidad)
         GroupBox1.Controls.Add(Label7)
-        GroupBox1.Controls.Add(rgTbContraseña)
-        GroupBox1.Controls.Add(rgTbApellido)
-        GroupBox1.Controls.Add(rgTbNombre)
-        GroupBox1.Controls.Add(rgTbUsuario)
+        GroupBox1.Controls.Add(adTbPrecio)
+        GroupBox1.Controls.Add(adTbMarca)
+        GroupBox1.Controls.Add(adTbCodigo)
+        GroupBox1.Controls.Add(adTbNombre)
         GroupBox1.Controls.Add(Label6)
         GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(Label2)
-        GroupBox1.Location = New Point(643, 121)
+        GroupBox1.Location = New Point(876, 126)
         GroupBox1.Name = "GroupBox1"
         GroupBox1.Size = New Size(361, 318)
         GroupBox1.TabIndex = 23
@@ -262,7 +263,7 @@ Partial Class FormAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1035, 490)
+        ClientSize = New Size(1299, 490)
         Controls.Add(GroupBox1)
         Controls.Add(Button4)
         Controls.Add(Button3)
@@ -271,13 +272,13 @@ Partial Class FormAdmin
         Controls.Add(RadioButton1)
         Controls.Add(Label3)
         Controls.Add(Button1)
-        Controls.Add(DataGridView1)
+        Controls.Add(DGVAdmin)
         Controls.Add(ComboBox1)
         Controls.Add(TextBox1)
         Controls.Add(Label1)
         Name = "FormAdmin"
         Text = "FormAdmin"
-        CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
+        CType(DGVAdmin, ComponentModel.ISupportInitialize).EndInit()
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)
@@ -287,7 +288,7 @@ Partial Class FormAdmin
     Friend WithEvents Label1 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents ComboBox1 As ComboBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents DGVAdmin As DataGridView
     Friend WithEvents Button1 As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents RadioButton1 As RadioButton
@@ -295,15 +296,15 @@ Partial Class FormAdmin
     Friend WithEvents Button2 As Button
     Friend WithEvents Button3 As Button
     Friend WithEvents Button4 As Button
-    Friend WithEvents rgTbContraseña As TextBox
-    Friend WithEvents rgTbApellido As TextBox
-    Friend WithEvents rgTbNombre As TextBox
-    Friend WithEvents rgTbUsuario As TextBox
+    Friend WithEvents adTbPrecio As TextBox
+    Friend WithEvents adTbMarca As TextBox
+    Friend WithEvents adTbCodigo As TextBox
+    Friend WithEvents adTbNombre As TextBox
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents Label2 As Label
-    Friend WithEvents TextBox2 As TextBox
+    Friend WithEvents adTbCantidad As TextBox
     Friend WithEvents Label7 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents GroupBox1 As GroupBox

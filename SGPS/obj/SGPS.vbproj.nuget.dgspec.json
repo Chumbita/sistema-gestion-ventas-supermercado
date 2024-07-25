@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\carli\\source\\repos\\SGPS\\SGPS\\SGPS.vbproj": {}
+    "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {}
   },
   "projects": {
-    "C:\\Users\\carli\\source\\repos\\SGPS\\SGPS\\SGPS.vbproj": {
+    "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\carli\\source\\repos\\SGPS\\SGPS\\SGPS.vbproj",
+        "projectUniqueName": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
         "projectName": "SGPS",
-        "projectPath": "C:\\Users\\carli\\source\\repos\\SGPS\\SGPS\\SGPS.vbproj",
-        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\carli\\source\\repos\\SGPS\\SGPS\\obj\\",
+        "projectPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
+        "packagesPath": "C:\\Users\\chumb\\.nuget\\packages\\",
+        "outputPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\chumb\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -26,7 +22,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -49,6 +44,12 @@
       "frameworks": {
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
+          "dependencies": {
+            "MySql.Data": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

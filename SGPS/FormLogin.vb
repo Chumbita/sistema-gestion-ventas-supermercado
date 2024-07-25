@@ -2,11 +2,15 @@
     Dim supermercado As Supermercado
     Dim usuario1 As Usuario
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'Única Instancia de la clase supermercado
         supermercado = New Supermercado("Marito SA")
+
+        'Usuario (Cliente) intanciado y agregado al supermercado para pruebas
         usuario1 = New Usuario("carlosolivera", "Carlos Olivera", "marioteamo")
-        supermercado.agregar_usuario(usuario1)
+        supermercado.AgregarUsuario(usuario1)
     End Sub
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        'Botón "Registrarse" que hace aparecer u ocultar la sección de "Registrar Usuario"
         gbRegistrar.Visible = Not gbRegistrar.Visible
     End Sub
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
@@ -15,7 +19,7 @@
         Dim flag As Boolean = False
 
         If usuario = "admin" AndAlso contraseña = "admin" Then
-            Dim formAdmin = New FormAdmin
+            Dim formAdmin = New FormAdmin(supermercado)
             formAdmin.Show()
             Me.Hide()
             flag = True
@@ -39,11 +43,13 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'Registro de nuevo usuario
         Dim nuevoUsuario As Usuario
         Dim user As String = rgTbUsuario.Text
         Dim nombre As String = rgTbNombre.Text & " " & rgTbApellido.Text
         Dim contraseña As String = rgTbContraseña.Text
 
+        'Usuario creado en memoria
         nuevoUsuario = New Usuario(user, nombre, contraseña)
         supermercado.agregar_usuario(nuevoUsuario)
         MsgBox("Usuario creado con éxito")
@@ -51,5 +57,7 @@
         rgTbNombre.Text = " "
         rgTbApellido.Text = " "
         rgTbContraseña.Text = " "
+
+        'Agregar funcionalidad para agregar el nuevo usuario en la Base de Datos
     End Sub
 End Class
