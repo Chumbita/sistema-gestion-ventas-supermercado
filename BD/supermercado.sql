@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-07-2024 a las 18:01:16
+-- Tiempo de generación: 26-07-2024 a las 22:02:28
 -- Versión del servidor: 10.4.32-MariaDB
--- Versión de PHP: 8.0.30
+-- Versión de PHP: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -62,6 +62,27 @@ CREATE TABLE `productos` (
 INSERT INTO `productos` (`codigo`, `nombre`, `marca`, `precio`, `cantidad`, `ruta`, `categoria`) VALUES
 (2, 'Leche Entera', 'Ilolay', 1500, 2, '\\Images\\milk.png', 'Lacteos');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL,
+  `usuario` varchar(50) NOT NULL,
+  `nombre` varchar(50) NOT NULL,
+  `contraseña` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
+
+--
+-- Volcado de datos para la tabla `usuarios`
+--
+
+INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `contraseña`) VALUES
+(1, 'admin', 'Administrador', 'admin'),
+(2, 'santicaldera', 'Santiago Calderón', 'santicaldera');
+
 --
 -- Índices para tablas volcadas
 --
@@ -79,6 +100,12 @@ ALTER TABLE `productos`
   ADD PRIMARY KEY (`codigo`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -93,6 +120,12 @@ ALTER TABLE `categoria`
 --
 ALTER TABLE `productos`
   MODIFY `codigo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

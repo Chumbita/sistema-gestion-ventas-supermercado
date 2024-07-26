@@ -26,6 +26,11 @@ Partial Class FormAdmin
         TextBox1 = New TextBox()
         ComboBox1 = New ComboBox()
         DGVAdmin = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
         Button1 = New Button()
         Label3 = New Label()
         RadioButton1 = New RadioButton()
@@ -52,42 +57,72 @@ Partial Class FormAdmin
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(38, 89)
+        Label1.Location = New Point(33, 67)
         Label1.Name = "Label1"
-        Label1.Size = New Size(119, 20)
+        Label1.Size = New Size(97, 15)
         Label1.TabIndex = 0
         Label1.Text = "Buscar Producto:"
         ' 
         ' TextBox1
         ' 
-        TextBox1.Location = New Point(188, 86)
+        TextBox1.Location = New Point(164, 64)
+        TextBox1.Margin = New Padding(3, 2, 3, 2)
         TextBox1.Name = "TextBox1"
-        TextBox1.Size = New Size(180, 27)
+        TextBox1.Size = New Size(158, 23)
         TextBox1.TabIndex = 1
         ' 
         ' ComboBox1
         ' 
         ComboBox1.FormattingEnabled = True
-        ComboBox1.Location = New Point(188, 126)
+        ComboBox1.Location = New Point(164, 94)
+        ComboBox1.Margin = New Padding(3, 2, 3, 2)
         ComboBox1.Name = "ComboBox1"
-        ComboBox1.Size = New Size(180, 28)
+        ComboBox1.Size = New Size(158, 23)
         ComboBox1.TabIndex = 2
         ' 
         ' DGVAdmin
         ' 
         DGVAdmin.AllowUserToAddRows = False
         DGVAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DGVAdmin.Location = New Point(38, 172)
+        DGVAdmin.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5})
+        DGVAdmin.Location = New Point(33, 129)
+        DGVAdmin.Margin = New Padding(3, 2, 3, 2)
         DGVAdmin.Name = "DGVAdmin"
         DGVAdmin.RowHeadersWidth = 51
-        DGVAdmin.Size = New Size(677, 188)
+        DGVAdmin.Size = New Size(554, 141)
         DGVAdmin.TabIndex = 3
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Código"
+        Column1.Name = "Column1"
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Nombre"
+        Column2.Name = "Column2"
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Marca"
+        Column3.Name = "Column3"
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Precio"
+        Column4.Name = "Column4"
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Cantidad"
+        Column5.Name = "Column5"
         ' 
         ' Button1
         ' 
-        Button1.Location = New Point(38, 377)
+        Button1.Location = New Point(33, 283)
+        Button1.Margin = New Padding(3, 2, 3, 2)
         Button1.Name = "Button1"
-        Button1.Size = New Size(105, 37)
+        Button1.Size = New Size(92, 28)
         Button1.TabIndex = 4
         Button1.Text = "Agregar"
         Button1.UseVisualStyleBackColor = True
@@ -95,18 +130,19 @@ Partial Class FormAdmin
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(38, 129)
+        Label3.Location = New Point(33, 97)
         Label3.Name = "Label3"
-        Label3.Size = New Size(144, 20)
+        Label3.Size = New Size(113, 15)
         Label3.TabIndex = 6
         Label3.Text = "Filtrar por categoría:"
         ' 
         ' RadioButton1
         ' 
         RadioButton1.AutoSize = True
-        RadioButton1.Location = New Point(383, 89)
+        RadioButton1.Location = New Point(335, 67)
+        RadioButton1.Margin = New Padding(3, 2, 3, 2)
         RadioButton1.Name = "RadioButton1"
-        RadioButton1.Size = New Size(104, 24)
+        RadioButton1.Size = New Size(85, 19)
         RadioButton1.TabIndex = 7
         RadioButton1.TabStop = True
         RadioButton1.Text = "Por Código"
@@ -115,9 +151,10 @@ Partial Class FormAdmin
         ' RadioButton2
         ' 
         RadioButton2.AutoSize = True
-        RadioButton2.Location = New Point(493, 89)
+        RadioButton2.Location = New Point(431, 67)
+        RadioButton2.Margin = New Padding(3, 2, 3, 2)
         RadioButton2.Name = "RadioButton2"
-        RadioButton2.Size = New Size(110, 24)
+        RadioButton2.Size = New Size(90, 19)
         RadioButton2.TabIndex = 8
         RadioButton2.TabStop = True
         RadioButton2.Text = "Por Nombre"
@@ -125,116 +162,125 @@ Partial Class FormAdmin
         ' 
         ' Button2
         ' 
-        Button2.Location = New Point(498, 377)
+        Button2.Location = New Point(436, 283)
+        Button2.Margin = New Padding(3, 2, 3, 2)
         Button2.Name = "Button2"
-        Button2.Size = New Size(105, 37)
+        Button2.Size = New Size(92, 28)
         Button2.TabIndex = 9
         Button2.Text = "Restockear"
         Button2.UseVisualStyleBackColor = True
         ' 
         ' Button3
         ' 
-        Button3.Location = New Point(188, 377)
+        Button3.Location = New Point(164, 283)
+        Button3.Margin = New Padding(3, 2, 3, 2)
         Button3.Name = "Button3"
-        Button3.Size = New Size(105, 37)
+        Button3.Size = New Size(92, 28)
         Button3.TabIndex = 10
         Button3.Text = "Eliminar"
         Button3.UseVisualStyleBackColor = True
         ' 
         ' Button4
         ' 
-        Button4.Location = New Point(345, 377)
+        Button4.Location = New Point(302, 283)
+        Button4.Margin = New Padding(3, 2, 3, 2)
         Button4.Name = "Button4"
-        Button4.Size = New Size(105, 37)
+        Button4.Size = New Size(92, 28)
         Button4.TabIndex = 11
         Button4.Text = "Editar"
         Button4.UseVisualStyleBackColor = True
         ' 
         ' adTbPrecio
         ' 
-        adTbPrecio.Location = New Point(127, 155)
+        adTbPrecio.Location = New Point(111, 116)
+        adTbPrecio.Margin = New Padding(3, 2, 3, 2)
         adTbPrecio.Name = "adTbPrecio"
-        adTbPrecio.Size = New Size(199, 27)
+        adTbPrecio.Size = New Size(175, 23)
         adTbPrecio.TabIndex = 15
         ' 
         ' adTbMarca
         ' 
-        adTbMarca.Location = New Point(127, 119)
+        adTbMarca.Location = New Point(111, 89)
+        adTbMarca.Margin = New Padding(3, 2, 3, 2)
         adTbMarca.Name = "adTbMarca"
-        adTbMarca.Size = New Size(199, 27)
+        adTbMarca.Size = New Size(175, 23)
         adTbMarca.TabIndex = 14
         ' 
         ' adTbCodigo
         ' 
-        adTbCodigo.Location = New Point(127, 83)
+        adTbCodigo.Location = New Point(111, 62)
+        adTbCodigo.Margin = New Padding(3, 2, 3, 2)
         adTbCodigo.Name = "adTbCodigo"
-        adTbCodigo.Size = New Size(199, 27)
+        adTbCodigo.Size = New Size(175, 23)
         adTbCodigo.TabIndex = 13
         ' 
         ' adTbNombre
         ' 
-        adTbNombre.Location = New Point(127, 47)
+        adTbNombre.Location = New Point(111, 35)
+        adTbNombre.Margin = New Padding(3, 2, 3, 2)
         adTbNombre.Name = "adTbNombre"
-        adTbNombre.Size = New Size(199, 27)
+        adTbNombre.Size = New Size(175, 23)
         adTbNombre.TabIndex = 12
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(31, 156)
+        Label6.Location = New Point(27, 117)
         Label6.Name = "Label6"
-        Label6.Size = New Size(53, 20)
+        Label6.Size = New Size(43, 15)
         Label6.TabIndex = 19
         Label6.Text = "Precio:"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(31, 122)
+        Label5.Location = New Point(27, 92)
         Label5.Name = "Label5"
-        Label5.Size = New Size(53, 20)
+        Label5.Size = New Size(43, 15)
         Label5.TabIndex = 18
         Label5.Text = "Marca:"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(31, 86)
+        Label4.Location = New Point(27, 64)
         Label4.Name = "Label4"
-        Label4.Size = New Size(61, 20)
+        Label4.Size = New Size(49, 15)
         Label4.TabIndex = 17
         Label4.Text = "Código:"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(31, 50)
+        Label2.Location = New Point(27, 38)
         Label2.Name = "Label2"
-        Label2.Size = New Size(67, 20)
+        Label2.Size = New Size(54, 15)
         Label2.TabIndex = 16
         Label2.Text = "Nombre:"
         ' 
         ' adTbCantidad
         ' 
-        adTbCantidad.Location = New Point(127, 191)
+        adTbCantidad.Location = New Point(111, 143)
+        adTbCantidad.Margin = New Padding(3, 2, 3, 2)
         adTbCantidad.Name = "adTbCantidad"
-        adTbCantidad.Size = New Size(199, 27)
+        adTbCantidad.Size = New Size(175, 23)
         adTbCantidad.TabIndex = 20
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(31, 192)
+        Label7.Location = New Point(27, 144)
         Label7.Name = "Label7"
-        Label7.Size = New Size(72, 20)
+        Label7.Size = New Size(58, 15)
         Label7.TabIndex = 21
         Label7.Text = "Cantidad:"
         ' 
         ' Button5
         ' 
-        Button5.Location = New Point(133, 256)
+        Button5.Location = New Point(116, 192)
+        Button5.Margin = New Padding(3, 2, 3, 2)
         Button5.Name = "Button5"
-        Button5.Size = New Size(105, 37)
+        Button5.Size = New Size(92, 28)
         Button5.TabIndex = 22
         Button5.Text = "Guardar"
         Button5.UseVisualStyleBackColor = True
@@ -252,18 +298,20 @@ Partial Class FormAdmin
         GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(Label2)
-        GroupBox1.Location = New Point(876, 126)
+        GroupBox1.Location = New Point(766, 94)
+        GroupBox1.Margin = New Padding(3, 2, 3, 2)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(361, 318)
+        GroupBox1.Padding = New Padding(3, 2, 3, 2)
+        GroupBox1.Size = New Size(316, 238)
         GroupBox1.TabIndex = 23
         GroupBox1.TabStop = False
         GroupBox1.Text = "Producto"
         ' 
         ' FormAdmin
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1299, 490)
+        ClientSize = New Size(1137, 368)
         Controls.Add(GroupBox1)
         Controls.Add(Button4)
         Controls.Add(Button3)
@@ -276,6 +324,7 @@ Partial Class FormAdmin
         Controls.Add(ComboBox1)
         Controls.Add(TextBox1)
         Controls.Add(Label1)
+        Margin = New Padding(3, 2, 3, 2)
         Name = "FormAdmin"
         Text = "FormAdmin"
         CType(DGVAdmin, ComponentModel.ISupportInitialize).EndInit()
@@ -308,4 +357,9 @@ Partial Class FormAdmin
     Friend WithEvents Label7 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Column1 As DataGridViewTextBoxColumn
+    Friend WithEvents Column2 As DataGridViewTextBoxColumn
+    Friend WithEvents Column3 As DataGridViewTextBoxColumn
+    Friend WithEvents Column4 As DataGridViewTextBoxColumn
+    Friend WithEvents Column5 As DataGridViewTextBoxColumn
 End Class

@@ -1,6 +1,4 @@
 ﻿Public Class Usuario
-    Public Sub New()
-    End Sub
     Public Sub New(usuario As String, nombre As String, contraseña As String)
         _usuario = usuario
         _nombre = nombre
