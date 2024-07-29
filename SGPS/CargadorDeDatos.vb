@@ -23,9 +23,16 @@ Public Class CargadorDeDatos
             Dim usuario As String = reader.GetString(1)
             Dim nombre As String = reader.GetString(2)
             Dim contraseña As String = reader.GetString(3)
+            Dim user As Usuario
 
-            Dim user As New Usuario(usuario, nombre, contraseña)
+            If reader.GetInt16(0) = 1 Then
+                user = New Administrador(usuario, nombre, contraseña)
+            Else
+                user = New Cliente(usuario, nombre, contraseña)
+            End If
+
             _supermercado.AgregarUsuario(user)
+
         End While
     End Sub
     Public Sub CargaDeProductos()

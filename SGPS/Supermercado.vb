@@ -29,14 +29,14 @@
     End Sub
     Public Sub EditarUsuario(id_usuario As Integer)
     End Sub
-    Public Sub AgregarProducto(categoria As Categoria, producto As Producto)
-        'For Each cat As Categoria In Me._categorias
-        '    If cat._nombre = categoria._nombre Then
-        '        cat._productos.Add(producto)
-        '        Exit For
-        '    End If
-        'Next
-    End Sub
+    'Public Sub AgregarProducto(categoria As Categoria, producto As Producto)
+    '    'For Each cat As Categoria In Me._categorias
+    '    '    If cat._nombre = categoria._nombre Then
+    '    '        cat._productos.Add(producto)
+    '    '        Exit For
+    '    '    End If
+    '    'Next
+    'End Sub
     Public Sub EliminarProducto(categoria As Categoria, producto As Producto)
         categoria._productos.Remove(producto)
     End Sub

@@ -17,6 +17,33 @@ Public Class FormAdmin
         _cargadorDeDatos.MostrarProductos(DGVAdmin)
     End Sub
 
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim adm As Administrador = _supermercado._usuarios(0)
+
+        Dim nombre As String = adTbNombre.Text
+        Dim codigo As Integer = adTbCodigo.Text
+        Dim marca As String = adTbMarca.Text
+        Dim precio As Double = adTbPrecio.Text
+        Dim cantidad As String = adTbCantidad.Text
+        Dim ruta As String = adTbRuta.Text
+        Dim categoria As String = adCBCategoria.Text
+
+        Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, ruta, categoria)
+        adm.AgregarProducto(producto)
+        LimpiarTextBox()
+
+    End Sub
+
+    Public Sub LimpiarTextBox()
+        adTbNombre.Text = " "
+        adTbCodigo.Text = " "
+        adTbMarca.Text = " "
+        adTbPrecio.Text = " "
+        adTbCantidad.Text = " "
+        adTbRuta.Text = " "
+        adCBCategoria.Text = " "
+    End Sub
+
     'Prueba de que la función CargaDeProductos funciona correctamente.
     'Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
     '    _cargadorDeDatos.CargaDeProductos()
