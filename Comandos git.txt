@@ -1,3 +1,0 @@
-git add .
-git commit -m "acción"
-git push -u origin main

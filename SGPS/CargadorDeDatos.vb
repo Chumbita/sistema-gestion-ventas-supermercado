@@ -87,7 +87,7 @@ Public Class CargadorDeDatos
 
         For Each categoria As Categoria In _supermercado._categorias
             For Each producto As Producto In categoria._productos
-                dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad)
+                dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria, producto._ruta)
             Next
         Next
     End Sub

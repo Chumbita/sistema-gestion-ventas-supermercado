@@ -5,6 +5,7 @@ Public Class FormAdmin
     'Modificación del constructor de FormAdmin para hacer uso de la instancia supermercado
     Private _cargadorDeDatos As CargadorDeDatos
     Private _supermercado As Supermercado
+    Private operacion As String
     Public Sub New(supermercado As Supermercado)
         InitializeComponent()
         Me._cargadorDeDatos = New CargadorDeDatos(supermercado)
@@ -17,7 +18,50 @@ Public Class FormAdmin
         _cargadorDeDatos.MostrarProductos(DGVAdmin)
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Public Sub ResetearTextBox()
+        adTbNombre.Text = " "
+        adTbCodigo.Text = " "
+        adTbMarca.Text = " "
+        adTbPrecio.Text = " "
+        adTbCantidad.Text = " "
+        adTbRuta.Text = " "
+        adCBCategoria.Text = " "
+        adTbNombre.Enabled = False
+        adTbCodigo.Enabled = False
+        adTbMarca.Enabled = False
+        adTbPrecio.Enabled = False
+        adTbRuta.Enabled = False
+        adTbCantidad.Enabled = False
+        adCBCategoria.Enabled = False
+    End Sub
+
+    Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
+        Select Case operacion
+            Case "agregar"
+                Agregar()
+                MsgBox("Producto agregado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+            Case "eliminar"
+                MsgBox("Producto eliminado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+            Case "editar"
+                MsgBox("Producto modificado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+            Case "restockear"
+                MsgBox("Producto restockeado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+            Case Else
+
+        End Select
+        ResetearTextBox()
+    End Sub
+
+    'Prueba de que la función CargaDeProductos funciona correctamente.
+    'Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    '    _cargadorDeDatos.CargaDeProductos()
+    '    For Each c As Categoria In _supermercado._categorias
+    '        For Each p As Producto In c._productos
+    '            MsgBox(p._nombre & " " & c._nombre)
+    '        Next
+    '    Next
+    'End Sub
+    Public Sub Agregar()
         Dim adm As Administrador = _supermercado._usuarios(0)
 
         Dim nombre As String = adTbNombre.Text
@@ -30,27 +74,57 @@ Public Class FormAdmin
 
         Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, ruta, categoria)
         adm.AgregarProducto(producto)
-        LimpiarTextBox()
+        DGVAdmin.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad)
+        ResetearTextBox()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        ResetearTextBox()
+        operacion = "agregar"
+        adTbNombre.Enabled = True
+        adTbCodigo.Enabled = True
+        adTbMarca.Enabled = True
+        adTbPrecio.Enabled = True
+        adTbRuta.Enabled = True
+        adTbCantidad.Enabled = True
+        adCBCategoria.Enabled = True
 
     End Sub
 
-    Public Sub LimpiarTextBox()
-        adTbNombre.Text = " "
-        adTbCodigo.Text = " "
-        adTbMarca.Text = " "
-        adTbPrecio.Text = " "
-        adTbCantidad.Text = " "
-        adTbRuta.Text = " "
-        adCBCategoria.Text = " "
+    Private Sub DGVAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVAdmin.CellClick
+        ResetearTextBox()
+        Dim fila As DataGridViewRow = DGVAdmin.SelectedRows(0)
+        adTbNombre.Text = fila.Cells("Column2").Value.ToString()
+        adTbCodigo.Text = fila.Cells("Column1").Value.ToString()
+        adTbMarca.Text = fila.Cells("Column3").Value.ToString()
+        adTbPrecio.Text = fila.Cells("Column4").Value.ToString()
+        adTbCantidad.Text = fila.Cells("Column5").Value.ToString()
+        adCBCategoria.Text = fila.Cells("Column6").Value.ToString()
+        adTbRuta.Text = fila.Cells("Column7").Value.ToString()
     End Sub
 
-    'Prueba de que la función CargaDeProductos funciona correctamente.
-    'Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-    '    _cargadorDeDatos.CargaDeProductos()
-    '    For Each c As Categoria In _supermercado._categorias
-    '        For Each p As Producto In c._productos
-    '            MsgBox(p._nombre & " " & c._nombre)
-    '        Next
-    '    Next
-    'End Sub
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+            operacion = "editar"
+            adTbNombre.Enabled = True
+            adTbMarca.Enabled = True
+            adTbPrecio.Enabled = True
+            adTbRuta.Enabled = True
+            adTbCantidad.Enabled = True
+            adCBCategoria.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnRestockear_Click(sender As Object, e As EventArgs) Handles btnRestockear.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+            operacion = "restockear"
+            adTbCantidad.Enabled = True
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+
+        End If
+    End Sub
 End Class
