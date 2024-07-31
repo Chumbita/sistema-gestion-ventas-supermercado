@@ -12,6 +12,6 @@
 
     Public Overridable Sub AgregarProducto(producto As Producto)
     End Sub
-    Public Overridable Sub EliminarProducto()
+    Public Overridable Sub EliminarProducto(producto As Producto)
     End Sub
 End Class

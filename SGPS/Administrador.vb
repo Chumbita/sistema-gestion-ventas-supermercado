@@ -28,4 +28,19 @@ Public Class Administrador
         conexion.Close()
     End Sub
 
+    Public Overrides Sub EliminarProducto(producto As Producto)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "DELETE FROM productos WHERE codigo = @codigo"
+
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@codigo", producto._codigo)
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
+    End Sub
 End Class

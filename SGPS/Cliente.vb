@@ -7,7 +7,7 @@
     Public Overrides Sub AgregarProducto(producto As Producto)
     End Sub
 
-    Public Overrides Sub EliminarProducto()
+    Public Overrides Sub EliminarProducto(producto As Producto)
 
     End Sub
 

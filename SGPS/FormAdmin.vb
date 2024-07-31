@@ -33,6 +33,12 @@ Public Class FormAdmin
         adTbRuta.Enabled = False
         adTbCantidad.Enabled = False
         adCBCategoria.Enabled = False
+        btnAgregar.Enabled = True
+        btnEliminar.Enabled = True
+        btnEditar.Enabled = True
+        btnGuardar.Enabled = False
+        btnCancelar.Enabled = False
+        btnRestockear.Enabled = True
     End Sub
 
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
@@ -41,6 +47,7 @@ Public Class FormAdmin
                 Agregar()
                 MsgBox("Producto agregado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
             Case "eliminar"
+                Eliminar()
                 MsgBox("Producto eliminado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
             Case "editar"
                 MsgBox("Producto modificado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
@@ -78,9 +85,34 @@ Public Class FormAdmin
         ResetearTextBox()
     End Sub
 
+    Public Sub Eliminar()
+        Dim adm As Administrador = _supermercado._usuarios(0)
+        Dim codigoProducto As String = adTbCodigo.Text
+        For Each c As Categoria In _supermercado._categorias
+            If c._nombre = adCBCategoria.Text Then
+                For Each p As Producto In c._productos
+                    If p._codigo = codigoProducto Then
+                        _supermercado.EliminarProducto(c, p)
+                        adm.EliminarProducto(p)
+                        DGVAdmin.Rows.RemoveAt(DGVAdmin.SelectedRows(0).Index)
+                    End If
+                    Exit For
+                Next
+            End If
+            Exit For
+        Next
+
+    End Sub
+
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         ResetearTextBox()
         operacion = "agregar"
+        btnEliminar.Enabled = False
+        btnEditar.Enabled = False
+        btnGuardar.Enabled = True
+        btnCancelar.Enabled = True
+        btnRestockear.Enabled = False
+
         adTbNombre.Enabled = True
         adTbCodigo.Enabled = True
         adTbMarca.Enabled = True
@@ -88,7 +120,6 @@ Public Class FormAdmin
         adTbRuta.Enabled = True
         adTbCantidad.Enabled = True
         adCBCategoria.Enabled = True
-
     End Sub
 
     Private Sub DGVAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVAdmin.CellClick
@@ -112,10 +143,21 @@ Public Class FormAdmin
             adTbRuta.Enabled = True
             adTbCantidad.Enabled = True
             adCBCategoria.Enabled = True
+            btnAgregar.Enabled = False
+            btnEliminar.Enabled = False
+            btnGuardar.Enabled = True
+            btnCancelar.Enabled = True
+            btnRestockear.Enabled = False
         End If
     End Sub
 
     Private Sub btnRestockear_Click(sender As Object, e As EventArgs) Handles btnRestockear.Click
+        btnAgregar.Enabled = False
+        btnGuardar.Enabled = True
+        btnCancelar.Enabled = True
+        btnEliminar.Enabled = False
+        btnEditar.Enabled = False
+
         If DGVAdmin.SelectedRows.Count > 0 Then
             operacion = "restockear"
             adTbCantidad.Enabled = True
@@ -123,8 +165,21 @@ Public Class FormAdmin
     End Sub
 
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        operacion = "eliminar"
+        btnAgregar.Enabled = False
+        btnGuardar.Enabled = True
+        btnCancelar.Enabled = True
+        btnRestockear.Enabled = False
+        btnEditar.Enabled = False
+
         If DGVAdmin.SelectedRows.Count > 0 Then
 
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            ResetearTextBox()
         End If
     End Sub
 End Class
