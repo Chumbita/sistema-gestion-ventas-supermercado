@@ -33,12 +33,48 @@ Public Class Administrador
         Dim cmd As MySqlCommand
         Dim query As String = "DELETE FROM productos WHERE codigo = @codigo"
 
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@codigo", producto._codigo)
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
+    End Sub
+    Public Sub EditarProducto(producto As Producto)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "UPDATE productos SET nombre = @nombre, marca = @marca, precio = @precio, cantidad = @cantidad, ruta = @ruta, categoria = @categoria WHERE codigo = @codigo"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
         conexion.Open()
 
         cmd.Parameters.AddWithValue("@codigo", producto._codigo)
+        cmd.Parameters.AddWithValue("@nombre", producto._nombre)
+        cmd.Parameters.AddWithValue("@marca", producto._marca)
+        cmd.Parameters.AddWithValue("@precio", producto._precio)
+        cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
+        cmd.Parameters.AddWithValue("@ruta", producto._ruta)
+        cmd.Parameters.AddWithValue("@categoria", producto._categoria)
+
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
+    End Sub
+    Public Sub Restockear(producto As Producto)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "UPDATE productos SET cantidad = @cantidad WHERE codigo = @codigo"
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@codigo", producto._codigo)
+        cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
+
         cmd.ExecuteNonQuery()
 
         conexion.Close()
