@@ -91,4 +91,10 @@ Public Class CargadorDeDatos
             Next
         Next
     End Sub
+
+    Public Sub MostrarCategorias(cb As ComboBox)
+        For Each c As Categoria In _supermercado._categorias
+            cb.Items.Add(c._nombre)
+        Next
+    End Sub
 End Class

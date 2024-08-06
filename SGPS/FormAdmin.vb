@@ -18,6 +18,8 @@ Public Class FormAdmin
         _cargadorDeDatos.CargaDeProductos()
         'Se cargan los productos del supermercado en el Data Grid View
         _cargadorDeDatos.MostrarProductos(DGVAdmin)
+        'Se cargan las categorias al combobox
+        _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
     End Sub
 
     Public Sub ResetearTextBox()
@@ -237,4 +239,53 @@ Public Class FormAdmin
             ResetearTextBox()
         End If
     End Sub
+
+    Private Sub tbBuscar_TextChanged(sender As Object, e As EventArgs) Handles tbBuscar.TextChanged
+        FiltrarProductos()
+    End Sub
+
+    Private Sub rbNombre_CheckedChanged(sender As Object, e As EventArgs) Handles rbPorCodigo.CheckedChanged
+        FiltrarProductos()
+    End Sub
+
+    Private Sub cbPorCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPorCategoria.SelectedIndexChanged
+        FiltrarProductos()
+    End Sub
+    Private Sub FiltrarProductos()
+        Dim buscarTexto As String = tbBuscar.Text.ToLower()
+        Dim categoriaTexto As String = cbPorCategoria.Text.ToLower()
+
+        For Each fila As DataGridViewRow In DGVAdmin.Rows
+            'no procesa la fila de nueva fila
+            If Not fila.IsNewRow Then
+                Dim mostrarFila As Boolean = True
+
+                ' Filtra por categoría
+                If Not String.IsNullOrEmpty(categoriaTexto) Then 'verifica si hay un texto de categoria por filtrar
+                    Dim celdaCategoria As DataGridViewCell = fila.Cells("Column6")
+                    If celdaCategoria.Value Is Nothing OrElse Not celdaCategoria.Value.ToString().ToLower().Contains(categoriaTexto) Then
+                        mostrarFila = False
+                    End If
+                End If
+
+                ' Filtra por código o nombre
+                If mostrarFila AndAlso Not String.IsNullOrEmpty(buscarTexto) Then
+                    If rbPorCodigo.Checked Then
+                        Dim celdaCodigo As DataGridViewCell = fila.Cells("Column1")
+                        If celdaCodigo.Value Is Nothing OrElse Not celdaCodigo.Value.ToString().ToLower().Contains(buscarTexto) Then
+                            mostrarFila = False
+                        End If
+                    ElseIf rbPorNombre.Checked Then
+                        Dim celdaNombre As DataGridViewCell = fila.Cells("Column2")
+                        If celdaNombre.Value Is Nothing OrElse Not celdaNombre.Value.ToString().ToLower().Contains(buscarTexto) Then
+                            mostrarFila = False
+                        End If
+                    End If
+                End If
+
+                fila.Visible = mostrarFila
+            End If
+        Next
+    End Sub
+
 End Class
