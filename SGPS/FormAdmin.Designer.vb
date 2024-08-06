@@ -59,8 +59,9 @@ Partial Class FormAdmin
         btnCancelar = New Button()
         Label10 = New Label()
         btnEliminarC = New Button()
-        cbCate = New ComboBox()
-        btnGuardarC = New Button()
+        cbCategoria = New ComboBox()
+        btnAgregarC = New Button()
+        btnSalir = New Button()
         CType(DGVAdmin, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -386,7 +387,6 @@ Partial Class FormAdmin
         ' 
         adCBCategoria.Enabled = False
         adCBCategoria.FormattingEnabled = True
-        adCBCategoria.Items.AddRange(New Object() {"Lacteos"})
         adCBCategoria.Location = New Point(143, 236)
         adCBCategoria.Margin = New Padding(2, 3, 2, 3)
         adCBCategoria.Name = "adCBCategoria"
@@ -417,7 +417,7 @@ Partial Class FormAdmin
         ' Label10
         ' 
         Label10.AutoSize = True
-        Label10.Location = New Point(1224, 157)
+        Label10.Location = New Point(1259, 163)
         Label10.Margin = New Padding(2, 0, 2, 0)
         Label10.Name = "Label10"
         Label10.Size = New Size(80, 21)
@@ -426,38 +426,47 @@ Partial Class FormAdmin
         ' 
         ' btnEliminarC
         ' 
-        btnEliminarC.Location = New Point(1210, 229)
+        btnEliminarC.Location = New Point(1241, 233)
         btnEliminarC.Name = "btnEliminarC"
         btnEliminarC.Size = New Size(119, 40)
         btnEliminarC.TabIndex = 25
         btnEliminarC.Text = "Eliminar"
         btnEliminarC.UseVisualStyleBackColor = True
         ' 
-        ' cbCate
+        ' cbCategoria
         ' 
-        cbCate.FormattingEnabled = True
-        cbCate.Items.AddRange(New Object() {"Lacteos", "Bebidas", "Electrodomésticos", "Panaderia", "Mario"})
-        cbCate.Location = New Point(1197, 194)
-        cbCate.Margin = New Padding(2, 3, 2, 3)
-        cbCate.Name = "cbCate"
-        cbCate.Size = New Size(142, 29)
-        cbCate.TabIndex = 2
+        cbCategoria.FormattingEnabled = True
+        cbCategoria.Location = New Point(1214, 197)
+        cbCategoria.Margin = New Padding(2, 3, 2, 3)
+        cbCategoria.Name = "cbCategoria"
+        cbCategoria.Size = New Size(170, 29)
+        cbCategoria.TabIndex = 2
         ' 
-        ' btnGuardarC
+        ' btnAgregarC
         ' 
-        btnGuardarC.Location = New Point(1210, 275)
-        btnGuardarC.Name = "btnGuardarC"
-        btnGuardarC.Size = New Size(119, 40)
-        btnGuardarC.TabIndex = 25
-        btnGuardarC.Text = "Guardar"
-        btnGuardarC.UseVisualStyleBackColor = True
+        btnAgregarC.Location = New Point(1241, 279)
+        btnAgregarC.Name = "btnAgregarC"
+        btnAgregarC.Size = New Size(119, 40)
+        btnAgregarC.TabIndex = 25
+        btnAgregarC.Text = "Agregar"
+        btnAgregarC.UseVisualStyleBackColor = True
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.Location = New Point(1241, 396)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(114, 35)
+        btnSalir.TabIndex = 26
+        btnSalir.Text = "Salir"
+        btnSalir.UseVisualStyleBackColor = True
         ' 
         ' FormAdmin
         ' 
         AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1420, 548)
-        Controls.Add(btnGuardarC)
+        Controls.Add(btnSalir)
+        Controls.Add(btnAgregarC)
         Controls.Add(btnEliminarC)
         Controls.Add(btnCancelar)
         Controls.Add(GroupBox1)
@@ -470,7 +479,7 @@ Partial Class FormAdmin
         Controls.Add(Label3)
         Controls.Add(btnAgregar)
         Controls.Add(DGVAdmin)
-        Controls.Add(cbCate)
+        Controls.Add(cbCategoria)
         Controls.Add(cbPorCategoria)
         Controls.Add(tbBuscar)
         Controls.Add(Label10)
@@ -522,6 +531,7 @@ Partial Class FormAdmin
     Friend WithEvents btnCancelar As Button
     Friend WithEvents Label10 As Label
     Friend WithEvents btnEliminarC As Button
-    Friend WithEvents cbCate As ComboBox
-    Friend WithEvents btnGuardarC As Button
+    Friend WithEvents cbCategoria As ComboBox
+    Friend WithEvents btnAgregarC As Button
+    Friend WithEvents btnSalir As Button
 End Class

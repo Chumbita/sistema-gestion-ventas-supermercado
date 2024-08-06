@@ -55,7 +55,5 @@
         rgTbNombre.Text = " "
         rgTbApellido.Text = " "
         rgTbContraseña.Text = " "
-
-        'Agregar funcionalidad para agregar el nuevo usuario en la Base de Datos
     End Sub
 End Class

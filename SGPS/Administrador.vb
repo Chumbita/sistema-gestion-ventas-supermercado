@@ -10,7 +10,7 @@ Public Class Administrador
     Public Overrides Sub AgregarProducto(producto As Producto)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "INSERT INTO Productos (codigo, nombre, marca, precio, cantidad, ruta, categoria) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @ruta, @categoria)"
+        Dim query As String = "INSERT INTO productos (codigo, nombre, marca, precio, cantidad, ruta, categoria) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @ruta, @categoria)"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
@@ -78,5 +78,35 @@ Public Class Administrador
         cmd.ExecuteNonQuery()
 
         conexion.Close()
+    End Sub
+    Public Sub AgregarCategoria(categoria As Categoria)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "INSERT INTO categorias (nombre) VALUES (@nombre)"
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@nombre", categoria._nombre)
+        cmd.ExecuteNonQuery()
+        conexion.Close()
+    End Sub
+    Public Sub EliminarCategoria(categoria As Categoria)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "DELETE FROM categorias WHERE nombre = @nombre"
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@nombre", categoria._nombre)
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
+    End Sub
+    Public Sub AgregarUsuario()
+
     End Sub
 End Class

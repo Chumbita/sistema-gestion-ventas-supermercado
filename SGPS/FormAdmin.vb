@@ -20,6 +20,9 @@ Public Class FormAdmin
         _cargadorDeDatos.MostrarProductos(DGVAdmin)
         'Se cargan las categorias al combobox
         _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
+        _cargadorDeDatos.MostrarCategorias(adCBCategoria)
+        _cargadorDeDatos.MostrarCategorias(cbCategoria)
+
     End Sub
 
     Public Sub ResetearTextBox()
@@ -63,6 +66,7 @@ Public Class FormAdmin
 
         End Select
         ResetearTextBox()
+        ActualizarFormulario()
     End Sub
 
     'Prueba de que la función CargaDeProductos funciona correctamente.
@@ -85,7 +89,7 @@ Public Class FormAdmin
 
         Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, ruta, categoria)
         adm.AgregarProducto(producto)
-        DGVAdmin.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad)
+        _supermercado.AgregarProducto(adCBCategoria.Text, producto)
         ResetearTextBox()
     End Sub
     Public Sub Eliminar()
@@ -161,7 +165,45 @@ Public Class FormAdmin
             End If
         Next
     End Sub
+    Public Sub AgregarCategoria()
+        Dim existeCategoria As Boolean = False
+        Dim textoCategoria As String = cbCategoria.Text
+        For Each c As Categoria In _supermercado._categorias
+            If c._nombre.ToLower() = textoCategoria.ToLower() Then
+                existeCategoria = True
+            End If
+        Next
+        If Not existeCategoria Then
+            Dim nuevaCategoria = New Categoria(textoCategoria)
+            _supermercado.AgregarCategoria(nuevaCategoria)
+            adm.AgregarCategoria(nuevaCategoria)
+            MsgBox("Categoria agregada con éxito")
+        Else
+            MsgBox("La Categoria ya existe")
+        End If
 
+    End Sub
+    Public Sub EliminarCategoria()
+        Dim textoCategoria As String = cbCategoria.Text
+        For Each c As Categoria In _supermercado._categorias
+            If c._nombre.ToLower() = textoCategoria.ToLower() Then
+                _supermercado.EliminarCategoria(c)
+                adm.EliminarCategoria(c)
+                MsgBox("Categoria eliminada con éxito")
+                Exit For
+            End If
+        Next
+    End Sub
+    Public Sub ActualizarFormulario()
+        cbPorCategoria.Items.Clear()
+        adCBCategoria.Items.Clear()
+        cbCategoria.Items.Clear()
+        _cargadorDeDatos.MostrarProductos(DGVAdmin)
+        _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
+        _cargadorDeDatos.MostrarCategorias(adCBCategoria)
+        _cargadorDeDatos.MostrarCategorias(cbCategoria)
+
+    End Sub
     Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         ResetearTextBox()
         operacion = "agregar"
@@ -232,8 +274,6 @@ Public Class FormAdmin
         End If
     End Sub
 
-
-
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             ResetearTextBox()
@@ -288,4 +328,28 @@ Public Class FormAdmin
         Next
     End Sub
 
+    Private Sub btnAgregarC_Click(sender As Object, e As EventArgs) Handles btnAgregarC.Click
+        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
+            AgregarCategoria()
+            cbCategoria.Text = ""
+            ActualizarFormulario()
+        End If
+
+    End Sub
+
+    Private Sub btnEliminarC_Click(sender As Object, e As EventArgs) Handles btnEliminarC.Click
+        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
+            EliminarCategoria()
+            cbCategoria.Text = ""
+            cbPorCategoria.Text = ""
+            adCBCategoria.Text = ""
+            ActualizarFormulario()
+        End If
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim formLogin = New Form1()
+        Me.Close()
+        formLogin.Show()
+    End Sub
 End Class

@@ -42,7 +42,7 @@ Public Class CargadorDeDatos
         Dim reader As MySqlDataReader
 
         miConexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
-        query = "SELECT * FROM categoria"
+        query = "SELECT * FROM categorias"
         cmd = New MySqlCommand(query, miConexion)
         miConexion.Open()
         reader = cmd.ExecuteReader()
