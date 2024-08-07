@@ -26,7 +26,7 @@
                     Me.Hide()
                     flag = True
                 Else
-                    Dim formUser As New FormUser(supermercado)
+                    Dim formUser As New FormUser(supermercado, user)
                     formUser.Show()
                     Me.Hide()
                     flag = True
@@ -40,7 +40,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnRegister2_Click(sender As Object, e As EventArgs) Handles btnRegister2.Click
         'Registro de nuevo usuario en memoria
         Dim nuevoUsuario As Usuario
         Dim user As String = rgTbUsuario.Text
@@ -49,7 +49,7 @@
 
         'Usuario creado en memoria
         nuevoUsuario = New Usuario(user, nombre, contraseña)
-        supermercado.AgregarUsuario(nuevoUsuario)
+        supermercado.RegistrarUsuario(nuevoUsuario)
         MsgBox("Usuario creado con éxito")
         rgTbUsuario.Text = " "
         rgTbNombre.Text = " "

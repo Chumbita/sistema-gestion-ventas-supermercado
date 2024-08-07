@@ -7,6 +7,9 @@
     <Compile Update="FormLogin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormProducto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormUser.vb">
       <SubType>Form</SubType>
     </Compile>

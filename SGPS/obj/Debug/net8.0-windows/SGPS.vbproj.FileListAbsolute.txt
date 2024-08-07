@@ -154,3 +154,4 @@ C:\Users\carri\source\repos\supermarket-management-system\SGPS\obj\Debug\net8.0-
 C:\Users\carri\source\repos\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.pdb
 C:\Users\carri\source\repos\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.genruntimeconfig.cache
 C:\Users\carri\source\repos\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\ref\SGPS.dll
+D:\Universidad\TERCER AÑO\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.FormProducto.resources

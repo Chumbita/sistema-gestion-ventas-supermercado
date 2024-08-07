@@ -1607,24 +1607,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\carli\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
+    "C:\\Users\\chumb\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO 1\\supermarket-management-system\\SGPS\\SGPS.vbproj",
+      "projectUniqueName": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
       "projectName": "SGPS",
-      "projectPath": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO 1\\supermarket-management-system\\SGPS\\SGPS.vbproj",
-      "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO 1\\supermarket-management-system\\SGPS\\obj\\",
+      "projectPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
+      "packagesPath": "C:\\Users\\chumb\\.nuget\\packages\\",
+      "outputPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-      ],
       "configFilePaths": [
-        "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Users\\chumb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -1632,7 +1627,6 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {

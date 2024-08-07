@@ -14,20 +14,6 @@ Public Class Supermercado
     End Sub
     Public Sub AgregarUsuario(usuario As Usuario)
         _usuarios.Add(usuario)
-        Dim conexion As MySqlConnection
-        Dim cmd As MySqlCommand
-        Dim query As String = "INSERT INTO usuarios (usuario, nombre, contraseña) VALUES (@usuario, @nombre, @contraseña)"
-
-        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
-        cmd = New MySqlCommand(query, conexion)
-        conexion.Open()
-
-        cmd.Parameters.AddWithValue("@usuario", usuario._usuario)
-        cmd.Parameters.AddWithValue("@nombre", usuario._nombre)
-        cmd.Parameters.AddWithValue("@contraseña", usuario._contraseña)
-        cmd.ExecuteNonQuery()
-
-        conexion.Close()
     End Sub
     'Public Sub EliminarUsuario(usuario As String, contraseña As String)
     '    Dim flag As Boolean = False
@@ -69,5 +55,22 @@ Public Class Supermercado
     End Sub
     Public Sub EliminarCategoria(categoria As Categoria)
         Me._categorias.Remove(categoria)
+    End Sub
+    Public Sub RegistrarUsuario(usuario As Usuario)
+        _usuarios.Add(usuario)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+        Dim query As String = "INSERT INTO usuarios (nombre, usuario, contraseña) VALUES (@nombre, @usuario, @contraseña)"
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        cmd = New MySqlCommand(query, conexion)
+        conexion.Open()
+
+        cmd.Parameters.AddWithValue("@nombre", usuario._nombre)
+        cmd.Parameters.AddWithValue("@usuario", usuario._usuario)
+        cmd.Parameters.AddWithValue("@contraseña", usuario._contraseña)
+        cmd.ExecuteNonQuery()
+
+        conexion.Close()
     End Sub
 End Class
