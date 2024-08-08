@@ -31,13 +31,11 @@ Public Class FormAdmin
         adTbMarca.Text = " "
         adTbPrecio.Text = " "
         adTbCantidad.Text = " "
-        adTbRuta.Text = " "
         adCBCategoria.Text = " "
         adTbNombre.Enabled = False
         adTbCodigo.Enabled = False
         adTbMarca.Enabled = False
         adTbPrecio.Enabled = False
-        adTbRuta.Enabled = False
         adTbCantidad.Enabled = False
         adCBCategoria.Enabled = False
         btnAgregar.Enabled = True
@@ -84,10 +82,9 @@ Public Class FormAdmin
         Dim marca As String = adTbMarca.Text
         Dim precio As Double = adTbPrecio.Text
         Dim cantidad As String = adTbCantidad.Text
-        Dim ruta As String = adTbRuta.Text
         Dim categoria As String = adCBCategoria.Text
 
-        Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, ruta, categoria)
+        Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
         adm.AgregarProducto(producto)
         _supermercado.AgregarProducto(adCBCategoria.Text, producto)
         ResetearTextBox()
@@ -130,14 +127,12 @@ Public Class FormAdmin
                             Next
                         End If
                         p._categoria = adCBCategoria.Text
-                        p._ruta = adTbRuta.Text
                         adm.EditarProducto(p)
                         DGVAdmin.Rows(rowIndex).Cells("Column2").Value = adTbNombre.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column3").Value = adTbMarca.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column4").Value = adTbPrecio.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column5").Value = adTbCantidad.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column6").Value = adCBCategoria.Text
-                        DGVAdmin.Rows(rowIndex).Cells("Column7").Value = adTbRuta.Text
                         ResetearTextBox()
                         Exit For
                     End If
@@ -217,7 +212,6 @@ Public Class FormAdmin
         adTbCodigo.Enabled = True
         adTbMarca.Enabled = True
         adTbPrecio.Enabled = True
-        adTbRuta.Enabled = True
         adTbCantidad.Enabled = True
         adCBCategoria.Enabled = True
     End Sub
@@ -231,7 +225,6 @@ Public Class FormAdmin
         adTbPrecio.Text = fila.Cells("Column4").Value.ToString()
         adTbCantidad.Text = fila.Cells("Column5").Value.ToString()
         adCBCategoria.Text = fila.Cells("Column6").Value.ToString()
-        adTbRuta.Text = fila.Cells("Column7").Value.ToString()
     End Sub
 
     Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
@@ -240,7 +233,6 @@ Public Class FormAdmin
             adTbNombre.Enabled = True
             adTbMarca.Enabled = True
             adTbPrecio.Enabled = True
-            adTbRuta.Enabled = True
             adTbCantidad.Enabled = True
             adCBCategoria.Enabled = True
             btnAgregar.Enabled = False

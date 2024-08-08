@@ -9,10 +9,10 @@
         'Se cargan los usuarios registrados en la base de datos en el supermercado.
         cargadorDeDatos.CargaDeUsuarios()
     End Sub
-    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
-        'Botón "Registrarse" que hace aparecer u ocultar la sección de "Registrar Usuario"
-        gbRegistrar.Visible = Not gbRegistrar.Visible
-    End Sub
+    'Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+    '    'Botón "Registrarse" que hace aparecer u ocultar la sección de "Registrar Usuario"
+    '    gbRegistrar.Visible = Not gbRegistrar.Visible
+    'End Sub
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim usuario As String = lgTbUsuario.Text
         Dim contraseña As String = lgTbContraseña.Text

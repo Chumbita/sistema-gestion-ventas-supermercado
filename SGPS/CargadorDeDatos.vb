@@ -25,7 +25,7 @@ Public Class CargadorDeDatos
             Dim contraseña As String = reader.GetString(3)
             Dim user As Usuario
 
-            If reader.GetInt16(0) = 1 Then
+            If reader.GetInt16(0) = 0 Then
                 user = New Administrador(usuario, nombre, contraseña)
             Else
                 user = New Cliente(usuario, nombre, contraseña)
@@ -64,10 +64,9 @@ Public Class CargadorDeDatos
             Dim marca As String = reader.GetString(2)
             Dim precio As Double = reader.GetDouble(3)
             Dim cantidad As Integer = reader.GetInt32(4)
-            Dim ruta As String = reader.GetString(5)
-            Dim pCategoria As String = reader.GetString(6)
+            Dim pCategoria As String = reader.GetString(5)
 
-            Dim producto As New Producto(codigo, nombre, marca, precio, cantidad, ruta, pCategoria)
+            Dim producto As New Producto(codigo, nombre, marca, precio, cantidad, pCategoria)
 
             For Each cat As Categoria In _supermercado._categorias
                 If cat._nombre = producto._categoria Then
@@ -87,7 +86,7 @@ Public Class CargadorDeDatos
 
         For Each categoria As Categoria In _supermercado._categorias
             For Each producto As Producto In categoria._productos
-                dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria, producto._ruta)
+                dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
             Next
         Next
     End Sub

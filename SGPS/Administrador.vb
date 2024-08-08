@@ -10,7 +10,7 @@ Public Class Administrador
     Public Overrides Sub AgregarProducto(producto As Producto)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "INSERT INTO productos (codigo, nombre, marca, precio, cantidad, ruta, categoria) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @ruta, @categoria)"
+        Dim query As String = "INSERT INTO productos (codigo, nombre, marca, precio, cantidad, categoria) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @categoria)"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
@@ -21,7 +21,6 @@ Public Class Administrador
         cmd.Parameters.AddWithValue("@marca", producto._marca)
         cmd.Parameters.AddWithValue("@precio", producto._precio)
         cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
-        cmd.Parameters.AddWithValue("@ruta", producto._ruta)
         cmd.Parameters.AddWithValue("@categoria", producto._categoria)
         cmd.ExecuteNonQuery()
 
@@ -45,7 +44,7 @@ Public Class Administrador
     Public Sub EditarProducto(producto As Producto)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "UPDATE productos SET nombre = @nombre, marca = @marca, precio = @precio, cantidad = @cantidad, ruta = @ruta, categoria = @categoria WHERE codigo = @codigo"
+        Dim query As String = "UPDATE productos SET nombre = @nombre, marca = @marca, precio = @precio, cantidad = @cantidad, categoria = @categoria WHERE codigo = @codigo"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
@@ -56,7 +55,6 @@ Public Class Administrador
         cmd.Parameters.AddWithValue("@marca", producto._marca)
         cmd.Parameters.AddWithValue("@precio", producto._precio)
         cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
-        cmd.Parameters.AddWithValue("@ruta", producto._ruta)
         cmd.Parameters.AddWithValue("@categoria", producto._categoria)
 
         cmd.ExecuteNonQuery()

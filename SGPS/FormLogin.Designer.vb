@@ -28,7 +28,6 @@ Partial Class Form1
         Label2 = New Label()
         btnLogin = New Button()
         GroupBox1 = New GroupBox()
-        btnRegister = New Button()
         Label3 = New Label()
         Label4 = New Label()
         Label5 = New Label()
@@ -47,20 +46,20 @@ Partial Class Form1
         ' 
         lgTbUsuario.Location = New Point(33, 79)
         lgTbUsuario.Name = "lgTbUsuario"
-        lgTbUsuario.Size = New Size(199, 27)
+        lgTbUsuario.Size = New Size(231, 27)
         lgTbUsuario.TabIndex = 0
         ' 
         ' lgTbContraseña
         ' 
-        lgTbContraseña.Location = New Point(33, 131)
+        lgTbContraseña.Location = New Point(33, 143)
         lgTbContraseña.Name = "lgTbContraseña"
-        lgTbContraseña.Size = New Size(199, 27)
+        lgTbContraseña.Size = New Size(231, 27)
         lgTbContraseña.TabIndex = 1
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(33, 56)
+        Label1.Location = New Point(30, 56)
         Label1.Name = "Label1"
         Label1.Size = New Size(62, 20)
         Label1.TabIndex = 2
@@ -69,7 +68,7 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(33, 108)
+        Label2.Location = New Point(31, 120)
         Label2.Name = "Label2"
         Label2.Size = New Size(86, 20)
         Label2.TabIndex = 3
@@ -77,41 +76,31 @@ Partial Class Form1
         ' 
         ' btnLogin
         ' 
-        btnLogin.Location = New Point(33, 177)
+        btnLogin.Location = New Point(45, 207)
         btnLogin.Name = "btnLogin"
-        btnLogin.Size = New Size(199, 29)
+        btnLogin.Size = New Size(199, 36)
         btnLogin.TabIndex = 4
         btnLogin.Text = "Iniciar Sesión"
         btnLogin.UseVisualStyleBackColor = True
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(btnRegister)
-        GroupBox1.Controls.Add(btnLogin)
         GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(btnLogin)
         GroupBox1.Controls.Add(Label1)
         GroupBox1.Controls.Add(lgTbContraseña)
         GroupBox1.Controls.Add(lgTbUsuario)
-        GroupBox1.Location = New Point(56, 113)
+        GroupBox1.Location = New Point(40, 88)
         GroupBox1.Name = "GroupBox1"
-        GroupBox1.Size = New Size(269, 266)
+        GroupBox1.Size = New Size(297, 282)
         GroupBox1.TabIndex = 6
         GroupBox1.TabStop = False
         GroupBox1.Text = "Iniciar Sesión"
         ' 
-        ' btnRegister
-        ' 
-        btnRegister.Location = New Point(33, 212)
-        btnRegister.Name = "btnRegister"
-        btnRegister.Size = New Size(199, 29)
-        btnRegister.TabIndex = 6
-        btnRegister.Text = "Registrarse"
-        btnRegister.UseVisualStyleBackColor = True
-        ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(28, 52)
+        Label3.Location = New Point(26, 52)
         Label3.Name = "Label3"
         Label3.Size = New Size(62, 20)
         Label3.TabIndex = 5
@@ -120,7 +109,7 @@ Partial Class Form1
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(28, 90)
+        Label4.Location = New Point(26, 90)
         Label4.Name = "Label4"
         Label4.Size = New Size(67, 20)
         Label4.TabIndex = 7
@@ -129,7 +118,7 @@ Partial Class Form1
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(28, 128)
+        Label5.Location = New Point(26, 128)
         Label5.Name = "Label5"
         Label5.Size = New Size(69, 20)
         Label5.TabIndex = 8
@@ -138,7 +127,7 @@ Partial Class Form1
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(28, 164)
+        Label6.Location = New Point(26, 164)
         Label6.Name = "Label6"
         Label6.Size = New Size(86, 20)
         Label6.TabIndex = 9
@@ -146,30 +135,30 @@ Partial Class Form1
         ' 
         ' rgTbUsuario
         ' 
-        rgTbUsuario.Location = New Point(124, 49)
+        rgTbUsuario.Location = New Point(117, 49)
         rgTbUsuario.Name = "rgTbUsuario"
-        rgTbUsuario.Size = New Size(199, 27)
+        rgTbUsuario.Size = New Size(206, 27)
         rgTbUsuario.TabIndex = 2
         ' 
         ' rgTbNombre
         ' 
-        rgTbNombre.Location = New Point(124, 87)
+        rgTbNombre.Location = New Point(117, 87)
         rgTbNombre.Name = "rgTbNombre"
-        rgTbNombre.Size = New Size(199, 27)
+        rgTbNombre.Size = New Size(206, 27)
         rgTbNombre.TabIndex = 3
         ' 
         ' rgTbApellido
         ' 
-        rgTbApellido.Location = New Point(124, 125)
+        rgTbApellido.Location = New Point(117, 125)
         rgTbApellido.Name = "rgTbApellido"
-        rgTbApellido.Size = New Size(199, 27)
+        rgTbApellido.Size = New Size(206, 27)
         rgTbApellido.TabIndex = 4
         ' 
         ' rgTbContraseña
         ' 
-        rgTbContraseña.Location = New Point(124, 163)
+        rgTbContraseña.Location = New Point(117, 163)
         rgTbContraseña.Name = "rgTbContraseña"
-        rgTbContraseña.Size = New Size(199, 27)
+        rgTbContraseña.Size = New Size(206, 27)
         rgTbContraseña.TabIndex = 5
         ' 
         ' gbRegistrar
@@ -183,19 +172,18 @@ Partial Class Form1
         gbRegistrar.Controls.Add(Label5)
         gbRegistrar.Controls.Add(Label4)
         gbRegistrar.Controls.Add(Label3)
-        gbRegistrar.Location = New Point(394, 113)
+        gbRegistrar.Location = New Point(353, 87)
         gbRegistrar.Name = "gbRegistrar"
-        gbRegistrar.Size = New Size(353, 266)
+        gbRegistrar.Size = New Size(353, 283)
         gbRegistrar.TabIndex = 13
         gbRegistrar.TabStop = False
         gbRegistrar.Text = "Registrar Usuario"
-        gbRegistrar.Visible = False
         ' 
         ' btnRegister2
         ' 
-        btnRegister2.Location = New Point(115, 212)
+        btnRegister2.Location = New Point(81, 208)
         btnRegister2.Name = "btnRegister2"
-        btnRegister2.Size = New Size(94, 29)
+        btnRegister2.Size = New Size(199, 36)
         btnRegister2.TabIndex = 10
         btnRegister2.Text = "Registrarse"
         btnRegister2.UseVisualStyleBackColor = True
@@ -204,7 +192,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(794, 512)
+        ClientSize = New Size(747, 455)
         Controls.Add(gbRegistrar)
         Controls.Add(GroupBox1)
         Name = "Form1"
@@ -231,7 +219,6 @@ Partial Class Form1
     Friend WithEvents rgTbNombre As TextBox
     Friend WithEvents rgTbApellido As TextBox
     Friend WithEvents rgTbContraseña As TextBox
-    Friend WithEvents btnRegister As Button
     Friend WithEvents gbRegistrar As GroupBox
     Friend WithEvents btnRegister2 As Button
 

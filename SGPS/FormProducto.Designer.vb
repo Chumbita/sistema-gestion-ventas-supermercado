@@ -22,6 +22,7 @@ Partial Class FormProducto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormProducto))
         tbNombre = New TextBox()
         Label1 = New Label()
         Label2 = New Label()
@@ -34,20 +35,23 @@ Partial Class FormProducto
         cbCantidad = New ComboBox()
         btnAñadir = New Button()
         btnCancelar = New Button()
+        GroupBox1 = New GroupBox()
+        Label6 = New Label()
+        GroupBox1.SuspendLayout()
         SuspendLayout()
         ' 
         ' tbNombre
         ' 
         tbNombre.Enabled = False
-        tbNombre.Location = New Point(287, 90)
+        tbNombre.Location = New Point(107, 30)
         tbNombre.Name = "tbNombre"
-        tbNombre.Size = New Size(125, 27)
+        tbNombre.Size = New Size(235, 27)
         tbNombre.TabIndex = 0
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(208, 93)
+        Label1.Location = New Point(27, 33)
         Label1.Name = "Label1"
         Label1.Size = New Size(67, 20)
         Label1.TabIndex = 1
@@ -56,7 +60,7 @@ Partial Class FormProducto
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(208, 126)
+        Label2.Location = New Point(27, 66)
         Label2.Name = "Label2"
         Label2.Size = New Size(53, 20)
         Label2.TabIndex = 3
@@ -65,15 +69,15 @@ Partial Class FormProducto
         ' tbMarca
         ' 
         tbMarca.Enabled = False
-        tbMarca.Location = New Point(287, 123)
+        tbMarca.Location = New Point(107, 63)
         tbMarca.Name = "tbMarca"
-        tbMarca.Size = New Size(125, 27)
+        tbMarca.Size = New Size(235, 27)
         tbMarca.TabIndex = 2
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(208, 159)
+        Label3.Location = New Point(27, 99)
         Label3.Name = "Label3"
         Label3.Size = New Size(53, 20)
         Label3.TabIndex = 5
@@ -82,15 +86,15 @@ Partial Class FormProducto
         ' tbPrecio
         ' 
         tbPrecio.Enabled = False
-        tbPrecio.Location = New Point(287, 156)
+        tbPrecio.Location = New Point(107, 96)
         tbPrecio.Name = "tbPrecio"
-        tbPrecio.Size = New Size(125, 27)
+        tbPrecio.Size = New Size(235, 27)
         tbPrecio.TabIndex = 4
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(208, 192)
+        Label4.Location = New Point(27, 132)
         Label4.Name = "Label4"
         Label4.Size = New Size(72, 20)
         Label4.TabIndex = 7
@@ -99,15 +103,15 @@ Partial Class FormProducto
         ' tbCategoria
         ' 
         tbCategoria.Enabled = False
-        tbCategoria.Location = New Point(287, 222)
+        tbCategoria.Location = New Point(107, 162)
         tbCategoria.Name = "tbCategoria"
-        tbCategoria.Size = New Size(125, 27)
+        tbCategoria.Size = New Size(235, 27)
         tbCategoria.TabIndex = 6
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(208, 225)
+        Label5.Location = New Point(27, 165)
         Label5.Name = "Label5"
         Label5.Size = New Size(77, 20)
         Label5.TabIndex = 9
@@ -117,48 +121,76 @@ Partial Class FormProducto
         ' 
         cbCantidad.FormattingEnabled = True
         cbCantidad.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        cbCantidad.Location = New Point(287, 188)
+        cbCantidad.Location = New Point(107, 128)
         cbCantidad.Name = "cbCantidad"
-        cbCantidad.Size = New Size(125, 28)
+        cbCantidad.Size = New Size(69, 28)
         cbCantidad.TabIndex = 10
         ' 
         ' btnAñadir
         ' 
-        btnAñadir.Location = New Point(208, 273)
+        btnAñadir.Image = CType(resources.GetObject("btnAñadir.Image"), Image)
+        btnAñadir.ImageAlign = ContentAlignment.MiddleRight
+        btnAñadir.Location = New Point(155, 291)
         btnAñadir.Name = "btnAñadir"
-        btnAñadir.Size = New Size(94, 29)
+        btnAñadir.Size = New Size(109, 42)
         btnAñadir.TabIndex = 11
         btnAñadir.Text = "Añadir"
+        btnAñadir.TextAlign = ContentAlignment.MiddleLeft
         btnAñadir.UseVisualStyleBackColor = True
         ' 
         ' btnCancelar
         ' 
-        btnCancelar.Location = New Point(337, 273)
+        btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), Image)
+        btnCancelar.ImageAlign = ContentAlignment.MiddleRight
+        btnCancelar.Location = New Point(302, 291)
         btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(94, 29)
+        btnCancelar.Size = New Size(109, 42)
         btnCancelar.TabIndex = 12
         btnCancelar.Text = "Cancelar"
+        btnCancelar.TextAlign = ContentAlignment.MiddleLeft
         btnCancelar.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(cbCantidad)
+        GroupBox1.Controls.Add(Label5)
+        GroupBox1.Controls.Add(Label4)
+        GroupBox1.Controls.Add(tbCategoria)
+        GroupBox1.Controls.Add(Label3)
+        GroupBox1.Controls.Add(tbPrecio)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Controls.Add(tbMarca)
+        GroupBox1.Controls.Add(Label1)
+        GroupBox1.Controls.Add(tbNombre)
+        GroupBox1.Location = New Point(88, 37)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Size = New Size(376, 214)
+        GroupBox1.TabIndex = 13
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Producto"
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(90, 254)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(288, 20)
+        Label6.TabIndex = 14
+        Label6.Text = "Modifique la cantidad que desea comprar"
         ' 
         ' FormProducto
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(653, 386)
+        ClientSize = New Size(568, 356)
+        Controls.Add(Label6)
+        Controls.Add(GroupBox1)
         Controls.Add(btnCancelar)
         Controls.Add(btnAñadir)
-        Controls.Add(cbCantidad)
-        Controls.Add(Label5)
-        Controls.Add(Label4)
-        Controls.Add(tbCategoria)
-        Controls.Add(Label3)
-        Controls.Add(tbPrecio)
-        Controls.Add(Label2)
-        Controls.Add(tbMarca)
-        Controls.Add(Label1)
-        Controls.Add(tbNombre)
         Name = "FormProducto"
         Text = "FormProducto"
+        GroupBox1.ResumeLayout(False)
+        GroupBox1.PerformLayout()
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -175,4 +207,6 @@ Partial Class FormProducto
     Friend WithEvents cbCantidad As ComboBox
     Friend WithEvents btnAñadir As Button
     Friend WithEvents btnCancelar As Button
+    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents Label6 As Label
 End Class

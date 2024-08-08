@@ -25,7 +25,7 @@
             Dim cantidad As String = 1
             Dim categoria As String = fila.Cells("Column6").Value.ToString()
 
-            Dim producto = New Producto(codigo, nombre, marca, precio, cantidad, "", categoria)
+            Dim producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
             Dim formProducto = New FormProducto(producto, _carrito, DGVCarrito)
             formProducto.Show()
         End If

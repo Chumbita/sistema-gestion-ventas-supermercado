@@ -8,7 +8,7 @@
     Public Sub MostrarCarrito(dgv As DataGridView)
         dgv.Rows.Clear()
         For Each producto As Producto In _productos
-            dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria, producto._ruta)
+            dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
         Next
     End Sub
     Public Sub EliminarProducto(producto As String)
