@@ -1,11 +1,11 @@
 ﻿Public Class FormProducto
     Dim _producto As Producto
-    Dim _carrito As Carrito
+    Dim _cliente As Cliente
     Dim _dgv As DataGridView
-    Public Sub New(producto As Producto, carrito As Carrito, dgv As DataGridView)
+    Public Sub New(producto As Producto, cliente As Cliente, dgv As DataGridView)
         InitializeComponent()
         Me._producto = producto
-        Me._carrito = carrito
+        Me._cliente = cliente
         Me._dgv = dgv
     End Sub
     Private Sub FormProducto_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -18,9 +18,9 @@
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
         _producto._cantidad = cbCantidad.Text
-        _carrito._productos.Add(_producto)
+        _cliente._carrito._productos.Add(_producto)
         Me.Close()
-        _carrito.MostrarCarrito(_dgv)
+        _cliente._carrito.MostrarCarrito(_dgv)
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then

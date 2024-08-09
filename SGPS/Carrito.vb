@@ -1,9 +1,7 @@
 ﻿Public Class Carrito
-    Public Sub New(cliente As Cliente)
-        _cliente = cliente
+    Public Sub New()
         _productos = New List(Of Producto)
     End Sub
-    Public Property _cliente As Usuario
     Public Property _productos As List(Of Producto)
     Public Sub MostrarCarrito(dgv As DataGridView)
         dgv.Rows.Clear()

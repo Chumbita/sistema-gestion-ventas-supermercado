@@ -1,19 +1,10 @@
 ﻿Public Class FormUser
-    Private _cargadorDeDatos As CargadorDeDatos
-    Private _supermercado As Supermercado
-    Private _carrito As Carrito
-    Private _usuario As Cliente
-    Public Sub New(supermercado As Supermercado, usuario As Usuario)
-        InitializeComponent()
-        Me._cargadorDeDatos = New CargadorDeDatos(supermercado)
-        Me._supermercado = supermercado
-        Me._usuario = usuario
-    End Sub
+    Private _cliente As Cliente
+
     Private Sub FormUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        _cargadorDeDatos.CargaDeProductos()
-        _cargadorDeDatos.MostrarProductos(DGVUser)
-        _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
-        _carrito = New Carrito(_usuario)
+        cargadorDatos.CargaDeProductos()
+        cargadorDatos.MostrarProductos(DGVUser)
+        cargadorDatos.MostrarCategorias(cbPorCategoria)
     End Sub
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         If DGVUser.SelectedRows.Count > 0 Then
@@ -26,7 +17,7 @@
             Dim categoria As String = fila.Cells("Column6").Value.ToString()
 
             Dim producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
-            Dim formProducto = New FormProducto(producto, _carrito, DGVCarrito)
+            Dim formProducto = New FormProducto(producto, _cliente, DGVCarrito)
             formProducto.Show()
         End If
     End Sub
@@ -34,23 +25,23 @@
         If DGVCarrito.SelectedRows.Count > 0 AndAlso MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim fila As DataGridViewRow = DGVUser.SelectedRows(0)
             Dim producto = fila.Cells("Column2").Value.ToString()
-            _carrito.EliminarProducto(producto)
-            _carrito.MostrarCarrito(DGVCarrito)
+            _cliente._carrito.EliminarProducto(producto)
+            _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
     Private Sub btnVaciar_Click(sender As Object, e As EventArgs) Handles btnVaciar.Click
         If MessageBox.Show("¿Está seguro que desea vaciar el carrito?", "Vaciar Carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            _carrito.VaciarCarrito()
-            _carrito.MostrarCarrito(DGVCarrito)
+            _cliente._carrito.VaciarCarrito()
+            _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
     Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
         Dim text As String
         If MessageBox.Show("¿Finalizar Compra?", "Finalizar Compra", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            text = _carrito.FinalizarCompra()
+            text = _cliente._carrito.FinalizarCompra()
             MsgBox(text)
-            _carrito.VaciarCarrito()
-            _carrito.MostrarCarrito(DGVCarrito)
+            _cliente._carrito.VaciarCarrito()
+            _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
 

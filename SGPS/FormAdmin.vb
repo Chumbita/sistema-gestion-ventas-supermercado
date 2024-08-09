@@ -2,29 +2,117 @@
 Imports Microsoft.SqlServer
 Imports MySql.Data.MySqlClient
 Public Class FormAdmin
-    'Modificación del constructor de FormAdmin para hacer uso de la instancia supermercado
-    Private _cargadorDeDatos As CargadorDeDatos
-    Private _supermercado As Supermercado
+
     Private operacion As String
     Dim adm As Administrador
-    Public Sub New(supermercado As Supermercado)
-        InitializeComponent()
-        Me._cargadorDeDatos = New CargadorDeDatos(supermercado)
-        Me._supermercado = supermercado
-        adm = _supermercado._usuarios(0)
-    End Sub
     Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Se cargan los productos de la base de datos al supermercado
-        _cargadorDeDatos.CargaDeProductos()
+        cargadorDatos.CargaDeProductos()
         'Se cargan los productos del supermercado en el Data Grid View
-        _cargadorDeDatos.MostrarProductos(DGVAdmin)
+        cargadorDatos.MostrarProductos(DGVAdmin)
         'Se cargan las categorias al combobox
-        _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
-        _cargadorDeDatos.MostrarCategorias(adCBCategoria)
-        _cargadorDeDatos.MostrarCategorias(cbCategoria)
+        cargadorDatos.MostrarCategorias(cbPorCategoria)
+        cargadorDatos.MostrarCategorias(adCBCategoria)
+        cargadorDatos.MostrarCategorias(cbCategoria)
+        adm = miSupermercado._usuarios(0)
+
+    End Sub
+    Private Sub DGVAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVAdmin.CellClick
+        ResetearTextBox()
+        Dim fila As DataGridViewRow = DGVAdmin.SelectedRows(0)
+        adTbNombre.Text = fila.Cells("Column2").Value.ToString()
+        adTbCodigo.Text = fila.Cells("Column1").Value.ToString()
+        adTbMarca.Text = fila.Cells("Column3").Value.ToString()
+        adTbPrecio.Text = fila.Cells("Column4").Value.ToString()
+        adTbCantidad.Text = fila.Cells("Column5").Value.ToString()
+        adCBCategoria.Text = fila.Cells("Column6").Value.ToString()
+    End Sub
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        ResetearTextBox()
+        operacion = "agregar"
+        btnEliminar.Enabled = False
+        btnEditar.Enabled = False
+        btnGuardar.Enabled = True
+        btnCancelar.Enabled = True
+        btnRestockear.Enabled = False
+
+        adTbNombre.Enabled = True
+        adTbCodigo.Enabled = True
+        adTbMarca.Enabled = True
+        adTbPrecio.Enabled = True
+        adTbCantidad.Enabled = True
+        adCBCategoria.Enabled = True
+    End Sub
+
+    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+            operacion = "editar"
+            adTbNombre.Enabled = True
+            adTbMarca.Enabled = True
+            adTbPrecio.Enabled = True
+            adTbCantidad.Enabled = True
+            adCBCategoria.Enabled = True
+            btnAgregar.Enabled = False
+            btnEliminar.Enabled = False
+            btnGuardar.Enabled = True
+            btnCancelar.Enabled = True
+            btnRestockear.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnRestockear_Click(sender As Object, e As EventArgs) Handles btnRestockear.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+            operacion = "restockear"
+            adTbCantidad.Enabled = True
+            adTbCantidad.Text = 0
+            btnAgregar.Enabled = False
+            btnGuardar.Enabled = True
+            btnCancelar.Enabled = True
+            btnEliminar.Enabled = False
+            btnEditar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+        If DGVAdmin.SelectedRows.Count > 0 Then
+            operacion = "eliminar"
+            btnAgregar.Enabled = False
+            btnGuardar.Enabled = True
+            btnCancelar.Enabled = True
+            btnRestockear.Enabled = False
+            btnEditar.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
+        If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
+            ResetearTextBox()
+        End If
+    End Sub
+    Private Sub btnAgregarC_Click(sender As Object, e As EventArgs) Handles btnAgregarC.Click
+        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
+            AgregarCategoria()
+            cbCategoria.Text = ""
+            ActualizarFormulario()
+        End If
 
     End Sub
 
+    Private Sub btnEliminarC_Click(sender As Object, e As EventArgs) Handles btnEliminarC.Click
+        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
+            EliminarCategoria()
+            cbCategoria.Text = ""
+            cbPorCategoria.Text = ""
+            adCBCategoria.Text = ""
+            ActualizarFormulario()
+        End If
+    End Sub
+
+    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
+        Dim formLogin = New Form1()
+        Me.Close()
+        formLogin.Show()
+    End Sub
     Public Sub ResetearTextBox()
         adTbNombre.Text = " "
         adTbCodigo.Text = " "
@@ -45,21 +133,20 @@ Public Class FormAdmin
         btnCancelar.Enabled = False
         btnRestockear.Enabled = True
     End Sub
-
     Private Sub btnGuardar_Click(sender As Object, e As EventArgs) Handles btnGuardar.Click
         Select Case operacion
             Case "agregar"
                 Agregar()
-                MsgBox("Producto agregado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+                MsgBox("Producto agregado con éxito.", MsgBoxStyle.OkOnly, miSupermercado._nombre)
             Case "eliminar"
                 Eliminar()
-                MsgBox("Producto eliminado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+                MsgBox("Producto eliminado con éxito.", MsgBoxStyle.OkOnly, miSupermercado._nombre)
             Case "editar"
                 Editar()
-                MsgBox("Producto modificado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+                MsgBox("Producto modificado con éxito.", MsgBoxStyle.OkOnly, miSupermercado._nombre)
             Case "restockear"
                 Restockear()
-                MsgBox("Producto restockeado con éxito.", MsgBoxStyle.OkOnly, _supermercado._nombre)
+                MsgBox("Producto restockeado con éxito.", MsgBoxStyle.OkOnly, miSupermercado._nombre)
             Case Else
 
         End Select
@@ -67,15 +154,6 @@ Public Class FormAdmin
         ActualizarFormulario()
     End Sub
 
-    'Prueba de que la función CargaDeProductos funciona correctamente.
-    'Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-    '    _cargadorDeDatos.CargaDeProductos()
-    '    For Each c As Categoria In _supermercado._categorias
-    '        For Each p As Producto In c._productos
-    '            MsgBox(p._nombre & " " & c._nombre)
-    '        Next
-    '    Next
-    'End Sub
     Public Sub Agregar()
         Dim nombre As String = adTbNombre.Text
         Dim codigo As Integer = adTbCodigo.Text
@@ -86,16 +164,16 @@ Public Class FormAdmin
 
         Dim producto As Producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
         adm.AgregarProducto(producto)
-        _supermercado.AgregarProducto(adCBCategoria.Text, producto)
+        miSupermercado.AgregarProducto(adCBCategoria.Text, producto)
         ResetearTextBox()
     End Sub
     Public Sub Eliminar()
         Dim codigoProducto As String = adTbCodigo.Text
-        For Each c As Categoria In _supermercado._categorias
+        For Each c As Categoria In miSupermercado._categorias
             If c._nombre = adCBCategoria.Text Then
                 For Each p As Producto In c._productos
                     If p._codigo = codigoProducto Then
-                        _supermercado.EliminarProducto(c, p)
+                        miSupermercado.EliminarProducto(c, p)
                         adm.EliminarProducto(p)
                         DGVAdmin.Rows.RemoveAt(DGVAdmin.SelectedRows(0).Index)
                         Exit For
@@ -109,7 +187,7 @@ Public Class FormAdmin
     Public Sub Editar()
         Dim codigoProducto As String = adTbCodigo.Text
         Dim rowIndex As Integer = DGVAdmin.CurrentCell.RowIndex
-        For Each c As Categoria In _supermercado._categorias
+        For Each c As Categoria In miSupermercado._categorias
             If c._nombre = adCBCategoria.Text Then
                 For Each p As Producto In c._productos
                     If p._codigo = codigoProducto Then
@@ -118,7 +196,7 @@ Public Class FormAdmin
                         p._precio = adTbPrecio.Text
                         p._cantidad = adTbCantidad.Text
                         If p._categoria IsNot adCBCategoria.Text Then
-                            For Each nc As Categoria In _supermercado._categorias
+                            For Each nc As Categoria In miSupermercado._categorias
                                 If nc._nombre = adCBCategoria.Text Then
                                     nc._productos.Add(p)
                                     c._productos.Remove(p)
@@ -145,13 +223,13 @@ Public Class FormAdmin
     Public Sub Restockear()
         Dim codigoProducto As String = adTbCodigo.Text
         Dim rowIndex As Integer = DGVAdmin.CurrentCell.RowIndex
-        For Each c As Categoria In _supermercado._categorias
+        For Each c As Categoria In miSupermercado._categorias
             If c._nombre = adCBCategoria.Text Then
                 For Each p As Producto In c._productos
                     If p._codigo = codigoProducto Then
-                        p._cantidad = adTbCantidad.Text
+                        p._cantidad = p._cantidad + Integer.Parse(adTbCantidad.Text)
                         adm.Restockear(p)
-                        DGVAdmin.Rows(rowIndex).Cells("Column5").Value = adTbCantidad.Text
+                        DGVAdmin.Rows(rowIndex).Cells("Column5").Value = p._cantidad
                         ResetearTextBox()
                         Exit For
                     End If
@@ -163,14 +241,14 @@ Public Class FormAdmin
     Public Sub AgregarCategoria()
         Dim existeCategoria As Boolean = False
         Dim textoCategoria As String = cbCategoria.Text
-        For Each c As Categoria In _supermercado._categorias
+        For Each c As Categoria In miSupermercado._categorias
             If c._nombre.ToLower() = textoCategoria.ToLower() Then
                 existeCategoria = True
             End If
         Next
         If Not existeCategoria Then
             Dim nuevaCategoria = New Categoria(textoCategoria)
-            _supermercado.AgregarCategoria(nuevaCategoria)
+            miSupermercado.AgregarCategoria(nuevaCategoria)
             adm.AgregarCategoria(nuevaCategoria)
             MsgBox("Categoria agregada con éxito")
         Else
@@ -180,9 +258,9 @@ Public Class FormAdmin
     End Sub
     Public Sub EliminarCategoria()
         Dim textoCategoria As String = cbCategoria.Text
-        For Each c As Categoria In _supermercado._categorias
+        For Each c As Categoria In miSupermercado._categorias
             If c._nombre.ToLower() = textoCategoria.ToLower() Then
-                _supermercado.EliminarCategoria(c)
+                miSupermercado.EliminarCategoria(c)
                 adm.EliminarCategoria(c)
                 MsgBox("Categoria eliminada con éxito")
                 Exit For
@@ -193,83 +271,11 @@ Public Class FormAdmin
         cbPorCategoria.Items.Clear()
         adCBCategoria.Items.Clear()
         cbCategoria.Items.Clear()
-        _cargadorDeDatos.MostrarProductos(DGVAdmin)
-        _cargadorDeDatos.MostrarCategorias(cbPorCategoria)
-        _cargadorDeDatos.MostrarCategorias(adCBCategoria)
-        _cargadorDeDatos.MostrarCategorias(cbCategoria)
+        cargadorDatos.MostrarProductos(DGVAdmin)
+        cargadorDatos.MostrarCategorias(cbPorCategoria)
+        cargadorDatos.MostrarCategorias(adCBCategoria)
+        cargadorDatos.MostrarCategorias(cbCategoria)
 
-    End Sub
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        ResetearTextBox()
-        operacion = "agregar"
-        btnEliminar.Enabled = False
-        btnEditar.Enabled = False
-        btnGuardar.Enabled = True
-        btnCancelar.Enabled = True
-        btnRestockear.Enabled = False
-
-        adTbNombre.Enabled = True
-        adTbCodigo.Enabled = True
-        adTbMarca.Enabled = True
-        adTbPrecio.Enabled = True
-        adTbCantidad.Enabled = True
-        adCBCategoria.Enabled = True
-    End Sub
-
-    Private Sub DGVAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVAdmin.CellClick
-        ResetearTextBox()
-        Dim fila As DataGridViewRow = DGVAdmin.SelectedRows(0)
-        adTbNombre.Text = fila.Cells("Column2").Value.ToString()
-        adTbCodigo.Text = fila.Cells("Column1").Value.ToString()
-        adTbMarca.Text = fila.Cells("Column3").Value.ToString()
-        adTbPrecio.Text = fila.Cells("Column4").Value.ToString()
-        adTbCantidad.Text = fila.Cells("Column5").Value.ToString()
-        adCBCategoria.Text = fila.Cells("Column6").Value.ToString()
-    End Sub
-
-    Private Sub btnEditar_Click(sender As Object, e As EventArgs) Handles btnEditar.Click
-        If DGVAdmin.SelectedRows.Count > 0 Then
-            operacion = "editar"
-            adTbNombre.Enabled = True
-            adTbMarca.Enabled = True
-            adTbPrecio.Enabled = True
-            adTbCantidad.Enabled = True
-            adCBCategoria.Enabled = True
-            btnAgregar.Enabled = False
-            btnEliminar.Enabled = False
-            btnGuardar.Enabled = True
-            btnCancelar.Enabled = True
-            btnRestockear.Enabled = False
-        End If
-    End Sub
-
-    Private Sub btnRestockear_Click(sender As Object, e As EventArgs) Handles btnRestockear.Click
-        If DGVAdmin.SelectedRows.Count > 0 Then
-            operacion = "restockear"
-            adTbCantidad.Enabled = True
-            btnAgregar.Enabled = False
-            btnGuardar.Enabled = True
-            btnCancelar.Enabled = True
-            btnEliminar.Enabled = False
-            btnEditar.Enabled = False
-        End If
-    End Sub
-
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
-        If DGVAdmin.SelectedRows.Count > 0 Then
-            operacion = "eliminar"
-            btnAgregar.Enabled = False
-            btnGuardar.Enabled = True
-            btnCancelar.Enabled = True
-            btnRestockear.Enabled = False
-            btnEditar.Enabled = False
-        End If
-    End Sub
-
-    Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
-        If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            ResetearTextBox()
-        End If
     End Sub
 
     Private Sub tbBuscar_TextChanged(sender As Object, e As EventArgs) Handles tbBuscar.TextChanged
@@ -318,30 +324,5 @@ Public Class FormAdmin
                 fila.Visible = mostrarFila
             End If
         Next
-    End Sub
-
-    Private Sub btnAgregarC_Click(sender As Object, e As EventArgs) Handles btnAgregarC.Click
-        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
-            AgregarCategoria()
-            cbCategoria.Text = ""
-            ActualizarFormulario()
-        End If
-
-    End Sub
-
-    Private Sub btnEliminarC_Click(sender As Object, e As EventArgs) Handles btnEliminarC.Click
-        If Not String.IsNullOrEmpty(cbCategoria.Text) Then
-            EliminarCategoria()
-            cbCategoria.Text = ""
-            cbPorCategoria.Text = ""
-            adCBCategoria.Text = ""
-            ActualizarFormulario()
-        End If
-    End Sub
-
-    Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim formLogin = New Form1()
-        Me.Close()
-        formLogin.Show()
     End Sub
 End Class

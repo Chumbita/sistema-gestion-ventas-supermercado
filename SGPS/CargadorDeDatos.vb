@@ -55,7 +55,7 @@ Public Class CargadorDeDatos
 
         reader.Close()
 
-        query = "SELECT * FROM productos"
+        query = "SELECT * FROM  productos ORDER BY codigo ASC"
         cmd = New MySqlCommand(query, miConexion)
         reader = cmd.ExecuteReader()
         While reader.Read()
