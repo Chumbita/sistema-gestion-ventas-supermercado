@@ -1,31 +1,30 @@
-﻿Public Class FormUser
-    Private _cliente As Cliente
-
+﻿Imports Mysqlx.Crud
+Public Class FormUser
     Private Sub FormUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargadorDatos.CargaDeProductos()
         cargadorDatos.MostrarProductos(DGVUser)
         cargadorDatos.MostrarCategorias(cbPorCategoria)
     End Sub
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
         If DGVUser.SelectedRows.Count > 0 Then
             Dim fila As DataGridViewRow = DGVUser.SelectedRows(0)
             Dim codigo As String = fila.Cells("Column1").Value.ToString()
             Dim nombre As String = fila.Cells("Column2").Value.ToString()
             Dim marca As String = fila.Cells("Column3").Value.ToString()
             Dim precio As String = fila.Cells("Column4").Value.ToString()
-            Dim cantidad As String = 1
+            Dim cantidad As String = fila.Cells("Column5").Value.ToString
             Dim categoria As String = fila.Cells("Column6").Value.ToString()
 
             Dim producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
-            Dim formProducto = New FormProducto(producto, _cliente, DGVCarrito)
+            Dim formProducto = New FormProducto(producto, DGVCarrito)
             formProducto.Show()
         End If
     End Sub
     Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
         If DGVCarrito.SelectedRows.Count > 0 AndAlso MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim fila As DataGridViewRow = DGVUser.SelectedRows(0)
-            Dim producto = fila.Cells("Column2").Value.ToString()
-            _cliente._carrito.EliminarProducto(producto)
+            Dim codProducto = fila.Cells("Column1").Value.ToString()
+            _cliente._carrito.EliminarProducto(codProducto)
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
@@ -82,7 +81,7 @@
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim forLogin = New Form1()
+        Dim forLogin = New FormLogin()
         Me.Close()
         forLogin.Show()
     End Sub

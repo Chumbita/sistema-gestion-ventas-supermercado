@@ -24,17 +24,22 @@ Partial Class FormUser
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUser))
         DGVUser = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
         Label1 = New Label()
         tbBuscar = New TextBox()
         cbPorCategoria = New ComboBox()
-        Button1 = New Button()
+        btnAgregar = New Button()
         Label2 = New Label()
         btnEliminar = New Button()
         btnVaciar = New Button()
         btnFinalizar = New Button()
         Label3 = New Label()
         DGVCarrito = New DataGridView()
-        btnSalir = New Button()
         Column7 = New DataGridViewTextBoxColumn()
         Column8 = New DataGridViewTextBoxColumn()
         Column9 = New DataGridViewTextBoxColumn()
@@ -42,13 +47,8 @@ Partial Class FormUser
         Column11 = New DataGridViewTextBoxColumn()
         Column12 = New DataGridViewTextBoxColumn()
         Column13 = New DataGridViewTextBoxColumn()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
-        Column6 = New DataGridViewTextBoxColumn()
-        Label4 = New Label()
+        btnSalir = New Button()
+        lbCarrito = New Label()
         CType(DGVUser, ComponentModel.ISupportInitialize).BeginInit()
         CType(DGVCarrito, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
@@ -64,6 +64,50 @@ Partial Class FormUser
         DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DGVUser.Size = New Size(553, 339)
         DGVUser.TabIndex = 0
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Código"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        Column1.Visible = False
+        Column1.Width = 125
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Nombre"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        Column2.Width = 125
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Marca"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        Column3.Width = 125
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Precio"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
+        Column4.Width = 125
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Cantidad"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
+        Column5.Visible = False
+        Column5.Width = 125
+        ' 
+        ' Column6
+        ' 
+        Column6.HeaderText = "Categoría"
+        Column6.MinimumWidth = 6
+        Column6.Name = "Column6"
+        Column6.Width = 125
         ' 
         ' Label1
         ' 
@@ -89,17 +133,17 @@ Partial Class FormUser
         cbPorCategoria.Size = New Size(213, 28)
         cbPorCategoria.TabIndex = 3
         ' 
-        ' Button1
+        ' btnAgregar
         ' 
-        Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.ImageAlign = ContentAlignment.MiddleRight
-        Button1.Location = New Point(186, 471)
-        Button1.Name = "Button1"
-        Button1.Size = New Size(168, 43)
-        Button1.TabIndex = 4
-        Button1.Text = "Agregar al carrito"
-        Button1.TextAlign = ContentAlignment.MiddleLeft
-        Button1.UseVisualStyleBackColor = True
+        btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), Image)
+        btnAgregar.ImageAlign = ContentAlignment.MiddleRight
+        btnAgregar.Location = New Point(186, 471)
+        btnAgregar.Name = "btnAgregar"
+        btnAgregar.Size = New Size(168, 43)
+        btnAgregar.TabIndex = 4
+        btnAgregar.Text = "Agregar al carrito"
+        btnAgregar.TextAlign = ContentAlignment.MiddleLeft
+        btnAgregar.UseVisualStyleBackColor = True
         ' 
         ' Label2
         ' 
@@ -166,15 +210,6 @@ Partial Class FormUser
         DGVCarrito.Size = New Size(553, 339)
         DGVCarrito.TabIndex = 11
         ' 
-        ' btnSalir
-        ' 
-        btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), Image)
-        btnSalir.Location = New Point(1140, 17)
-        btnSalir.Name = "btnSalir"
-        btnSalir.Size = New Size(51, 55)
-        btnSalir.TabIndex = 12
-        btnSalir.UseVisualStyleBackColor = True
-        ' 
         ' Column7
         ' 
         Column7.HeaderText = "Código"
@@ -227,65 +262,30 @@ Partial Class FormUser
         Column13.Visible = False
         Column13.Width = 125
         ' 
-        ' Column1
+        ' btnSalir
         ' 
-        Column1.HeaderText = "Código"
-        Column1.MinimumWidth = 6
-        Column1.Name = "Column1"
-        Column1.Visible = False
-        Column1.Width = 125
+        btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), Image)
+        btnSalir.Location = New Point(1140, 17)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(51, 55)
+        btnSalir.TabIndex = 12
+        btnSalir.UseVisualStyleBackColor = True
         ' 
-        ' Column2
+        ' lbCarrito
         ' 
-        Column2.HeaderText = "Nombre"
-        Column2.MinimumWidth = 6
-        Column2.Name = "Column2"
-        Column2.Width = 125
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Marca"
-        Column3.MinimumWidth = 6
-        Column3.Name = "Column3"
-        Column3.Width = 125
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Precio"
-        Column4.MinimumWidth = 6
-        Column4.Name = "Column4"
-        Column4.Width = 125
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Cantidad"
-        Column5.MinimumWidth = 6
-        Column5.Name = "Column5"
-        Column5.Visible = False
-        Column5.Width = 125
-        ' 
-        ' Column6
-        ' 
-        Column6.HeaderText = "Categoría"
-        Column6.MinimumWidth = 6
-        Column6.Name = "Column6"
-        Column6.Width = 125
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(638, 84)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(57, 20)
-        Label4.TabIndex = 13
-        Label4.Text = "Carrito:"
+        lbCarrito.AutoSize = True
+        lbCarrito.Location = New Point(638, 84)
+        lbCarrito.Name = "lbCarrito"
+        lbCarrito.Size = New Size(57, 20)
+        lbCarrito.TabIndex = 13
+        lbCarrito.Text = "Carrito:"
         ' 
         ' FormUser
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(1217, 554)
-        Controls.Add(Label4)
+        Controls.Add(lbCarrito)
         Controls.Add(btnSalir)
         Controls.Add(DGVCarrito)
         Controls.Add(Label3)
@@ -293,7 +293,7 @@ Partial Class FormUser
         Controls.Add(btnVaciar)
         Controls.Add(btnEliminar)
         Controls.Add(Label2)
-        Controls.Add(Button1)
+        Controls.Add(btnAgregar)
         Controls.Add(cbPorCategoria)
         Controls.Add(tbBuscar)
         Controls.Add(Label1)
@@ -310,7 +310,7 @@ Partial Class FormUser
     Friend WithEvents Label1 As Label
     Friend WithEvents tbBuscar As TextBox
     Friend WithEvents cbPorCategoria As ComboBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btnAgregar As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents btnEliminar As Button
     Friend WithEvents btnVaciar As Button
@@ -331,5 +331,5 @@ Partial Class FormUser
     Friend WithEvents Column11 As DataGridViewTextBoxColumn
     Friend WithEvents Column12 As DataGridViewTextBoxColumn
     Friend WithEvents Column13 As DataGridViewTextBoxColumn
-    Friend WithEvents Label4 As Label
+    Friend WithEvents lbCarrito As Label
 End Class

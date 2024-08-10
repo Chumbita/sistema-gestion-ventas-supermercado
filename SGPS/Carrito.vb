@@ -1,4 +1,5 @@
-﻿Public Class Carrito
+﻿Imports System.Text
+Public Class Carrito
     Public Sub New()
         _productos = New List(Of Producto)
     End Sub
@@ -9,9 +10,9 @@
             dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
         Next
     End Sub
-    Public Sub EliminarProducto(producto As String)
+    Public Sub EliminarProducto(codProducto As Integer)
         For Each p As Producto In _productos
-            If p._nombre = producto Then
+            If p._codigo = codProducto Then
                 _productos.Remove(p)
                 Exit For
             End If
@@ -22,12 +23,26 @@
     End Sub
     Public Function FinalizarCompra() As String
         Dim total As Double = 0
-        Dim text As String = ""
+        Dim sb As New StringBuilder()
+
+        ' Añadir encabezado de la factura
+        sb.AppendLine("Nombre".PadRight(25) & "Marca".PadRight(35) & "Cantidad".PadRight(15) & "Precio")
+        sb.AppendLine(New String("-"c, 60))  ' Línea separadora
+
+        ' Añadir los productos a la factura
         For Each producto As Producto In _productos
-            total += (producto._precio * producto._cantidad)
-            text = text & producto._nombre & producto._marca & producto._cantidad & "$" & producto._precio & vbCrLf
+            sb.AppendLine(producto._nombre.PadRight(25) &
+                      producto._marca.PadRight(35) &
+                      producto._cantidad.ToString().PadRight(15) &
+                      "$" & (producto._precio * producto._cantidad).ToString("F2"))
+            total += producto._precio * producto._cantidad
         Next
-        text = text & "Total             $" & total
-        Return text
+
+        ' Añadir el total
+        sb.AppendLine(New String("-"c, 60))  ' Línea separadora
+        sb.AppendLine("Total".PadRight(50) & "$" & total.ToString("F2"))
+
+        Return sb.ToString()
     End Function
+
 End Class

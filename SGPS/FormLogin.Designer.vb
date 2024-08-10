@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
-Partial Class Form1
+Partial Class FormLogin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -37,7 +37,7 @@ Partial Class Form1
         rgTbApellido = New TextBox()
         rgTbContraseña = New TextBox()
         gbRegistrar = New GroupBox()
-        btnRegister2 = New Button()
+        btnRegister = New Button()
         GroupBox1.SuspendLayout()
         gbRegistrar.SuspendLayout()
         SuspendLayout()
@@ -163,7 +163,7 @@ Partial Class Form1
         ' 
         ' gbRegistrar
         ' 
-        gbRegistrar.Controls.Add(btnRegister2)
+        gbRegistrar.Controls.Add(btnRegister)
         gbRegistrar.Controls.Add(rgTbContraseña)
         gbRegistrar.Controls.Add(rgTbApellido)
         gbRegistrar.Controls.Add(rgTbNombre)
@@ -179,23 +179,23 @@ Partial Class Form1
         gbRegistrar.TabStop = False
         gbRegistrar.Text = "Registrar Usuario"
         ' 
-        ' btnRegister2
+        ' btnRegister
         ' 
-        btnRegister2.Location = New Point(81, 208)
-        btnRegister2.Name = "btnRegister2"
-        btnRegister2.Size = New Size(199, 36)
-        btnRegister2.TabIndex = 10
-        btnRegister2.Text = "Registrarse"
-        btnRegister2.UseVisualStyleBackColor = True
+        btnRegister.Location = New Point(81, 208)
+        btnRegister.Name = "btnRegister"
+        btnRegister.Size = New Size(199, 36)
+        btnRegister.TabIndex = 10
+        btnRegister.Text = "Registrarse"
+        btnRegister.UseVisualStyleBackColor = True
         ' 
-        ' Form1
+        ' FormLogin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(747, 455)
         Controls.Add(gbRegistrar)
         Controls.Add(GroupBox1)
-        Name = "Form1"
+        Name = "FormLogin"
         Text = "Form1"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
@@ -220,6 +220,6 @@ Partial Class Form1
     Friend WithEvents rgTbApellido As TextBox
     Friend WithEvents rgTbContraseña As TextBox
     Friend WithEvents gbRegistrar As GroupBox
-    Friend WithEvents btnRegister2 As Button
+    Friend WithEvents btnRegister As Button
 
 End Class

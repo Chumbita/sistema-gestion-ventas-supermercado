@@ -109,7 +109,7 @@ Public Class FormAdmin
     End Sub
 
     Private Sub btnSalir_Click(sender As Object, e As EventArgs) Handles btnSalir.Click
-        Dim formLogin = New Form1()
+        Dim formLogin = New FormLogin()
         Me.Close()
         formLogin.Show()
     End Sub

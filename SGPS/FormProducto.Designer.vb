@@ -32,10 +32,12 @@ Partial Class FormProducto
         Label4 = New Label()
         tbCategoria = New TextBox()
         Label5 = New Label()
-        cbCantidad = New ComboBox()
         btnAñadir = New Button()
         btnCancelar = New Button()
         GroupBox1 = New GroupBox()
+        btnLess = New Button()
+        btnMore = New Button()
+        tbCantidad = New TextBox()
         Label6 = New Label()
         GroupBox1.SuspendLayout()
         SuspendLayout()
@@ -117,15 +119,6 @@ Partial Class FormProducto
         Label5.TabIndex = 9
         Label5.Text = "Categoría:"
         ' 
-        ' cbCantidad
-        ' 
-        cbCantidad.FormattingEnabled = True
-        cbCantidad.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"})
-        cbCantidad.Location = New Point(107, 128)
-        cbCantidad.Name = "cbCantidad"
-        cbCantidad.Size = New Size(69, 28)
-        cbCantidad.TabIndex = 10
-        ' 
         ' btnAñadir
         ' 
         btnAñadir.Image = CType(resources.GetObject("btnAñadir.Image"), Image)
@@ -152,7 +145,9 @@ Partial Class FormProducto
         ' 
         ' GroupBox1
         ' 
-        GroupBox1.Controls.Add(cbCantidad)
+        GroupBox1.Controls.Add(btnLess)
+        GroupBox1.Controls.Add(btnMore)
+        GroupBox1.Controls.Add(tbCantidad)
         GroupBox1.Controls.Add(Label5)
         GroupBox1.Controls.Add(Label4)
         GroupBox1.Controls.Add(tbCategoria)
@@ -168,6 +163,31 @@ Partial Class FormProducto
         GroupBox1.TabIndex = 13
         GroupBox1.TabStop = False
         GroupBox1.Text = "Producto"
+        ' 
+        ' btnLess
+        ' 
+        btnLess.Image = CType(resources.GetObject("btnLess.Image"), Image)
+        btnLess.Location = New Point(222, 127)
+        btnLess.Name = "btnLess"
+        btnLess.Size = New Size(33, 32)
+        btnLess.TabIndex = 13
+        btnLess.UseVisualStyleBackColor = True
+        ' 
+        ' btnMore
+        ' 
+        btnMore.Image = CType(resources.GetObject("btnMore.Image"), Image)
+        btnMore.Location = New Point(183, 127)
+        btnMore.Name = "btnMore"
+        btnMore.Size = New Size(33, 32)
+        btnMore.TabIndex = 12
+        btnMore.UseVisualStyleBackColor = True
+        ' 
+        ' tbCantidad
+        ' 
+        tbCantidad.Location = New Point(107, 129)
+        tbCantidad.Name = "tbCantidad"
+        tbCantidad.Size = New Size(69, 27)
+        tbCantidad.TabIndex = 11
         ' 
         ' Label6
         ' 
@@ -204,9 +224,11 @@ Partial Class FormProducto
     Friend WithEvents Label4 As Label
     Friend WithEvents tbCategoria As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents cbCantidad As ComboBox
     Friend WithEvents btnAñadir As Button
     Friend WithEvents btnCancelar As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label6 As Label
+    Friend WithEvents btnMore As Button
+    Friend WithEvents tbCantidad As TextBox
+    Friend WithEvents btnLess As Button
 End Class
