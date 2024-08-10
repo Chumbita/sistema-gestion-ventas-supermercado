@@ -2,43 +2,43 @@
 Public Class FormUser
     Private Sub FormUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargadorDatos.CargaDeProductos()
-        cargadorDatos.MostrarProductos(DGVUser)
+        cargadorDatos.MostrarProductos(DGVProductos)
         cargadorDatos.MostrarCategorias(cbPorCategoria)
     End Sub
-    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
-        If DGVUser.SelectedRows.Count > 0 Then
-            Dim fila As DataGridViewRow = DGVUser.SelectedRows(0)
-            Dim codigo As String = fila.Cells("Column1").Value.ToString()
-            Dim nombre As String = fila.Cells("Column2").Value.ToString()
-            Dim marca As String = fila.Cells("Column3").Value.ToString()
-            Dim precio As String = fila.Cells("Column4").Value.ToString()
-            Dim cantidad As String = fila.Cells("Column5").Value.ToString
-            Dim categoria As String = fila.Cells("Column6").Value.ToString()
+    Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
+        If DGVProductos.SelectedRows.Count > 0 Then
+            Dim filaSeleccionada As DataGridViewRow = DGVProductos.SelectedRows(0)
+            Dim codigoProducto As String = filaSeleccionada.Cells("Column1").Value.ToString()
+            Dim nombreProducto As String = filaSeleccionada.Cells("Column2").Value.ToString()
+            Dim marcaProducto As String = filaSeleccionada.Cells("Column3").Value.ToString()
+            Dim precioProducto As String = filaSeleccionada.Cells("Column4").Value.ToString()
+            Dim cantidadProducto As String = filaSeleccionada.Cells("Column5").Value.ToString
+            Dim categoriaProducto As String = filaSeleccionada.Cells("Column6").Value.ToString()
 
-            Dim producto = New Producto(codigo, nombre, marca, precio, cantidad, categoria)
-            Dim formProducto = New FormProducto(producto, DGVCarrito)
+            Dim productoSeleccionado = New Producto(codigoProducto, nombreProducto, marcaProducto, precioProducto, cantidadProducto, categoriaProducto)
+            Dim formProducto = New FormProducto(productoSeleccionado, DGVCarrito)
             formProducto.Show()
         End If
     End Sub
-    Private Sub btnEliminar_Click(sender As Object, e As EventArgs) Handles btnEliminar.Click
+    Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
         If DGVCarrito.SelectedRows.Count > 0 AndAlso MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            Dim fila As DataGridViewRow = DGVUser.SelectedRows(0)
-            Dim codProducto = fila.Cells("Column1").Value.ToString()
-            _cliente._carrito.EliminarProducto(codProducto)
+            Dim filaSeleccionada As DataGridViewRow = DGVProductos.SelectedRows(0)
+            Dim codigoProducto = filaSeleccionada.Cells("Column1").Value.ToString()
+            _cliente._carrito.EliminarProducto(codigoProducto)
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
-    Private Sub btnVaciar_Click(sender As Object, e As EventArgs) Handles btnVaciar.Click
+    Private Sub btnVaciarCarrito_Click(sender As Object, e As EventArgs) Handles btnVaciarCarrito.Click
         If MessageBox.Show("¿Está seguro que desea vaciar el carrito?", "Vaciar Carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             _cliente._carrito.VaciarCarrito()
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
-    Private Sub btnFinalizar_Click(sender As Object, e As EventArgs) Handles btnFinalizar.Click
-        Dim text As String
+    Private Sub btnFinalizarCompra_Click(sender As Object, e As EventArgs) Handles btnFinalizarCompra.Click
+        Dim resumenCompra As String
         If MessageBox.Show("¿Finalizar Compra?", "Finalizar Compra", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            text = _cliente._carrito.FinalizarCompra()
-            MsgBox(text)
+            resumenCompra = _cliente._carrito.FinalizarCompra()
+            MsgBox(resumenCompra)
             _cliente._carrito.VaciarCarrito()
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
@@ -55,7 +55,7 @@ Public Class FormUser
         Dim buscarTexto As String = tbBuscar.Text.ToLower()
         Dim categoriaTexto As String = cbPorCategoria.Text.ToLower()
 
-        For Each fila As DataGridViewRow In DGVUser.Rows
+        For Each fila As DataGridViewRow In DGVProductos.Rows
             'no procesa la fila de nueva fila
             If Not fila.IsNewRow Then
                 Dim mostrarFila As Boolean = True

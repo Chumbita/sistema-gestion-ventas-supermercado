@@ -2,7 +2,7 @@
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Instancias del supermercado y el cargadorDeDatos
         miSupermercado = New Supermercado("Marito SA")
-        cargadorDatos = New CargadorDeDatos(miSupermercado)
+        cargadorDatos = New CargadorDeDatos()
         'Se cargan los usuarios registrados en la base de datos en el supermercado.
         cargadorDatos.CargaDeUsuarios()
     End Sub

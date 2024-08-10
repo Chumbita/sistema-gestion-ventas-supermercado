@@ -3,37 +3,40 @@ Imports System.Diagnostics.Eventing
 Imports Microsoft.SqlServer
 Imports MySql.Data.MySqlClient
 Public Class CargadorDeDatos
-    Private Property _supermercado As Supermercado
-    Public Sub New(supermercado As Supermercado)
-        _supermercado = supermercado
-    End Sub
-
     Public Sub CargaDeUsuarios()
         Dim miConexion As MySqlConnection
         Dim query As String
         Dim cmd As MySqlCommand
         Dim reader As MySqlDataReader
 
-        miConexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
-        query = "SELECT * FROM usuarios"
-        cmd = New MySqlCommand(query, miConexion)
-        miConexion.Open()
-        reader = cmd.ExecuteReader()
-        While reader.Read()
-            Dim usuario As String = reader.GetString(1)
-            Dim nombre As String = reader.GetString(2)
-            Dim contraseña As String = reader.GetString(3)
-            Dim user As Usuario
+        Try
+            miConexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+            query = "SELECT * FROM usuarios"
+            cmd = New MySqlCommand(query, miConexion)
+            miConexion.Open()
+            reader = cmd.ExecuteReader()
 
-            If reader.GetInt16(0) = 0 Then
-                user = New Administrador(usuario, nombre, contraseña)
-            Else
-                user = New Cliente(usuario, nombre, contraseña)
-            End If
+            While reader.Read()
+                Dim usuario As String = reader.GetString(1)
+                Dim nombre As String = reader.GetString(2)
+                Dim contraseña As String = reader.GetString(3)
+                Dim nuevoUsuario As Usuario
 
-            _supermercado.AgregarUsuario(user)
+                If reader.GetInt16(0) = 0 Then
+                    nuevoUsuario = New Administrador(usuario, nombre, contraseña)
+                Else
+                    nuevoUsuario = New Cliente(usuario, nombre, contraseña)
+                End If
 
-        End While
+                miSupermercado.AgregarUsuario(nuevoUsuario)
+            End While
+
+            reader.Close()
+            cmd.Dispose()
+            miConexion.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los usuarios: " & ex.Message)
+        End Try
     End Sub
     Public Sub CargaDeProductos()
         Dim miConexion As MySqlConnection
@@ -41,59 +44,61 @@ Public Class CargadorDeDatos
         Dim cmd As MySqlCommand
         Dim reader As MySqlDataReader
 
-        miConexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
-        query = "SELECT * FROM categorias"
-        cmd = New MySqlCommand(query, miConexion)
-        miConexion.Open()
-        reader = cmd.ExecuteReader()
-        While reader.Read()
-            Dim nombreCategoria As String = reader.GetString(1)
+        Try
+            miConexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+            query = "SELECT * FROM categorias"
+            cmd = New MySqlCommand(query, miConexion)
+            miConexion.Open()
+            reader = cmd.ExecuteReader()
+            While reader.Read()
+                Dim nombreCategoria As String = reader.GetString(1)
+                Dim categoria As New Categoria(nombreCategoria)
+                miSupermercado.AgregarCategoria(categoria)
+            End While
+            reader.Close()
 
-            Dim categoria As New Categoria(nombreCategoria)
-            _supermercado.AgregarCategoria(categoria)
-        End While
+            query = "SELECT * FROM  productos ORDER BY codigo ASC"
+            cmd = New MySqlCommand(query, miConexion)
+            reader = cmd.ExecuteReader()
 
-        reader.Close()
+            While reader.Read()
+                Dim codigo As Integer = reader.GetInt32(0)
+                Dim nombre As String = reader.GetString(1)
+                Dim marca As String = reader.GetString(2)
+                Dim precio As Double = reader.GetDouble(3)
+                Dim cantidad As Integer = reader.GetInt32(4)
+                Dim nombreCategoria As String = reader.GetString(5)
 
-        query = "SELECT * FROM  productos ORDER BY codigo ASC"
-        cmd = New MySqlCommand(query, miConexion)
-        reader = cmd.ExecuteReader()
-        While reader.Read()
-            Dim codigo As Integer = reader.GetInt32(0)
-            Dim nombre As String = reader.GetString(1)
-            Dim marca As String = reader.GetString(2)
-            Dim precio As Double = reader.GetDouble(3)
-            Dim cantidad As Integer = reader.GetInt32(4)
-            Dim pCategoria As String = reader.GetString(5)
+                Dim producto As New Producto(codigo, nombre, marca, precio, cantidad, nombreCategoria)
 
-            Dim producto As New Producto(codigo, nombre, marca, precio, cantidad, pCategoria)
+                For Each categoria As Categoria In miSupermercado._categorias
+                    If categoria._nombre = producto._categoria Then
+                        categoria._productos.Add(producto)
+                        Exit For
+                    End If
+                Next
+            End While
 
-            For Each cat As Categoria In _supermercado._categorias
-                If cat._nombre = producto._categoria Then
-                    cat._productos.Add(producto)
-                    Exit For
-                End If
-            Next
-        End While
-
-        reader.Close()
-        cmd.Dispose()
-        miConexion.Close()
+            reader.Close()
+            cmd.Dispose()
+            miConexion.Close()
+        Catch ex As Exception
+            MessageBox.Show("Error al cargar los productos: " & ex.Message)
+        End Try
     End Sub
-
     Public Sub MostrarProductos(dgv As DataGridView)
         dgv.Rows.Clear()
 
-        For Each categoria As Categoria In _supermercado._categorias
+        For Each categoria As Categoria In miSupermercado._categorias
             For Each producto As Producto In categoria._productos
                 dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
             Next
         Next
     End Sub
-
     Public Sub MostrarCategorias(cb As ComboBox)
-        For Each c As Categoria In _supermercado._categorias
-            cb.Items.Add(c._nombre)
+        cb.Items.Clear()
+        For Each categoria As Categoria In miSupermercado._categorias
+            cb.Items.Add(categoria._nombre)
         Next
     End Sub
 End Class

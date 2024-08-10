@@ -23,7 +23,7 @@ Partial Class FormUser
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormUser))
-        DGVUser = New DataGridView()
+        DGVProductos = New DataGridView()
         Column1 = New DataGridViewTextBoxColumn()
         Column2 = New DataGridViewTextBoxColumn()
         Column3 = New DataGridViewTextBoxColumn()
@@ -33,11 +33,11 @@ Partial Class FormUser
         Label1 = New Label()
         tbBuscar = New TextBox()
         cbPorCategoria = New ComboBox()
-        btnAgregar = New Button()
+        btnAgregarProducto = New Button()
         Label2 = New Label()
-        btnEliminar = New Button()
-        btnVaciar = New Button()
-        btnFinalizar = New Button()
+        btnEliminarProducto = New Button()
+        btnVaciarCarrito = New Button()
+        btnFinalizarCompra = New Button()
         Label3 = New Label()
         DGVCarrito = New DataGridView()
         Column7 = New DataGridViewTextBoxColumn()
@@ -49,21 +49,21 @@ Partial Class FormUser
         Column13 = New DataGridViewTextBoxColumn()
         btnSalir = New Button()
         lbCarrito = New Label()
-        CType(DGVUser, ComponentModel.ISupportInitialize).BeginInit()
+        CType(DGVProductos, ComponentModel.ISupportInitialize).BeginInit()
         CType(DGVCarrito, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
-        ' DGVUser
+        ' DGVProductos
         ' 
-        DGVUser.AllowUserToAddRows = False
-        DGVUser.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DGVUser.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6})
-        DGVUser.Location = New Point(27, 118)
-        DGVUser.Name = "DGVUser"
-        DGVUser.RowHeadersWidth = 51
-        DGVUser.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DGVUser.Size = New Size(553, 339)
-        DGVUser.TabIndex = 0
+        DGVProductos.AllowUserToAddRows = False
+        DGVProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        DGVProductos.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6})
+        DGVProductos.Location = New Point(27, 118)
+        DGVProductos.Name = "DGVProductos"
+        DGVProductos.RowHeadersWidth = 51
+        DGVProductos.SelectionMode = DataGridViewSelectionMode.FullRowSelect
+        DGVProductos.Size = New Size(553, 339)
+        DGVProductos.TabIndex = 0
         ' 
         ' Column1
         ' 
@@ -133,17 +133,17 @@ Partial Class FormUser
         cbPorCategoria.Size = New Size(213, 28)
         cbPorCategoria.TabIndex = 3
         ' 
-        ' btnAgregar
+        ' btnAgregarProducto
         ' 
-        btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), Image)
-        btnAgregar.ImageAlign = ContentAlignment.MiddleRight
-        btnAgregar.Location = New Point(186, 471)
-        btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(168, 43)
-        btnAgregar.TabIndex = 4
-        btnAgregar.Text = "Agregar al carrito"
-        btnAgregar.TextAlign = ContentAlignment.MiddleLeft
-        btnAgregar.UseVisualStyleBackColor = True
+        btnAgregarProducto.Image = CType(resources.GetObject("btnAgregarProducto.Image"), Image)
+        btnAgregarProducto.ImageAlign = ContentAlignment.MiddleRight
+        btnAgregarProducto.Location = New Point(186, 471)
+        btnAgregarProducto.Name = "btnAgregarProducto"
+        btnAgregarProducto.Size = New Size(168, 43)
+        btnAgregarProducto.TabIndex = 4
+        btnAgregarProducto.Text = "Agregar al carrito"
+        btnAgregarProducto.TextAlign = ContentAlignment.MiddleLeft
+        btnAgregarProducto.UseVisualStyleBackColor = True
         ' 
         ' Label2
         ' 
@@ -154,41 +154,41 @@ Partial Class FormUser
         Label2.TabIndex = 5
         Label2.Text = "Filtrar por categoría:"
         ' 
-        ' btnEliminar
+        ' btnEliminarProducto
         ' 
-        btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), Image)
-        btnEliminar.ImageAlign = ContentAlignment.MiddleRight
-        btnEliminar.Location = New Point(638, 471)
-        btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(168, 43)
-        btnEliminar.TabIndex = 7
-        btnEliminar.Text = "Eliminar producto"
-        btnEliminar.TextAlign = ContentAlignment.MiddleLeft
-        btnEliminar.UseVisualStyleBackColor = True
+        btnEliminarProducto.Image = CType(resources.GetObject("btnEliminarProducto.Image"), Image)
+        btnEliminarProducto.ImageAlign = ContentAlignment.MiddleRight
+        btnEliminarProducto.Location = New Point(638, 471)
+        btnEliminarProducto.Name = "btnEliminarProducto"
+        btnEliminarProducto.Size = New Size(168, 43)
+        btnEliminarProducto.TabIndex = 7
+        btnEliminarProducto.Text = "Eliminar producto"
+        btnEliminarProducto.TextAlign = ContentAlignment.MiddleLeft
+        btnEliminarProducto.UseVisualStyleBackColor = True
         ' 
-        ' btnVaciar
+        ' btnVaciarCarrito
         ' 
-        btnVaciar.Image = CType(resources.GetObject("btnVaciar.Image"), Image)
-        btnVaciar.ImageAlign = ContentAlignment.MiddleRight
-        btnVaciar.Location = New Point(831, 471)
-        btnVaciar.Name = "btnVaciar"
-        btnVaciar.Size = New Size(168, 43)
-        btnVaciar.TabIndex = 8
-        btnVaciar.Text = "Vaciar carrito"
-        btnVaciar.TextAlign = ContentAlignment.MiddleLeft
-        btnVaciar.UseVisualStyleBackColor = True
+        btnVaciarCarrito.Image = CType(resources.GetObject("btnVaciarCarrito.Image"), Image)
+        btnVaciarCarrito.ImageAlign = ContentAlignment.MiddleRight
+        btnVaciarCarrito.Location = New Point(831, 471)
+        btnVaciarCarrito.Name = "btnVaciarCarrito"
+        btnVaciarCarrito.Size = New Size(168, 43)
+        btnVaciarCarrito.TabIndex = 8
+        btnVaciarCarrito.Text = "Vaciar carrito"
+        btnVaciarCarrito.TextAlign = ContentAlignment.MiddleLeft
+        btnVaciarCarrito.UseVisualStyleBackColor = True
         ' 
-        ' btnFinalizar
+        ' btnFinalizarCompra
         ' 
-        btnFinalizar.Image = CType(resources.GetObject("btnFinalizar.Image"), Image)
-        btnFinalizar.ImageAlign = ContentAlignment.MiddleRight
-        btnFinalizar.Location = New Point(1023, 471)
-        btnFinalizar.Name = "btnFinalizar"
-        btnFinalizar.Size = New Size(168, 43)
-        btnFinalizar.TabIndex = 9
-        btnFinalizar.Text = "Finalizar compra"
-        btnFinalizar.TextAlign = ContentAlignment.MiddleLeft
-        btnFinalizar.UseVisualStyleBackColor = True
+        btnFinalizarCompra.Image = CType(resources.GetObject("btnFinalizarCompra.Image"), Image)
+        btnFinalizarCompra.ImageAlign = ContentAlignment.MiddleRight
+        btnFinalizarCompra.Location = New Point(1023, 471)
+        btnFinalizarCompra.Name = "btnFinalizarCompra"
+        btnFinalizarCompra.Size = New Size(168, 43)
+        btnFinalizarCompra.TabIndex = 9
+        btnFinalizarCompra.Text = "Finalizar compra"
+        btnFinalizarCompra.TextAlign = ContentAlignment.MiddleLeft
+        btnFinalizarCompra.UseVisualStyleBackColor = True
         ' 
         ' Label3
         ' 
@@ -289,32 +289,32 @@ Partial Class FormUser
         Controls.Add(btnSalir)
         Controls.Add(DGVCarrito)
         Controls.Add(Label3)
-        Controls.Add(btnFinalizar)
-        Controls.Add(btnVaciar)
-        Controls.Add(btnEliminar)
+        Controls.Add(btnFinalizarCompra)
+        Controls.Add(btnVaciarCarrito)
+        Controls.Add(btnEliminarProducto)
         Controls.Add(Label2)
-        Controls.Add(btnAgregar)
+        Controls.Add(btnAgregarProducto)
         Controls.Add(cbPorCategoria)
         Controls.Add(tbBuscar)
         Controls.Add(Label1)
-        Controls.Add(DGVUser)
+        Controls.Add(DGVProductos)
         Name = "FormUser"
         Text = "FormUser"
-        CType(DGVUser, ComponentModel.ISupportInitialize).EndInit()
+        CType(DGVProductos, ComponentModel.ISupportInitialize).EndInit()
         CType(DGVCarrito, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
 
-    Friend WithEvents DGVUser As DataGridView
+    Friend WithEvents DGVProductos As DataGridView
     Friend WithEvents Label1 As Label
     Friend WithEvents tbBuscar As TextBox
     Friend WithEvents cbPorCategoria As ComboBox
-    Friend WithEvents btnAgregar As Button
+    Friend WithEvents btnAgregarProducto As Button
     Friend WithEvents Label2 As Label
-    Friend WithEvents btnEliminar As Button
-    Friend WithEvents btnVaciar As Button
-    Friend WithEvents btnFinalizar As Button
+    Friend WithEvents btnEliminarProducto As Button
+    Friend WithEvents btnVaciarCarrito As Button
+    Friend WithEvents btnFinalizarCompra As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents DGVCarrito As DataGridView
     Friend WithEvents btnSalir As Button

@@ -154,10 +154,10 @@
     <value>True</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnAgregar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnAgregarProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANPSURBVFhH1ddb
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANPSURBVFhH1ddb
         SBVBHAbwv9esxBLtYioR1YNh9NDVygtKkl0UUkEICrJ6LIroodR66C1KKApCX3opUIKuEAXdpAejC0Ev
         0QW7UEpIGlFW6r/v221q93h2z6pHpA9+4MwZZ+bszOzukSgnC+qhHbrgB7yDS7AVEmFMEguH4Buoj5dQ
         Aq7kQrXDesiEoEmAi6ASG6NSk61yPV+la6PKz00qHetUmherLJxiJvELtsHffADnLKkfTgK/WaScBpX0
@@ -175,10 +175,10 @@
         L64MDKgzAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnEliminar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnEliminarProducto.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAM6SURBVFhH1ddb
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAM6SURBVFhH1ddb
         SBRRHAbwVde8tnnJLO3CSlibiTfcSvGSUhRGFyoIgoSiHgsiutjtOSKCyiDqpQsFhWDZQ9RDF+mhoiKI
         ILqaofUgpUkZXf5938kTs+PM7Kgr0ge/h5n9zzln95w5M+uJcCbDXrgHH+E7tMNlqIcxMCKJhv3wFcTB
         S6iFkMyG1QZ1kA1uEwvNIBiFrMpMl+bCGfKmokg+1ZTKs/ICaQz4JS85UQ/iB6yHf+kA4yjpJxwFfrNw
@@ -195,10 +195,10 @@
         nkuuE7vMA+O8H4KIZNQHwJ+dg2Dni3jCIeyUU3Ab+JJrisfzB3b5TjnP8y/2AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btnVaciar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnVaciarCarrito.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOPSURBVFhH1dfZ
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAOPSURBVFhH1dfZ
         S1RRHAdwdcZ01FwrSw0dE80l3HAizSVFKSwLKughKop8LAjBsu0vqKAyaHmxpKAQNHuIXlqkh4KKIHoo
         bdGyerDUpIyWX9/vac5wR73XcUP6wgc7tzPn/Oaec5fxm+YkwGF4AJ/gB/RAG2yHOTAjCYCj8A3EQidU
         gFeyYLNBNcSDrwmEVhBUIZtiY6Q1J01eF+fKl/ICeV6ULY3pTskMC9FF/ISd4EkvGKukX3AK+M3GyxmQ
@@ -217,10 +217,10 @@
         /QXqOzxvayIExgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="btnFinalizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnFinalizarCompra.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wAAADsABataJCQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANeSURBVFhH1ddZ
+        vAAADrwBlbxySQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAANeSURBVFhH1ddZ
         SBVRGAfwTy0FNS0issxSoqKSIsgWEzMjMYJ8iKDILIrWhwILgkqjIJBAAytBk0jQJC1KKyqLQkXIQFuf
         Wh5aaHkIKqKMlq///05H53rvjDcXpD/8wDOeOee7c86dmSv9nHGQB63wHr7DK6iDdRAKA5JgOABfQV08
         g8XglURYabMMYiHQDIWLoBIUrLJoqUpBqcq5JpVr91WqGlR2HVJJmGSK+AEboDNvwF4l/YRjwE/WU0pA
@@ -283,7 +283,7 @@
   <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        rgAAAK4B+ff3XQAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhH7de9
+        qQAAAKkBq7NRIgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhH7de9
         LkRBGMbxDQkdkdBQ6VTcgIhKKBG1SBQU3AENhQvQiVIjGg21SFRIROUONITQiM//s9mR2dl3d2b2sFF4
         kl9yzLwz88p+nVMifTjAMz6b9IILzCI7OtzatFnzyErOf36DfcMR3qCaB3QjOeEhjXxgC1bW4OomNJAa
         /4AUamIIYebganSdHH/zVDMI09IGrAPqNdCLMbSV/zLib5wqp4EraOwQHRoI4xblsBoYwXvFsAYq8dfp
