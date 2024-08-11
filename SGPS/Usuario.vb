@@ -1,4 +1,4 @@
-﻿Public Class Usuario
+﻿Public MustInherit Class Usuario
     Public Sub New()
     End Sub
     Public Sub New(usuario As String, nombre As String, contraseña As String)
@@ -10,8 +10,6 @@
     Public Property _nombre As String
     Public Property _contraseña As String
 
-    Public Overridable Sub AgregarProducto(producto As Producto)
-    End Sub
-    Public Overridable Sub EliminarProducto(producto As Producto)
-    End Sub
+    Public MustOverride Sub AgregarProducto(producto As Producto)
+    Public MustOverride Sub EliminarProducto(codigoProducto As Integer)
 End Class

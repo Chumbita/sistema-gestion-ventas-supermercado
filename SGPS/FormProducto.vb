@@ -15,10 +15,10 @@
     End Sub
 
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        _producto._cantidad = tbCantidad.Text
-        _cliente._carrito._productos.Add(_producto)
-        Me.Close()
+        _producto._cantidad = CInt(tbCantidad.Text)
+        _cliente.AgregarProducto(_producto)
         _cliente._carrito.MostrarCarrito(_dgv)
+        Me.Close()
     End Sub
     Private Sub btnCancelar_Click(sender As Object, e As EventArgs) Handles btnCancelar.Click
         If MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Cancelar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then

@@ -1,7 +1,4 @@
-﻿Imports System.Data.Common
-Imports System.Diagnostics.Eventing
-Imports Microsoft.SqlServer
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Public Class CargadorDeDatos
     Public Sub CargaDeUsuarios()
         Dim miConexion As MySqlConnection
@@ -50,14 +47,16 @@ Public Class CargadorDeDatos
             cmd = New MySqlCommand(query, miConexion)
             miConexion.Open()
             reader = cmd.ExecuteReader()
+
             While reader.Read()
                 Dim nombreCategoria As String = reader.GetString(1)
                 Dim categoria As New Categoria(nombreCategoria)
                 miSupermercado.AgregarCategoria(categoria)
             End While
+
             reader.Close()
 
-            query = "SELECT * FROM  productos ORDER BY codigo ASC"
+            query = "SELECT * FROM  productos"
             cmd = New MySqlCommand(query, miConexion)
             reader = cmd.ExecuteReader()
 
@@ -91,12 +90,14 @@ Public Class CargadorDeDatos
 
         For Each categoria As Categoria In miSupermercado._categorias
             For Each producto As Producto In categoria._productos
-                dgv.Rows.Add(producto._codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
+                Dim codigo As Integer = CInt(producto._codigo)
+                dgv.Rows.Add(codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
             Next
         Next
     End Sub
     Public Sub MostrarCategorias(cb As ComboBox)
         cb.Items.Clear()
+        cb.Items.Add("")
         For Each categoria As Categoria In miSupermercado._categorias
             cb.Items.Add(categoria._nombre)
         Next

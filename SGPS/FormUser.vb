@@ -1,9 +1,9 @@
-﻿Imports Mysqlx.Crud
-Public Class FormUser
+﻿Public Class FormUser
     Private Sub FormUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         cargadorDatos.CargaDeProductos()
         cargadorDatos.MostrarProductos(DGVProductos)
         cargadorDatos.MostrarCategorias(cbPorCategoria)
+        DGVProductos.ClearSelection()
     End Sub
     Private Sub btnAgregarProducto_Click(sender As Object, e As EventArgs) Handles btnAgregarProducto.Click
         If DGVProductos.SelectedRows.Count > 0 Then
@@ -24,22 +24,22 @@ Public Class FormUser
         If DGVCarrito.SelectedRows.Count > 0 AndAlso MessageBox.Show("¿Está seguro que desea cancelar la operación?", "Eliminar Producto", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             Dim filaSeleccionada As DataGridViewRow = DGVProductos.SelectedRows(0)
             Dim codigoProducto = filaSeleccionada.Cells("Column1").Value.ToString()
-            _cliente._carrito.EliminarProducto(codigoProducto)
+            _cliente.EliminarProducto(codigoProducto)
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
     Private Sub btnVaciarCarrito_Click(sender As Object, e As EventArgs) Handles btnVaciarCarrito.Click
         If MessageBox.Show("¿Está seguro que desea vaciar el carrito?", "Vaciar Carrito", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            _cliente._carrito.VaciarCarrito()
+            _cliente.VaciarCarrito()
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub
     Private Sub btnFinalizarCompra_Click(sender As Object, e As EventArgs) Handles btnFinalizarCompra.Click
         Dim resumenCompra As String
         If MessageBox.Show("¿Finalizar Compra?", "Finalizar Compra", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
-            resumenCompra = _cliente._carrito.FinalizarCompra()
+            resumenCompra = _cliente.FinalizarCompra()
             MsgBox(resumenCompra)
-            _cliente._carrito.VaciarCarrito()
+            _cliente.VaciarCarrito()
             _cliente._carrito.MostrarCarrito(DGVCarrito)
         End If
     End Sub

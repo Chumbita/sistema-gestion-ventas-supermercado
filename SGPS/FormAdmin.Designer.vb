@@ -57,9 +57,9 @@ Partial Class FormAdmin
         Label8 = New Label()
         btnCancelar = New Button()
         Label10 = New Label()
-        btnEliminarC = New Button()
+        btnEliminarCategoria = New Button()
         cbCategoria = New ComboBox()
-        btnAgregarC = New Button()
+        btnAgregarCategoria = New Button()
         btnSalir = New Button()
         GroupBox2 = New GroupBox()
         CType(DGVAdmin, ComponentModel.ISupportInitialize).BeginInit()
@@ -88,7 +88,7 @@ Partial Class FormAdmin
         ' cbPorCategoria
         ' 
         cbPorCategoria.FormattingEnabled = True
-        cbPorCategoria.Items.AddRange(New Object() {""})
+        cbPorCategoria.Items.AddRange(New Object() {" "})
         cbPorCategoria.Location = New Point(169, 90)
         cbPorCategoria.Margin = New Padding(2, 3, 2, 3)
         cbPorCategoria.Name = "cbPorCategoria"
@@ -98,11 +98,14 @@ Partial Class FormAdmin
         ' DGVAdmin
         ' 
         DGVAdmin.AllowUserToAddRows = False
+        DGVAdmin.AllowUserToDeleteRows = False
+        DGVAdmin.AllowUserToResizeColumns = False
         DGVAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DGVAdmin.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7})
         DGVAdmin.Location = New Point(21, 137)
         DGVAdmin.Margin = New Padding(2, 3, 2, 3)
         DGVAdmin.Name = "DGVAdmin"
+        DGVAdmin.ReadOnly = True
         DGVAdmin.RowHeadersWidth = 51
         DGVAdmin.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DGVAdmin.Size = New Size(678, 353)
@@ -113,6 +116,7 @@ Partial Class FormAdmin
         Column1.HeaderText = "Código"
         Column1.MinimumWidth = 6
         Column1.Name = "Column1"
+        Column1.ReadOnly = True
         Column1.Width = 125
         ' 
         ' Column2
@@ -120,6 +124,7 @@ Partial Class FormAdmin
         Column2.HeaderText = "Nombre"
         Column2.MinimumWidth = 6
         Column2.Name = "Column2"
+        Column2.ReadOnly = True
         Column2.Width = 125
         ' 
         ' Column3
@@ -127,6 +132,7 @@ Partial Class FormAdmin
         Column3.HeaderText = "Marca"
         Column3.MinimumWidth = 6
         Column3.Name = "Column3"
+        Column3.ReadOnly = True
         Column3.Width = 125
         ' 
         ' Column4
@@ -134,6 +140,7 @@ Partial Class FormAdmin
         Column4.HeaderText = "Precio"
         Column4.MinimumWidth = 6
         Column4.Name = "Column4"
+        Column4.ReadOnly = True
         Column4.Width = 125
         ' 
         ' Column5
@@ -141,6 +148,7 @@ Partial Class FormAdmin
         Column5.HeaderText = "Cantidad"
         Column5.MinimumWidth = 6
         Column5.Name = "Column5"
+        Column5.ReadOnly = True
         Column5.Width = 125
         ' 
         ' Column6
@@ -148,6 +156,7 @@ Partial Class FormAdmin
         Column6.HeaderText = "Categoria"
         Column6.MinimumWidth = 6
         Column6.Name = "Column6"
+        Column6.ReadOnly = True
         Column6.Visible = False
         Column6.Width = 125
         ' 
@@ -156,6 +165,7 @@ Partial Class FormAdmin
         Column7.HeaderText = "Ruta"
         Column7.MinimumWidth = 6
         Column7.Name = "Column7"
+        Column7.ReadOnly = True
         Column7.Visible = False
         Column7.Width = 125
         ' 
@@ -421,17 +431,17 @@ Partial Class FormAdmin
         Label10.Size = New Size(0, 20)
         Label10.TabIndex = 0
         ' 
-        ' btnEliminarC
+        ' btnEliminarCategoria
         ' 
-        btnEliminarC.Image = CType(resources.GetObject("btnEliminarC.Image"), Image)
-        btnEliminarC.ImageAlign = ContentAlignment.MiddleRight
-        btnEliminarC.Location = New Point(51, 129)
-        btnEliminarC.Name = "btnEliminarC"
-        btnEliminarC.Size = New Size(117, 44)
-        btnEliminarC.TabIndex = 25
-        btnEliminarC.Text = "Eliminar"
-        btnEliminarC.TextAlign = ContentAlignment.MiddleLeft
-        btnEliminarC.UseVisualStyleBackColor = True
+        btnEliminarCategoria.Image = CType(resources.GetObject("btnEliminarCategoria.Image"), Image)
+        btnEliminarCategoria.ImageAlign = ContentAlignment.MiddleRight
+        btnEliminarCategoria.Location = New Point(51, 129)
+        btnEliminarCategoria.Name = "btnEliminarCategoria"
+        btnEliminarCategoria.Size = New Size(117, 44)
+        btnEliminarCategoria.TabIndex = 25
+        btnEliminarCategoria.Text = "Eliminar"
+        btnEliminarCategoria.TextAlign = ContentAlignment.MiddleLeft
+        btnEliminarCategoria.UseVisualStyleBackColor = True
         ' 
         ' cbCategoria
         ' 
@@ -442,17 +452,17 @@ Partial Class FormAdmin
         cbCategoria.Size = New Size(199, 28)
         cbCategoria.TabIndex = 2
         ' 
-        ' btnAgregarC
+        ' btnAgregarCategoria
         ' 
-        btnAgregarC.Image = CType(resources.GetObject("btnAgregarC.Image"), Image)
-        btnAgregarC.ImageAlign = ContentAlignment.MiddleRight
-        btnAgregarC.Location = New Point(51, 78)
-        btnAgregarC.Name = "btnAgregarC"
-        btnAgregarC.Size = New Size(119, 44)
-        btnAgregarC.TabIndex = 25
-        btnAgregarC.Text = "Agregar"
-        btnAgregarC.TextAlign = ContentAlignment.MiddleLeft
-        btnAgregarC.UseVisualStyleBackColor = True
+        btnAgregarCategoria.Image = CType(resources.GetObject("btnAgregarCategoria.Image"), Image)
+        btnAgregarCategoria.ImageAlign = ContentAlignment.MiddleRight
+        btnAgregarCategoria.Location = New Point(51, 78)
+        btnAgregarCategoria.Name = "btnAgregarCategoria"
+        btnAgregarCategoria.Size = New Size(119, 44)
+        btnAgregarCategoria.TabIndex = 25
+        btnAgregarCategoria.Text = "Agregar"
+        btnAgregarCategoria.TextAlign = ContentAlignment.MiddleLeft
+        btnAgregarCategoria.UseVisualStyleBackColor = True
         ' 
         ' btnSalir
         ' 
@@ -465,9 +475,9 @@ Partial Class FormAdmin
         ' 
         ' GroupBox2
         ' 
-        GroupBox2.Controls.Add(btnEliminarC)
+        GroupBox2.Controls.Add(btnEliminarCategoria)
         GroupBox2.Controls.Add(cbCategoria)
-        GroupBox2.Controls.Add(btnAgregarC)
+        GroupBox2.Controls.Add(btnAgregarCategoria)
         GroupBox2.Location = New Point(1096, 126)
         GroupBox2.Name = "GroupBox2"
         GroupBox2.Size = New Size(216, 195)
@@ -533,6 +543,13 @@ Partial Class FormAdmin
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label8 As Label
     Friend WithEvents adCBCategoria As ComboBox
+    Friend WithEvents btnCancelar As Button
+    Friend WithEvents Label10 As Label
+    Friend WithEvents btnEliminarCategoria As Button
+    Friend WithEvents cbCategoria As ComboBox
+    Friend WithEvents btnAgregarCategoria As Button
+    Friend WithEvents btnSalir As Button
+    Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents Column1 As DataGridViewTextBoxColumn
     Friend WithEvents Column2 As DataGridViewTextBoxColumn
     Friend WithEvents Column3 As DataGridViewTextBoxColumn
@@ -540,11 +557,4 @@ Partial Class FormAdmin
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
-    Friend WithEvents btnCancelar As Button
-    Friend WithEvents Label10 As Label
-    Friend WithEvents btnEliminarC As Button
-    Friend WithEvents cbCategoria As ComboBox
-    Friend WithEvents btnAgregarC As Button
-    Friend WithEvents btnSalir As Button
-    Friend WithEvents GroupBox2 As GroupBox
 End Class
