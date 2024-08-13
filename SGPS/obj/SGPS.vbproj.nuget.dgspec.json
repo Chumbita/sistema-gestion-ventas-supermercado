@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {}
+    "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {}
   },
   "projects": {
-    "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {
+    "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
+        "projectUniqueName": "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
         "projectName": "SGPS",
-        "projectPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
+        "projectPath": "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\SGPS.vbproj",
         "packagesPath": "C:\\Users\\chumb\\.nuget\\packages\\",
-        "outputPath": "D:\\Universidad\\TERCER AÑO\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\obj\\",
+        "outputPath": "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\SGPS\\SGPS\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\chumb\\AppData\\Roaming\\NuGet\\NuGet.Config",

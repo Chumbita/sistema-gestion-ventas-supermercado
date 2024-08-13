@@ -13,10 +13,20 @@
         tbCantidad.Text = 1
         tbCategoria.Text = _producto._categoria
     End Sub
-
     Private Sub btnAñadir_Click(sender As Object, e As EventArgs) Handles btnAñadir.Click
-        _producto._cantidad = CInt(tbCantidad.Text)
-        _cliente.AgregarProducto(_producto)
+        _producto._cantidad -= CInt(tbCantidad.Text)
+        Dim esNuevo = True
+        For Each producto As Producto In _cliente._carrito._productos
+            If _producto._codigo = producto._codigo Then
+                producto._cantidad += CInt(tbCantidad.Text)
+                esNuevo = False
+                Exit For
+            End If
+        Next
+        If esNuevo Then
+            Dim productoSeleccionado = New Producto(_producto._codigo, _producto._nombre, _producto._marca, _producto._precio, tbCantidad.Text, _producto._categoria)
+            _cliente.AgregarProducto(productoSeleccionado)
+        End If
         _cliente._carrito.MostrarCarrito(_dgv)
         Me.Close()
     End Sub

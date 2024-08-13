@@ -299,7 +299,7 @@
                 If mostrarFila AndAlso Not String.IsNullOrEmpty(buscarTexto) Then
                     If rbPorCodigo.Checked Then
                         Dim celdaCodigo As DataGridViewCell = fila.Cells("Column1")
-                        If celdaCodigo.Value Is Nothing OrElse Not celdaCodigo.Value.ToString().ToLower().Contains(buscarTexto) Then
+                        If celdaCodigo.Value Is Nothing OrElse Not celdaCodigo.Value.ToString().ToLower().Equals(buscarTexto) Then
                             mostrarFila = False
                         End If
                     ElseIf rbPorNombre.Checked Then

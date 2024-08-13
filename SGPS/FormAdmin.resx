@@ -189,7 +189,7 @@
   <data name="btnEditar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qQAAAKkBq7NRIgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKTSURBVFhH7ZbL
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAKTSURBVFhH7ZbL
         axNBHMeT7GyzaZ4mUtQ2tAiioMZUqxdBimdFLxYv/guCh1pqD1akCh686EkvRRFElFIp+ECt1kdFPfgE
         Qa8VFXwjqBjH7/dXNonrNmbXjXjoFz78mNnZfL8zs8wk9I9kNKVbDqh45mXYML+qWPIh+jZNP2q8lDU3
         P4GqHfwADQ9hmcncE1StmtO62D+mu4ff6o7NfRIiEo0/klENkgor8y6qDkcMXdw1ptef+Cx0D7/RoXCY
@@ -207,7 +207,7 @@
   <data name="btnGuardar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        5AAAAOQBXaJ52AAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJISURBVFhH7df/
+        4wAAAOMBD+bfpwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAJISURBVFhH7df/
         TxJxHMdxfu2XfuhPUqnI2pTrLM9+6sdWyOUPBW6NmdXWcloxELbEtJKkL1iSoiIjlzKDRJs1cOlkDbba
         sFzrlybvPp/F0cm9OT/lueuHbnv8xMbrubuD7WMwtTj2m5ov3jEJtg0C5G71hWAlu1mV+bQDahrPbXO0
         5QIsvMuVPQ0ninWcNXuwqa3BgF1kqK9yWKJJwNh8+TMjL/aUZn9fZKhQOSzROoAyHj/vLE3/urBhyV4E
@@ -271,7 +271,7 @@
   <data name="btnSalir.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAA
-        qQAAAKkBq7NRIgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhH7de9
+        qAAAAKgBefSzxgAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAGvSURBVFhH7de9
         LkRBGMbxDQkdkdBQ6VTcgIhKKBG1SBQU3AENhQvQiVIjGg21SFRIROUONITQiM//s9mR2dl3d2b2sFF4
         kl9yzLwz88p+nVMifTjAMz6b9IILzCI7OtzatFnzyErOf36DfcMR3qCaB3QjOeEhjXxgC1bW4OomNJAa
         /4AUamIIYebganSdHH/zVDMI09IGrAPqNdCLMbSV/zLib5wqp4EraOwQHRoI4xblsBoYwXvFsAYq8dfp

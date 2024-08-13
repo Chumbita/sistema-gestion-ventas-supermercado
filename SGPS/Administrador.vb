@@ -1,7 +1,4 @@
-﻿Imports System.Data.Common
-Imports System.Drawing.Text
-Imports Microsoft.SqlServer
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
 Public Class Administrador
     Inherits Usuario
     Public Sub New(usuario As String, nombre As String, contraseña As String)

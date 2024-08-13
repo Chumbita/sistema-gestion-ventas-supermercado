@@ -27,13 +27,6 @@ Partial Class FormAdmin
         tbBuscar = New TextBox()
         cbPorCategoria = New ComboBox()
         DGVAdmin = New DataGridView()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
-        Column6 = New DataGridViewTextBoxColumn()
-        Column7 = New DataGridViewTextBoxColumn()
         btnAgregar = New Button()
         Label3 = New Label()
         rbPorCodigo = New RadioButton()
@@ -62,6 +55,13 @@ Partial Class FormAdmin
         btnAgregarCategoria = New Button()
         btnSalir = New Button()
         GroupBox2 = New GroupBox()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
+        Column7 = New DataGridViewTextBoxColumn()
         CType(DGVAdmin, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -110,64 +110,6 @@ Partial Class FormAdmin
         DGVAdmin.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DGVAdmin.Size = New Size(678, 353)
         DGVAdmin.TabIndex = 3
-        ' 
-        ' Column1
-        ' 
-        Column1.HeaderText = "Código"
-        Column1.MinimumWidth = 6
-        Column1.Name = "Column1"
-        Column1.ReadOnly = True
-        Column1.Width = 125
-        ' 
-        ' Column2
-        ' 
-        Column2.HeaderText = "Nombre"
-        Column2.MinimumWidth = 6
-        Column2.Name = "Column2"
-        Column2.ReadOnly = True
-        Column2.Width = 125
-        ' 
-        ' Column3
-        ' 
-        Column3.HeaderText = "Marca"
-        Column3.MinimumWidth = 6
-        Column3.Name = "Column3"
-        Column3.ReadOnly = True
-        Column3.Width = 125
-        ' 
-        ' Column4
-        ' 
-        Column4.HeaderText = "Precio"
-        Column4.MinimumWidth = 6
-        Column4.Name = "Column4"
-        Column4.ReadOnly = True
-        Column4.Width = 125
-        ' 
-        ' Column5
-        ' 
-        Column5.HeaderText = "Cantidad"
-        Column5.MinimumWidth = 6
-        Column5.Name = "Column5"
-        Column5.ReadOnly = True
-        Column5.Width = 125
-        ' 
-        ' Column6
-        ' 
-        Column6.HeaderText = "Categoria"
-        Column6.MinimumWidth = 6
-        Column6.Name = "Column6"
-        Column6.ReadOnly = True
-        Column6.Visible = False
-        Column6.Width = 125
-        ' 
-        ' Column7
-        ' 
-        Column7.HeaderText = "Ruta"
-        Column7.MinimumWidth = 6
-        Column7.Name = "Column7"
-        Column7.ReadOnly = True
-        Column7.Visible = False
-        Column7.Width = 125
         ' 
         ' btnAgregar
         ' 
@@ -484,6 +426,64 @@ Partial Class FormAdmin
         GroupBox2.TabIndex = 27
         GroupBox2.TabStop = False
         GroupBox2.Text = "Categoría"
+        ' 
+        ' Column1
+        ' 
+        Column1.HeaderText = "Código"
+        Column1.MinimumWidth = 6
+        Column1.Name = "Column1"
+        Column1.ReadOnly = True
+        Column1.Width = 125
+        ' 
+        ' Column2
+        ' 
+        Column2.HeaderText = "Nombre"
+        Column2.MinimumWidth = 6
+        Column2.Name = "Column2"
+        Column2.ReadOnly = True
+        Column2.Width = 125
+        ' 
+        ' Column3
+        ' 
+        Column3.HeaderText = "Marca"
+        Column3.MinimumWidth = 6
+        Column3.Name = "Column3"
+        Column3.ReadOnly = True
+        Column3.Width = 125
+        ' 
+        ' Column4
+        ' 
+        Column4.HeaderText = "Precio"
+        Column4.MinimumWidth = 6
+        Column4.Name = "Column4"
+        Column4.ReadOnly = True
+        Column4.Width = 125
+        ' 
+        ' Column5
+        ' 
+        Column5.HeaderText = "Cantidad"
+        Column5.MinimumWidth = 6
+        Column5.Name = "Column5"
+        Column5.ReadOnly = True
+        Column5.Width = 125
+        ' 
+        ' Column6
+        ' 
+        Column6.HeaderText = "Categoria"
+        Column6.MinimumWidth = 6
+        Column6.Name = "Column6"
+        Column6.ReadOnly = True
+        Column6.Visible = False
+        Column6.Width = 125
+        ' 
+        ' Column7
+        ' 
+        Column7.HeaderText = "Ruta"
+        Column7.MinimumWidth = 6
+        Column7.Name = "Column7"
+        Column7.ReadOnly = True
+        Column7.Visible = False
+        Column7.Width = 125
         ' 
         ' FormAdmin
         ' 

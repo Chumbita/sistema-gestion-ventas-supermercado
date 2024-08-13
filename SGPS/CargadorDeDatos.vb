@@ -90,6 +90,9 @@ Public Class CargadorDeDatos
 
         For Each categoria As Categoria In miSupermercado._categorias
             For Each producto As Producto In categoria._productos
+                If producto._cantidad = 0 Then
+
+                End If
                 Dim codigo As Integer = CInt(producto._codigo)
                 dgv.Rows.Add(codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
             Next

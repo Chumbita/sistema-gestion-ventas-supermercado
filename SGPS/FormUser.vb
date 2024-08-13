@@ -9,15 +9,20 @@
         If DGVProductos.SelectedRows.Count > 0 Then
             Dim filaSeleccionada As DataGridViewRow = DGVProductos.SelectedRows(0)
             Dim codigoProducto As String = filaSeleccionada.Cells("Column1").Value.ToString()
-            Dim nombreProducto As String = filaSeleccionada.Cells("Column2").Value.ToString()
-            Dim marcaProducto As String = filaSeleccionada.Cells("Column3").Value.ToString()
-            Dim precioProducto As String = filaSeleccionada.Cells("Column4").Value.ToString()
-            Dim cantidadProducto As String = filaSeleccionada.Cells("Column5").Value.ToString
             Dim categoriaProducto As String = filaSeleccionada.Cells("Column6").Value.ToString()
 
-            Dim productoSeleccionado = New Producto(codigoProducto, nombreProducto, marcaProducto, precioProducto, cantidadProducto, categoriaProducto)
-            Dim formProducto = New FormProducto(productoSeleccionado, DGVCarrito)
-            formProducto.Show()
+            For Each categoria As Categoria In miSupermercado._categorias
+                If categoria._nombre = categoriaProducto Then
+                    For Each producto As Producto In categoria._productos
+                        If producto._codigo = codigoProducto Then
+                            Dim formProducto = New FormProducto(producto, DGVCarrito)
+                            formProducto.Show()
+                            Exit For
+                        End If
+                    Next
+                    Exit For
+                End If
+            Next
         End If
     End Sub
     Private Sub btnEliminarProducto_Click(sender As Object, e As EventArgs) Handles btnEliminarProducto.Click
@@ -68,7 +73,7 @@
                     End If
                 End If
 
-                ' Filtra por código o nombre
+                ' Filtra por nombre
                 If mostrarFila AndAlso Not String.IsNullOrEmpty(buscarTexto) Then
                     Dim celdaNombre As DataGridViewCell = fila.Cells("Column2")
                     If celdaNombre.Value Is Nothing OrElse Not celdaNombre.Value.ToString().ToLower().Contains(buscarTexto) Then
