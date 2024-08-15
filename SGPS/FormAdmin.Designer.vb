@@ -27,6 +27,13 @@ Partial Class FormAdmin
         tbBuscar = New TextBox()
         cbPorCategoria = New ComboBox()
         DGVAdmin = New DataGridView()
+        Column1 = New DataGridViewTextBoxColumn()
+        Column2 = New DataGridViewTextBoxColumn()
+        Column3 = New DataGridViewTextBoxColumn()
+        Column4 = New DataGridViewTextBoxColumn()
+        Column5 = New DataGridViewTextBoxColumn()
+        Column6 = New DataGridViewTextBoxColumn()
+        Column7 = New DataGridViewTextBoxColumn()
         btnAgregar = New Button()
         Label3 = New Label()
         rbPorCodigo = New RadioButton()
@@ -55,13 +62,8 @@ Partial Class FormAdmin
         btnAgregarCategoria = New Button()
         btnSalir = New Button()
         GroupBox2 = New GroupBox()
-        Column1 = New DataGridViewTextBoxColumn()
-        Column2 = New DataGridViewTextBoxColumn()
-        Column3 = New DataGridViewTextBoxColumn()
-        Column4 = New DataGridViewTextBoxColumn()
-        Column5 = New DataGridViewTextBoxColumn()
-        Column6 = New DataGridViewTextBoxColumn()
-        Column7 = New DataGridViewTextBoxColumn()
+        tbStockMinimo = New TextBox()
+        Label9 = New Label()
         CType(DGVAdmin, ComponentModel.ISupportInitialize).BeginInit()
         GroupBox1.SuspendLayout()
         GroupBox2.SuspendLayout()
@@ -70,29 +72,29 @@ Partial Class FormAdmin
         ' Label1
         ' 
         Label1.AutoSize = True
-        Label1.Location = New Point(21, 53)
+        Label1.Location = New Point(24, 56)
         Label1.Margin = New Padding(2, 0, 2, 0)
         Label1.Name = "Label1"
-        Label1.Size = New Size(119, 20)
+        Label1.Size = New Size(126, 21)
         Label1.TabIndex = 0
         Label1.Text = "Buscar Producto:"
         ' 
         ' tbBuscar
         ' 
-        tbBuscar.Location = New Point(169, 50)
+        tbBuscar.Location = New Point(190, 52)
         tbBuscar.Margin = New Padding(2, 3, 2, 3)
         tbBuscar.Name = "tbBuscar"
-        tbBuscar.Size = New Size(277, 27)
+        tbBuscar.Size = New Size(311, 29)
         tbBuscar.TabIndex = 1
         ' 
         ' cbPorCategoria
         ' 
         cbPorCategoria.FormattingEnabled = True
         cbPorCategoria.Items.AddRange(New Object() {" "})
-        cbPorCategoria.Location = New Point(169, 90)
+        cbPorCategoria.Location = New Point(190, 94)
         cbPorCategoria.Margin = New Padding(2, 3, 2, 3)
         cbPorCategoria.Name = "cbPorCategoria"
-        cbPorCategoria.Size = New Size(277, 28)
+        cbPorCategoria.Size = New Size(311, 29)
         cbPorCategoria.TabIndex = 2
         ' 
         ' DGVAdmin
@@ -102,330 +104,14 @@ Partial Class FormAdmin
         DGVAdmin.AllowUserToResizeColumns = False
         DGVAdmin.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
         DGVAdmin.Columns.AddRange(New DataGridViewColumn() {Column1, Column2, Column3, Column4, Column5, Column6, Column7})
-        DGVAdmin.Location = New Point(21, 137)
+        DGVAdmin.Location = New Point(24, 144)
         DGVAdmin.Margin = New Padding(2, 3, 2, 3)
         DGVAdmin.Name = "DGVAdmin"
         DGVAdmin.ReadOnly = True
         DGVAdmin.RowHeadersWidth = 51
         DGVAdmin.SelectionMode = DataGridViewSelectionMode.FullRowSelect
-        DGVAdmin.Size = New Size(678, 353)
+        DGVAdmin.Size = New Size(763, 371)
         DGVAdmin.TabIndex = 3
-        ' 
-        ' btnAgregar
-        ' 
-        btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), Image)
-        btnAgregar.ImageAlign = ContentAlignment.MiddleRight
-        btnAgregar.Location = New Point(21, 514)
-        btnAgregar.Margin = New Padding(2, 3, 2, 3)
-        btnAgregar.Name = "btnAgregar"
-        btnAgregar.Size = New Size(119, 44)
-        btnAgregar.TabIndex = 4
-        btnAgregar.Text = "Agregar"
-        btnAgregar.TextAlign = ContentAlignment.MiddleLeft
-        btnAgregar.UseVisualStyleBackColor = True
-        ' 
-        ' Label3
-        ' 
-        Label3.AutoSize = True
-        Label3.Location = New Point(21, 93)
-        Label3.Margin = New Padding(2, 0, 2, 0)
-        Label3.Name = "Label3"
-        Label3.Size = New Size(144, 20)
-        Label3.TabIndex = 6
-        Label3.Text = "Filtrar por categoría:"
-        ' 
-        ' rbPorCodigo
-        ' 
-        rbPorCodigo.AutoSize = True
-        rbPorCodigo.Location = New Point(469, 53)
-        rbPorCodigo.Margin = New Padding(2, 3, 2, 3)
-        rbPorCodigo.Name = "rbPorCodigo"
-        rbPorCodigo.Size = New Size(104, 24)
-        rbPorCodigo.TabIndex = 7
-        rbPorCodigo.TabStop = True
-        rbPorCodigo.Text = "Por Código"
-        rbPorCodigo.UseVisualStyleBackColor = True
-        ' 
-        ' rbPorNombre
-        ' 
-        rbPorNombre.AutoSize = True
-        rbPorNombre.Checked = True
-        rbPorNombre.Location = New Point(580, 53)
-        rbPorNombre.Margin = New Padding(2, 3, 2, 3)
-        rbPorNombre.Name = "rbPorNombre"
-        rbPorNombre.Size = New Size(110, 24)
-        rbPorNombre.TabIndex = 8
-        rbPorNombre.TabStop = True
-        rbPorNombre.Text = "Por Nombre"
-        rbPorNombre.UseVisualStyleBackColor = True
-        ' 
-        ' btnRestockear
-        ' 
-        btnRestockear.Image = CType(resources.GetObject("btnRestockear.Image"), Image)
-        btnRestockear.ImageAlign = ContentAlignment.MiddleRight
-        btnRestockear.Location = New Point(580, 514)
-        btnRestockear.Margin = New Padding(2, 3, 2, 3)
-        btnRestockear.Name = "btnRestockear"
-        btnRestockear.Size = New Size(119, 44)
-        btnRestockear.TabIndex = 9
-        btnRestockear.Text = "Restockear"
-        btnRestockear.TextAlign = ContentAlignment.MiddleLeft
-        btnRestockear.UseVisualStyleBackColor = True
-        ' 
-        ' btnEliminar
-        ' 
-        btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), Image)
-        btnEliminar.ImageAlign = ContentAlignment.MiddleRight
-        btnEliminar.Location = New Point(202, 514)
-        btnEliminar.Margin = New Padding(2, 3, 2, 3)
-        btnEliminar.Name = "btnEliminar"
-        btnEliminar.Size = New Size(119, 44)
-        btnEliminar.TabIndex = 10
-        btnEliminar.Text = "Eliminar"
-        btnEliminar.TextAlign = ContentAlignment.MiddleLeft
-        btnEliminar.UseVisualStyleBackColor = True
-        ' 
-        ' btnEditar
-        ' 
-        btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), Image)
-        btnEditar.ImageAlign = ContentAlignment.MiddleRight
-        btnEditar.Location = New Point(389, 514)
-        btnEditar.Margin = New Padding(2, 3, 2, 3)
-        btnEditar.Name = "btnEditar"
-        btnEditar.Size = New Size(119, 44)
-        btnEditar.TabIndex = 11
-        btnEditar.Text = "Editar"
-        btnEditar.TextAlign = ContentAlignment.MiddleLeft
-        btnEditar.UseVisualStyleBackColor = True
-        ' 
-        ' adTbPrecio
-        ' 
-        adTbPrecio.Enabled = False
-        adTbPrecio.Location = New Point(129, 159)
-        adTbPrecio.Margin = New Padding(2, 3, 2, 3)
-        adTbPrecio.Name = "adTbPrecio"
-        adTbPrecio.Size = New Size(198, 27)
-        adTbPrecio.TabIndex = 15
-        ' 
-        ' adTbMarca
-        ' 
-        adTbMarca.Enabled = False
-        adTbMarca.Location = New Point(129, 123)
-        adTbMarca.Margin = New Padding(2, 3, 2, 3)
-        adTbMarca.Name = "adTbMarca"
-        adTbMarca.Size = New Size(198, 27)
-        adTbMarca.TabIndex = 14
-        ' 
-        ' adTbCodigo
-        ' 
-        adTbCodigo.Enabled = False
-        adTbCodigo.Location = New Point(129, 87)
-        adTbCodigo.Margin = New Padding(2, 3, 2, 3)
-        adTbCodigo.Name = "adTbCodigo"
-        adTbCodigo.Size = New Size(198, 27)
-        adTbCodigo.TabIndex = 13
-        ' 
-        ' adTbNombre
-        ' 
-        adTbNombre.Enabled = False
-        adTbNombre.Location = New Point(129, 51)
-        adTbNombre.Margin = New Padding(2, 3, 2, 3)
-        adTbNombre.Name = "adTbNombre"
-        adTbNombre.Size = New Size(198, 27)
-        adTbNombre.TabIndex = 12
-        ' 
-        ' Label6
-        ' 
-        Label6.AutoSize = True
-        Label6.Location = New Point(33, 160)
-        Label6.Margin = New Padding(2, 0, 2, 0)
-        Label6.Name = "Label6"
-        Label6.Size = New Size(53, 20)
-        Label6.TabIndex = 19
-        Label6.Text = "Precio:"
-        ' 
-        ' Label5
-        ' 
-        Label5.AutoSize = True
-        Label5.Location = New Point(33, 127)
-        Label5.Margin = New Padding(2, 0, 2, 0)
-        Label5.Name = "Label5"
-        Label5.Size = New Size(53, 20)
-        Label5.TabIndex = 18
-        Label5.Text = "Marca:"
-        ' 
-        ' Label4
-        ' 
-        Label4.AutoSize = True
-        Label4.Location = New Point(33, 89)
-        Label4.Margin = New Padding(2, 0, 2, 0)
-        Label4.Name = "Label4"
-        Label4.Size = New Size(61, 20)
-        Label4.TabIndex = 17
-        Label4.Text = "Código:"
-        ' 
-        ' Label2
-        ' 
-        Label2.AutoSize = True
-        Label2.Location = New Point(33, 56)
-        Label2.Margin = New Padding(2, 0, 2, 0)
-        Label2.Name = "Label2"
-        Label2.Size = New Size(67, 20)
-        Label2.TabIndex = 16
-        Label2.Text = "Nombre:"
-        ' 
-        ' adTbCantidad
-        ' 
-        adTbCantidad.Enabled = False
-        adTbCantidad.Location = New Point(129, 196)
-        adTbCantidad.Margin = New Padding(2, 3, 2, 3)
-        adTbCantidad.Name = "adTbCantidad"
-        adTbCantidad.Size = New Size(198, 27)
-        adTbCantidad.TabIndex = 20
-        ' 
-        ' Label7
-        ' 
-        Label7.AutoSize = True
-        Label7.Location = New Point(33, 196)
-        Label7.Margin = New Padding(2, 0, 2, 0)
-        Label7.Name = "Label7"
-        Label7.Size = New Size(72, 20)
-        Label7.TabIndex = 21
-        Label7.Text = "Cantidad:"
-        ' 
-        ' btnGuardar
-        ' 
-        btnGuardar.Enabled = False
-        btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), Image)
-        btnGuardar.ImageAlign = ContentAlignment.MiddleRight
-        btnGuardar.Location = New Point(736, 446)
-        btnGuardar.Margin = New Padding(2, 3, 2, 3)
-        btnGuardar.Name = "btnGuardar"
-        btnGuardar.Size = New Size(119, 44)
-        btnGuardar.TabIndex = 22
-        btnGuardar.Text = "Guardar"
-        btnGuardar.TextAlign = ContentAlignment.MiddleLeft
-        btnGuardar.UseVisualStyleBackColor = True
-        ' 
-        ' GroupBox1
-        ' 
-        GroupBox1.Controls.Add(adCBCategoria)
-        GroupBox1.Controls.Add(Label8)
-        GroupBox1.Controls.Add(adTbCantidad)
-        GroupBox1.Controls.Add(Label7)
-        GroupBox1.Controls.Add(adTbPrecio)
-        GroupBox1.Controls.Add(adTbMarca)
-        GroupBox1.Controls.Add(adTbCodigo)
-        GroupBox1.Controls.Add(adTbNombre)
-        GroupBox1.Controls.Add(Label6)
-        GroupBox1.Controls.Add(Label5)
-        GroupBox1.Controls.Add(Label4)
-        GroupBox1.Controls.Add(Label2)
-        GroupBox1.Location = New Point(716, 126)
-        GroupBox1.Margin = New Padding(2, 3, 2, 3)
-        GroupBox1.Name = "GroupBox1"
-        GroupBox1.Padding = New Padding(2, 3, 2, 3)
-        GroupBox1.Size = New Size(361, 296)
-        GroupBox1.TabIndex = 23
-        GroupBox1.TabStop = False
-        GroupBox1.Text = "Producto"
-        ' 
-        ' adCBCategoria
-        ' 
-        adCBCategoria.Enabled = False
-        adCBCategoria.FormattingEnabled = True
-        adCBCategoria.Location = New Point(129, 229)
-        adCBCategoria.Margin = New Padding(2, 3, 2, 3)
-        adCBCategoria.Name = "adCBCategoria"
-        adCBCategoria.Size = New Size(198, 28)
-        adCBCategoria.TabIndex = 24
-        ' 
-        ' Label8
-        ' 
-        Label8.AutoSize = True
-        Label8.Location = New Point(33, 232)
-        Label8.Margin = New Padding(2, 0, 2, 0)
-        Label8.Name = "Label8"
-        Label8.Size = New Size(77, 20)
-        Label8.TabIndex = 23
-        Label8.Text = "Categoria:"
-        ' 
-        ' btnCancelar
-        ' 
-        btnCancelar.Enabled = False
-        btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), Image)
-        btnCancelar.ImageAlign = ContentAlignment.MiddleRight
-        btnCancelar.Location = New Point(938, 446)
-        btnCancelar.Margin = New Padding(2, 3, 2, 3)
-        btnCancelar.Name = "btnCancelar"
-        btnCancelar.Size = New Size(119, 44)
-        btnCancelar.TabIndex = 24
-        btnCancelar.Text = "Cancelar"
-        btnCancelar.TextAlign = ContentAlignment.MiddleLeft
-        btnCancelar.UseVisualStyleBackColor = True
-        ' 
-        ' Label10
-        ' 
-        Label10.AutoSize = True
-        Label10.Location = New Point(1119, 98)
-        Label10.Margin = New Padding(2, 0, 2, 0)
-        Label10.Name = "Label10"
-        Label10.Size = New Size(0, 20)
-        Label10.TabIndex = 0
-        ' 
-        ' btnEliminarCategoria
-        ' 
-        btnEliminarCategoria.Image = CType(resources.GetObject("btnEliminarCategoria.Image"), Image)
-        btnEliminarCategoria.ImageAlign = ContentAlignment.MiddleRight
-        btnEliminarCategoria.Location = New Point(51, 129)
-        btnEliminarCategoria.Name = "btnEliminarCategoria"
-        btnEliminarCategoria.Size = New Size(117, 44)
-        btnEliminarCategoria.TabIndex = 25
-        btnEliminarCategoria.Text = "Eliminar"
-        btnEliminarCategoria.TextAlign = ContentAlignment.MiddleLeft
-        btnEliminarCategoria.UseVisualStyleBackColor = True
-        ' 
-        ' cbCategoria
-        ' 
-        cbCategoria.FormattingEnabled = True
-        cbCategoria.Location = New Point(12, 34)
-        cbCategoria.Margin = New Padding(2, 3, 2, 3)
-        cbCategoria.Name = "cbCategoria"
-        cbCategoria.Size = New Size(199, 28)
-        cbCategoria.TabIndex = 2
-        ' 
-        ' btnAgregarCategoria
-        ' 
-        btnAgregarCategoria.Image = CType(resources.GetObject("btnAgregarCategoria.Image"), Image)
-        btnAgregarCategoria.ImageAlign = ContentAlignment.MiddleRight
-        btnAgregarCategoria.Location = New Point(51, 78)
-        btnAgregarCategoria.Name = "btnAgregarCategoria"
-        btnAgregarCategoria.Size = New Size(119, 44)
-        btnAgregarCategoria.TabIndex = 25
-        btnAgregarCategoria.Text = "Agregar"
-        btnAgregarCategoria.TextAlign = ContentAlignment.MiddleLeft
-        btnAgregarCategoria.UseVisualStyleBackColor = True
-        ' 
-        ' btnSalir
-        ' 
-        btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), Image)
-        btnSalir.Location = New Point(1259, 25)
-        btnSalir.Name = "btnSalir"
-        btnSalir.Size = New Size(48, 48)
-        btnSalir.TabIndex = 26
-        btnSalir.UseVisualStyleBackColor = True
-        ' 
-        ' GroupBox2
-        ' 
-        GroupBox2.Controls.Add(btnEliminarCategoria)
-        GroupBox2.Controls.Add(cbCategoria)
-        GroupBox2.Controls.Add(btnAgregarCategoria)
-        GroupBox2.Location = New Point(1096, 126)
-        GroupBox2.Name = "GroupBox2"
-        GroupBox2.Size = New Size(216, 195)
-        GroupBox2.TabIndex = 27
-        GroupBox2.TabStop = False
-        GroupBox2.Text = "Categoría"
         ' 
         ' Column1
         ' 
@@ -485,11 +171,345 @@ Partial Class FormAdmin
         Column7.Visible = False
         Column7.Width = 125
         ' 
+        ' btnAgregar
+        ' 
+        btnAgregar.Image = CType(resources.GetObject("btnAgregar.Image"), Image)
+        btnAgregar.ImageAlign = ContentAlignment.MiddleRight
+        btnAgregar.Location = New Point(24, 540)
+        btnAgregar.Margin = New Padding(2, 3, 2, 3)
+        btnAgregar.Name = "btnAgregar"
+        btnAgregar.Size = New Size(134, 46)
+        btnAgregar.TabIndex = 4
+        btnAgregar.Text = "Agregar"
+        btnAgregar.TextAlign = ContentAlignment.MiddleLeft
+        btnAgregar.UseVisualStyleBackColor = True
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Location = New Point(24, 98)
+        Label3.Margin = New Padding(2, 0, 2, 0)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(150, 21)
+        Label3.TabIndex = 6
+        Label3.Text = "Filtrar por categoría:"
+        ' 
+        ' rbPorCodigo
+        ' 
+        rbPorCodigo.AutoSize = True
+        rbPorCodigo.Location = New Point(528, 56)
+        rbPorCodigo.Margin = New Padding(2, 3, 2, 3)
+        rbPorCodigo.Name = "rbPorCodigo"
+        rbPorCodigo.Size = New Size(108, 25)
+        rbPorCodigo.TabIndex = 7
+        rbPorCodigo.TabStop = True
+        rbPorCodigo.Text = "Por Código"
+        rbPorCodigo.UseVisualStyleBackColor = True
+        ' 
+        ' rbPorNombre
+        ' 
+        rbPorNombre.AutoSize = True
+        rbPorNombre.Checked = True
+        rbPorNombre.Location = New Point(652, 56)
+        rbPorNombre.Margin = New Padding(2, 3, 2, 3)
+        rbPorNombre.Name = "rbPorNombre"
+        rbPorNombre.Size = New Size(116, 25)
+        rbPorNombre.TabIndex = 8
+        rbPorNombre.TabStop = True
+        rbPorNombre.Text = "Por Nombre"
+        rbPorNombre.UseVisualStyleBackColor = True
+        ' 
+        ' btnRestockear
+        ' 
+        btnRestockear.Image = CType(resources.GetObject("btnRestockear.Image"), Image)
+        btnRestockear.ImageAlign = ContentAlignment.MiddleRight
+        btnRestockear.Location = New Point(652, 540)
+        btnRestockear.Margin = New Padding(2, 3, 2, 3)
+        btnRestockear.Name = "btnRestockear"
+        btnRestockear.Size = New Size(134, 46)
+        btnRestockear.TabIndex = 9
+        btnRestockear.Text = "Restockear"
+        btnRestockear.TextAlign = ContentAlignment.MiddleLeft
+        btnRestockear.UseVisualStyleBackColor = True
+        ' 
+        ' btnEliminar
+        ' 
+        btnEliminar.Image = CType(resources.GetObject("btnEliminar.Image"), Image)
+        btnEliminar.ImageAlign = ContentAlignment.MiddleRight
+        btnEliminar.Location = New Point(227, 540)
+        btnEliminar.Margin = New Padding(2, 3, 2, 3)
+        btnEliminar.Name = "btnEliminar"
+        btnEliminar.Size = New Size(134, 46)
+        btnEliminar.TabIndex = 10
+        btnEliminar.Text = "Eliminar"
+        btnEliminar.TextAlign = ContentAlignment.MiddleLeft
+        btnEliminar.UseVisualStyleBackColor = True
+        ' 
+        ' btnEditar
+        ' 
+        btnEditar.Image = CType(resources.GetObject("btnEditar.Image"), Image)
+        btnEditar.ImageAlign = ContentAlignment.MiddleRight
+        btnEditar.Location = New Point(438, 540)
+        btnEditar.Margin = New Padding(2, 3, 2, 3)
+        btnEditar.Name = "btnEditar"
+        btnEditar.Size = New Size(134, 46)
+        btnEditar.TabIndex = 11
+        btnEditar.Text = "Editar"
+        btnEditar.TextAlign = ContentAlignment.MiddleLeft
+        btnEditar.UseVisualStyleBackColor = True
+        ' 
+        ' adTbPrecio
+        ' 
+        adTbPrecio.Enabled = False
+        adTbPrecio.Location = New Point(145, 167)
+        adTbPrecio.Margin = New Padding(2, 3, 2, 3)
+        adTbPrecio.Name = "adTbPrecio"
+        adTbPrecio.Size = New Size(222, 29)
+        adTbPrecio.TabIndex = 15
+        ' 
+        ' adTbMarca
+        ' 
+        adTbMarca.Enabled = False
+        adTbMarca.Location = New Point(145, 129)
+        adTbMarca.Margin = New Padding(2, 3, 2, 3)
+        adTbMarca.Name = "adTbMarca"
+        adTbMarca.Size = New Size(222, 29)
+        adTbMarca.TabIndex = 14
+        ' 
+        ' adTbCodigo
+        ' 
+        adTbCodigo.Enabled = False
+        adTbCodigo.Location = New Point(145, 91)
+        adTbCodigo.Margin = New Padding(2, 3, 2, 3)
+        adTbCodigo.Name = "adTbCodigo"
+        adTbCodigo.Size = New Size(222, 29)
+        adTbCodigo.TabIndex = 13
+        ' 
+        ' adTbNombre
+        ' 
+        adTbNombre.Enabled = False
+        adTbNombre.Location = New Point(145, 54)
+        adTbNombre.Margin = New Padding(2, 3, 2, 3)
+        adTbNombre.Name = "adTbNombre"
+        adTbNombre.Size = New Size(222, 29)
+        adTbNombre.TabIndex = 12
+        ' 
+        ' Label6
+        ' 
+        Label6.AutoSize = True
+        Label6.Location = New Point(37, 168)
+        Label6.Margin = New Padding(2, 0, 2, 0)
+        Label6.Name = "Label6"
+        Label6.Size = New Size(56, 21)
+        Label6.TabIndex = 19
+        Label6.Text = "Precio:"
+        ' 
+        ' Label5
+        ' 
+        Label5.AutoSize = True
+        Label5.Location = New Point(37, 133)
+        Label5.Margin = New Padding(2, 0, 2, 0)
+        Label5.Name = "Label5"
+        Label5.Size = New Size(56, 21)
+        Label5.TabIndex = 18
+        Label5.Text = "Marca:"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Location = New Point(37, 93)
+        Label4.Margin = New Padding(2, 0, 2, 0)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(63, 21)
+        Label4.TabIndex = 17
+        Label4.Text = "Código:"
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Location = New Point(37, 59)
+        Label2.Margin = New Padding(2, 0, 2, 0)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(71, 21)
+        Label2.TabIndex = 16
+        Label2.Text = "Nombre:"
+        ' 
+        ' adTbCantidad
+        ' 
+        adTbCantidad.Enabled = False
+        adTbCantidad.Location = New Point(145, 206)
+        adTbCantidad.Margin = New Padding(2, 3, 2, 3)
+        adTbCantidad.Name = "adTbCantidad"
+        adTbCantidad.Size = New Size(222, 29)
+        adTbCantidad.TabIndex = 20
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(37, 206)
+        Label7.Margin = New Padding(2, 0, 2, 0)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(75, 21)
+        Label7.TabIndex = 21
+        Label7.Text = "Cantidad:"
+        ' 
+        ' btnGuardar
+        ' 
+        btnGuardar.Enabled = False
+        btnGuardar.Image = CType(resources.GetObject("btnGuardar.Image"), Image)
+        btnGuardar.ImageAlign = ContentAlignment.MiddleRight
+        btnGuardar.Location = New Point(828, 468)
+        btnGuardar.Margin = New Padding(2, 3, 2, 3)
+        btnGuardar.Name = "btnGuardar"
+        btnGuardar.Size = New Size(134, 46)
+        btnGuardar.TabIndex = 22
+        btnGuardar.Text = "Guardar"
+        btnGuardar.TextAlign = ContentAlignment.MiddleLeft
+        btnGuardar.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox1
+        ' 
+        GroupBox1.Controls.Add(adCBCategoria)
+        GroupBox1.Controls.Add(Label8)
+        GroupBox1.Controls.Add(adTbCantidad)
+        GroupBox1.Controls.Add(Label7)
+        GroupBox1.Controls.Add(adTbPrecio)
+        GroupBox1.Controls.Add(adTbMarca)
+        GroupBox1.Controls.Add(adTbCodigo)
+        GroupBox1.Controls.Add(adTbNombre)
+        GroupBox1.Controls.Add(Label6)
+        GroupBox1.Controls.Add(Label5)
+        GroupBox1.Controls.Add(Label4)
+        GroupBox1.Controls.Add(Label2)
+        GroupBox1.Location = New Point(806, 132)
+        GroupBox1.Margin = New Padding(2, 3, 2, 3)
+        GroupBox1.Name = "GroupBox1"
+        GroupBox1.Padding = New Padding(2, 3, 2, 3)
+        GroupBox1.Size = New Size(406, 311)
+        GroupBox1.TabIndex = 23
+        GroupBox1.TabStop = False
+        GroupBox1.Text = "Producto"
+        ' 
+        ' adCBCategoria
+        ' 
+        adCBCategoria.Enabled = False
+        adCBCategoria.FormattingEnabled = True
+        adCBCategoria.Location = New Point(145, 240)
+        adCBCategoria.Margin = New Padding(2, 3, 2, 3)
+        adCBCategoria.Name = "adCBCategoria"
+        adCBCategoria.Size = New Size(222, 29)
+        adCBCategoria.TabIndex = 24
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Location = New Point(37, 244)
+        Label8.Margin = New Padding(2, 0, 2, 0)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(80, 21)
+        Label8.TabIndex = 23
+        Label8.Text = "Categoria:"
+        ' 
+        ' btnCancelar
+        ' 
+        btnCancelar.Enabled = False
+        btnCancelar.Image = CType(resources.GetObject("btnCancelar.Image"), Image)
+        btnCancelar.ImageAlign = ContentAlignment.MiddleRight
+        btnCancelar.Location = New Point(1055, 468)
+        btnCancelar.Margin = New Padding(2, 3, 2, 3)
+        btnCancelar.Name = "btnCancelar"
+        btnCancelar.Size = New Size(134, 46)
+        btnCancelar.TabIndex = 24
+        btnCancelar.Text = "Cancelar"
+        btnCancelar.TextAlign = ContentAlignment.MiddleLeft
+        btnCancelar.UseVisualStyleBackColor = True
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Location = New Point(1259, 103)
+        Label10.Margin = New Padding(2, 0, 2, 0)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(0, 21)
+        Label10.TabIndex = 0
+        ' 
+        ' btnEliminarCategoria
+        ' 
+        btnEliminarCategoria.Image = CType(resources.GetObject("btnEliminarCategoria.Image"), Image)
+        btnEliminarCategoria.ImageAlign = ContentAlignment.MiddleRight
+        btnEliminarCategoria.Location = New Point(57, 135)
+        btnEliminarCategoria.Name = "btnEliminarCategoria"
+        btnEliminarCategoria.Size = New Size(132, 46)
+        btnEliminarCategoria.TabIndex = 25
+        btnEliminarCategoria.Text = "Eliminar"
+        btnEliminarCategoria.TextAlign = ContentAlignment.MiddleLeft
+        btnEliminarCategoria.UseVisualStyleBackColor = True
+        ' 
+        ' cbCategoria
+        ' 
+        cbCategoria.FormattingEnabled = True
+        cbCategoria.Location = New Point(14, 36)
+        cbCategoria.Margin = New Padding(2, 3, 2, 3)
+        cbCategoria.Name = "cbCategoria"
+        cbCategoria.Size = New Size(223, 29)
+        cbCategoria.TabIndex = 2
+        ' 
+        ' btnAgregarCategoria
+        ' 
+        btnAgregarCategoria.Image = CType(resources.GetObject("btnAgregarCategoria.Image"), Image)
+        btnAgregarCategoria.ImageAlign = ContentAlignment.MiddleRight
+        btnAgregarCategoria.Location = New Point(57, 82)
+        btnAgregarCategoria.Name = "btnAgregarCategoria"
+        btnAgregarCategoria.Size = New Size(134, 46)
+        btnAgregarCategoria.TabIndex = 25
+        btnAgregarCategoria.Text = "Agregar"
+        btnAgregarCategoria.TextAlign = ContentAlignment.MiddleLeft
+        btnAgregarCategoria.UseVisualStyleBackColor = True
+        ' 
+        ' btnSalir
+        ' 
+        btnSalir.Image = CType(resources.GetObject("btnSalir.Image"), Image)
+        btnSalir.Location = New Point(1416, 26)
+        btnSalir.Name = "btnSalir"
+        btnSalir.Size = New Size(54, 50)
+        btnSalir.TabIndex = 26
+        btnSalir.UseVisualStyleBackColor = True
+        ' 
+        ' GroupBox2
+        ' 
+        GroupBox2.Controls.Add(btnEliminarCategoria)
+        GroupBox2.Controls.Add(cbCategoria)
+        GroupBox2.Controls.Add(btnAgregarCategoria)
+        GroupBox2.Location = New Point(1233, 132)
+        GroupBox2.Name = "GroupBox2"
+        GroupBox2.Size = New Size(243, 205)
+        GroupBox2.TabIndex = 27
+        GroupBox2.TabStop = False
+        GroupBox2.Text = "Categoría"
+        ' 
+        ' tbStockMinimo
+        ' 
+        tbStockMinimo.Location = New Point(652, 98)
+        tbStockMinimo.Name = "tbStockMinimo"
+        tbStockMinimo.Size = New Size(75, 29)
+        tbStockMinimo.TabIndex = 28
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Location = New Point(528, 102)
+        Label9.Margin = New Padding(2, 0, 2, 0)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(108, 21)
+        Label9.TabIndex = 0
+        Label9.Text = "Stock mínimo:"
+        ' 
         ' FormAdmin
         ' 
-        AutoScaleDimensions = New SizeF(8F, 20F)
+        AutoScaleDimensions = New SizeF(9F, 21F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1331, 585)
+        ClientSize = New Size(1497, 614)
+        Controls.Add(tbStockMinimo)
         Controls.Add(GroupBox2)
         Controls.Add(btnSalir)
         Controls.Add(btnCancelar)
@@ -506,6 +526,7 @@ Partial Class FormAdmin
         Controls.Add(DGVAdmin)
         Controls.Add(cbPorCategoria)
         Controls.Add(tbBuscar)
+        Controls.Add(Label9)
         Controls.Add(Label1)
         Margin = New Padding(2, 3, 2, 3)
         Name = "FormAdmin"
@@ -557,4 +578,6 @@ Partial Class FormAdmin
     Friend WithEvents Column5 As DataGridViewTextBoxColumn
     Friend WithEvents Column6 As DataGridViewTextBoxColumn
     Friend WithEvents Column7 As DataGridViewTextBoxColumn
+    Friend WithEvents tbStockMinimo As TextBox
+    Friend WithEvents Label9 As Label
 End Class

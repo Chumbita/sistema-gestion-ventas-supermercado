@@ -310,8 +310,28 @@
                     End If
                 End If
 
+                'Stock mínimo
+                If mostrarFila AndAlso Not String.IsNullOrEmpty(tbStockMinimo.Text) Then
+                    Dim stockMinimo As Integer
+
+                    If Integer.TryParse(tbStockMinimo.Text, stockMinimo) Then
+                        Dim celdaCantidad As DataGridViewCell = fila.Cells("Column5")
+                        Dim cantidad As Integer = Convert.ToInt32(celdaCantidad.Value)
+                        If cantidad >= stockMinimo Then
+                            mostrarFila = False
+                        End If
+                    Else
+                        MessageBox.Show("Por favor, ingrese un valor numérico válido.")
+                        tbStockMinimo.Text = ""
+                    End If
+                End If
+
                 fila.Visible = mostrarFila
             End If
         Next
+    End Sub
+
+    Private Sub tbStockMinimo_TextChanged(sender As Object, e As EventArgs) Handles tbStockMinimo.TextChanged
+        FiltrarProductos()
     End Sub
 End Class

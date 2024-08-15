@@ -176,7 +176,6 @@ C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\bin\Debug\net8.0-windows\runtimes\win-x64\native\krbcc64.dll
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.vbproj.AssemblyReference.cache
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.FormAdmin.resources
-C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.Form1.resources
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.FormProducto.resources
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.FormUser.resources
 C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.Resources.resources
@@ -230,3 +229,4 @@ D:\Universidad\Terce Año\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\
 D:\Universidad\Terce Año\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.pdb
 D:\Universidad\Terce Año\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\SGPS.genruntimeconfig.cache
 D:\Universidad\Terce Año\Programación II\Teoría\Proyecto\SGPS\SGPS\obj\Debug\net8.0-windows\ref\SGPS.dll
+C:\Users\carli\OneDrive\Escritorio\uni\3er año 2024\PRG II\PROYECTO\supermarket-management-system\SGPS\obj\Debug\net8.0-windows\SGPS.FormLogin.resources
