@@ -207,8 +207,9 @@ Partial Class FormProducto
         Controls.Add(GroupBox1)
         Controls.Add(btnCancelar)
         Controls.Add(btnAñadir)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "FormProducto"
-        Text = "FormProducto"
+        Text = "SGVS Producto"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         ResumeLayout(False)

@@ -298,8 +298,9 @@ Partial Class FormUser
         Controls.Add(tbBuscar)
         Controls.Add(Label1)
         Controls.Add(DGVProductos)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "FormUser"
-        Text = "FormUser"
+        Text = "SGVS Carrito"
         CType(DGVProductos, ComponentModel.ISupportInitialize).EndInit()
         CType(DGVCarrito, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)

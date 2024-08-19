@@ -22,6 +22,7 @@ Partial Class FormLogin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(FormLogin))
         lgTbUsuario = New TextBox()
         lgTbContraseña = New TextBox()
         Label1 = New Label()
@@ -195,8 +196,9 @@ Partial Class FormLogin
         ClientSize = New Size(747, 455)
         Controls.Add(gbRegistrar)
         Controls.Add(GroupBox1)
+        Icon = CType(resources.GetObject("$this.Icon"), Icon)
         Name = "FormLogin"
-        Text = "Form1"
+        Text = "SGVS Login"
         GroupBox1.ResumeLayout(False)
         GroupBox1.PerformLayout()
         gbRegistrar.ResumeLayout(False)
