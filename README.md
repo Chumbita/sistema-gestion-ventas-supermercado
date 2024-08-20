@@ -1,4 +1,4 @@
-# Supermercado Management System
+# Sistema de Gestion y Ventas de Supermercado
 
 ## Descripción
 
@@ -21,13 +21,13 @@ La sección dirigida a los clientes incluye características para una experienci
 
 ## Cómo Descargar y Ejecutar
 
-1. **Descarga**: [Descarga el archivo ZIP del proyecto](https://github.com/user-attachments/files/16576415/SGPS.zip) directamente desde el enlace.
+1. **Descarga**: [Descarga el archivo ZIP del proyecto](https://github.com/user-attachments/files/16666957/SGVS-Ejecutable.zip) directamente desde el enlace.
 2. **Preparación de la Base de Datos**:
    - Inicia el servidor de bases de datos con XAMPP y abre PHPMyAdmin.
    - Crea una nueva base de datos con el nombre `supermercado`.
    - Importa el archivo `supermercado.sql` desde la interfaz de PHPMyAdmin para configurar la base de datos.
 3. **Ejecución del Programa**:
-   - Descomprime el archivo ZIP y navega a la carpeta `SGPS-Ejecutable`.
+   - Descomprime el archivo ZIP y navega a la carpeta `SGVS-Ejecutable`.
    - Ejecuta el archivo del programa para iniciar el sistema.
 
-Para más detalles sobre el uso y la funcionalidad del programa, consulta el archivo `README.txt` incluido en el ZIP.
+Para más detalles sobre el uso y la funcionalidad del programa, consulta el archivo `READ_ME.txt` incluido en el ZIP.
