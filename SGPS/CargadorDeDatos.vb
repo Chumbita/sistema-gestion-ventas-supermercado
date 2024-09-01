@@ -49,8 +49,9 @@ Public Class CargadorDeDatos
             reader = cmd.ExecuteReader()
 
             While reader.Read()
+                Dim idCategoria As Integer = reader.GetInt16(0)
                 Dim nombreCategoria As String = reader.GetString(1)
-                Dim categoria As New Categoria(nombreCategoria)
+                Dim categoria As New Categoria(idCategoria, nombreCategoria)
                 miSupermercado.AgregarCategoria(categoria)
             End While
 
@@ -66,12 +67,12 @@ Public Class CargadorDeDatos
                 Dim marca As String = reader.GetString(2)
                 Dim precio As Double = reader.GetDouble(3)
                 Dim cantidad As Integer = reader.GetInt32(4)
-                Dim nombreCategoria As String = reader.GetString(5)
+                Dim nombreCategoria As Integer = reader.GetInt16(5)
 
                 Dim producto As New Producto(codigo, nombre, marca, precio, cantidad, nombreCategoria)
 
                 For Each categoria As Categoria In miSupermercado._categorias
-                    If categoria._nombre = producto._categoria Then
+                    If categoria._id = producto._categoria Then
                         categoria._productos.Add(producto)
                         Exit For
                     End If
@@ -90,11 +91,8 @@ Public Class CargadorDeDatos
 
         For Each categoria As Categoria In miSupermercado._categorias
             For Each producto As Producto In categoria._productos
-                If producto._cantidad = 0 Then
-
-                End If
                 Dim codigo As Integer = CInt(producto._codigo)
-                dgv.Rows.Add(codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, producto._categoria)
+                dgv.Rows.Add(codigo, producto._nombre, producto._marca, producto._precio, producto._cantidad, categoria._nombre)
             Next
         Next
     End Sub

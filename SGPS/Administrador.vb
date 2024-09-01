@@ -7,7 +7,7 @@ Public Class Administrador
     Public Overrides Sub AgregarProducto(producto As Producto)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "INSERT INTO productos (codigo, nombre, marca, precio, cantidad, categoria) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @categoria)"
+        Dim query As String = "INSERT INTO productos (codigo, nombre, marca, precio, cantidad, fk_categorias) VALUES (@codigo, @nombre, @marca, @precio, @cantidad, @fk_categorias)"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
@@ -18,7 +18,7 @@ Public Class Administrador
         cmd.Parameters.AddWithValue("@marca", producto._marca)
         cmd.Parameters.AddWithValue("@precio", producto._precio)
         cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
-        cmd.Parameters.AddWithValue("@categoria", producto._categoria)
+        cmd.Parameters.AddWithValue("@fk_categorias", producto._categoria)
         cmd.ExecuteNonQuery()
 
         conexion.Close()
@@ -41,7 +41,7 @@ Public Class Administrador
     Public Sub EditarProducto(producto As Producto)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "UPDATE productos SET nombre = @nombre, marca = @marca, precio = @precio, cantidad = @cantidad, categoria = @categoria WHERE codigo = @codigo"
+        Dim query As String = "UPDATE productos SET nombre = @nombre, marca = @marca, precio = @precio, cantidad = @cantidad, fk_categorias = @fk_categorias WHERE codigo = @codigo"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
@@ -52,7 +52,7 @@ Public Class Administrador
         cmd.Parameters.AddWithValue("@marca", producto._marca)
         cmd.Parameters.AddWithValue("@precio", producto._precio)
         cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
-        cmd.Parameters.AddWithValue("@categoria", producto._categoria)
+        cmd.Parameters.AddWithValue("@fk_categorias", producto._categoria)
 
         cmd.ExecuteNonQuery()
 
@@ -77,12 +77,13 @@ Public Class Administrador
     Public Sub AgregarCategoria(categoria As Categoria)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "INSERT INTO categorias (nombre) VALUES (@nombre)"
+        Dim query As String = "INSERT INTO categorias (id, nombre) VALUES (@id, @nombre)"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
         conexion.Open()
 
+        cmd.Parameters.AddWithValue("@id", categoria._id)
         cmd.Parameters.AddWithValue("@nombre", categoria._nombre)
         cmd.ExecuteNonQuery()
         conexion.Close()
@@ -90,13 +91,13 @@ Public Class Administrador
     Public Sub EliminarCategoria(categoria As Categoria)
         Dim conexion As MySqlConnection
         Dim cmd As MySqlCommand
-        Dim query As String = "DELETE FROM categorias WHERE nombre = @nombre"
+        Dim query As String = "DELETE FROM categorias WHERE id = @id"
 
         conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
         cmd = New MySqlCommand(query, conexion)
         conexion.Open()
 
-        cmd.Parameters.AddWithValue("@nombre", categoria._nombre)
+        cmd.Parameters.AddWithValue("@id", categoria._id)
         cmd.ExecuteNonQuery()
 
         conexion.Close()

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "98XGXz0VVWo=",
+  "dgSpecHash": "skTBzZgB8D0=",
   "success": true,
-  "projectFilePath": "D:\\Universidad\\Terce Año\\Programación II\\Teoría\\Proyecto\\Nueva carpeta\\supermarket-management-system\\SGPS\\SGPS.vbproj",
+  "projectFilePath": "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\SGPS.vbproj",
   "expectedPackageFiles": [
     "C:\\Users\\chumb\\.nuget\\packages\\bouncycastle.cryptography\\2.3.1\\bouncycastle.cryptography.2.3.1.nupkg.sha512",
     "C:\\Users\\chumb\\.nuget\\packages\\google.protobuf\\3.26.1\\google.protobuf.3.26.1.nupkg.sha512",

@@ -15,7 +15,7 @@
                 If categoria._nombre = categoriaProducto Then
                     For Each producto As Producto In categoria._productos
                         If producto._codigo = codigoProducto Then
-                            Dim formProducto = New FormProducto(producto, DGVCarrito)
+                            Dim formProducto = New FormProducto(producto, categoria._nombre, DGVCarrito)
                             formProducto.Show()
                             Exit For
                         End If

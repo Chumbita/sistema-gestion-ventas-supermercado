@@ -149,7 +149,7 @@
                 adTbMarca.Enabled = True
                 adTbPrecio.Enabled = True
                 adTbCantidad.Enabled = True
-                adCBCategoria.Enabled = True
+                adCBCategoria.Enabled = False
             Case "Restockear"
                 btnAgregar.Enabled = False
                 btnEliminar.Enabled = False
@@ -163,7 +163,14 @@
         btnCancelar.Enabled = True
     End Sub
     Public Sub Agregar()
-        Dim producto As Producto = New Producto(adTbCodigo.Text, adTbNombre.Text, adTbMarca.Text, adTbPrecio.Text, adTbCantidad.Text, adCBCategoria.Text)
+        Dim idCategoria As Integer
+        For Each categoria As Categoria In miSupermercado._categorias
+            If categoria._nombre = adCBCategoria.Text Then
+                idCategoria = categoria._id
+                Exit For
+            End If
+        Next
+        Dim producto As Producto = New Producto(adTbCodigo.Text, adTbNombre.Text, adTbMarca.Text, adTbPrecio.Text, adTbCantidad.Text, idCategoria)
         adm.AgregarProducto(producto)
         miSupermercado.AgregarProducto(adCBCategoria.Text, producto)
     End Sub
@@ -195,16 +202,6 @@
                         producto._marca = adTbMarca.Text
                         producto._precio = adTbPrecio.Text
                         producto._cantidad = adTbCantidad.Text
-                        If producto._categoria IsNot adCBCategoria.Text Then
-                            For Each nuevaCategoria As Categoria In miSupermercado._categorias
-                                If nuevaCategoria._nombre = adCBCategoria.Text Then
-                                    nuevaCategoria._productos.Add(producto)
-                                    categoria._productos.Remove(producto)
-                                    Exit For
-                                End If
-                            Next
-                        End If
-                        producto._categoria = adCBCategoria.Text
                         adm.EditarProducto(producto)
                         DGVAdmin.Rows(rowIndex).Cells("Column2").Value = adTbNombre.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column3").Value = adTbMarca.Text
@@ -248,7 +245,8 @@
         Next
 
         If Not existeCategoria Then
-            Dim nuevaCategoria = New Categoria(textoCategoria)
+            Dim idCategoria As Integer = miSupermercado._categorias(miSupermercado._categorias.Count - 1)._id + 1
+            Dim nuevaCategoria = New Categoria(idCategoria, textoCategoria)
             miSupermercado.AgregarCategoria(nuevaCategoria)
             adm.AgregarCategoria(nuevaCategoria)
             MsgBox("Nueva categoria agregada con éxito", MsgBoxStyle.Information, miSupermercado._nombre)

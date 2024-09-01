@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 08-08-2024 a las 16:01:02
+-- Tiempo de generación: 02-09-2024 a las 01:28:41
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -37,11 +37,13 @@ CREATE TABLE `categorias` (
 --
 
 INSERT INTO `categorias` (`id`, `nombre`) VALUES
-(4, 'Lácteos'),
-(5, 'Bebidas'),
-(6, 'Carnes'),
-(7, 'Panadería'),
-(8, 'Frutas y Verduras');
+(1, 'Lácteos'),
+(2, 'Bebidas'),
+(3, 'Carnes'),
+(4, 'Comestibles'),
+(5, 'Panadería'),
+(6, 'Frutas y Verduras'),
+(7, 'Limpieza');
 
 -- --------------------------------------------------------
 
@@ -55,36 +57,35 @@ CREATE TABLE `productos` (
   `marca` varchar(100) NOT NULL,
   `precio` double NOT NULL,
   `cantidad` int(100) NOT NULL,
-  `categoria` varchar(50) NOT NULL
+  `fk_categorias` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 --
 -- Volcado de datos para la tabla `productos`
 --
 
-INSERT INTO `productos` (`codigo`, `nombre`, `marca`, `precio`, `cantidad`, `categoria`) VALUES
-(1, 'Doritos', 'Doritos', 2000, 20, 'Comestibles'),
-(2, ' Manteca', 'Sancor', 2500, 20, 'Lacteos'),
-(3, 'Leche Entera', 'La Serenísima', 150, 50, 'Lácteos'),
-(4, 'Yogurt Natural', 'Ser', 200, 30, 'Lácteos'),
-(5, 'Queso Cremoso', 'Cremón', 450, 20, 'Lácteos'),
-(6, 'Gaseosa Cola', 'Coca-Cola', 250, 100, 'Bebidas'),
-(7, 'Jugo de Naranja', 'Cepita', 180, 60, 'Bebidas'),
-(8, 'Vino Tinto', 'Trapiche', 850, 40, 'Bebidas'),
-(9, 'Carne Picada', 'La Estancia', 900, 25, 'Carnes'),
-(10, 'Pechuga de Pollo', 'Granja Tres Arroyos', 700, 35, 'Carnes'),
-(11, 'Chorizo', 'Paladini', 600, 15, 'Carnes'),
-(12, 'Pan de Molde', 'Bimbo', 200, 80, 'Panadería'),
-(13, 'Medialunas', 'La Casa del Alfajor', 300, 50, 'Panadería'),
-(14, 'Facturas', 'Confitería del Sol', 400, 40, 'Panadería'),
-(15, 'Manzanas', 'Del Valle', 150, 60, 'Frutas y Verduras'),
-(16, 'Bananas', 'Tropical', 100, 70, 'Frutas y Verduras'),
-(17, 'Tomates', 'Huerta Fresca', 120, 90, 'Frutas y Verduras'),
-(18, 'Lechuga', 'Campo Verde', 80, 75, 'Frutas y Verduras'),
-(19, 'Zanahorias', 'El Ranchito', 110, 65, 'Frutas y Verduras'),
-(20, 'Manteca', 'Sancor', 250, 40, 'Lácteos'),
-(21, 'Cerveza Rubia', 'Quilmes', 300, 120, 'Bebidas'),
-(22, 'Salchichas', 'Vienísima', 400, 55, 'Carnes');
+INSERT INTO `productos` (`codigo`, `nombre`, `marca`, `precio`, `cantidad`, `fk_categorias`) VALUES
+(1, 'Doritos', 'Doritos', 2000, 20, 4),
+(2, 'Manteca', 'Sancor', 2500, 20, 1),
+(3, 'Leche Entera', 'La Serenísima', 150, 46, 1),
+(4, 'Yogurt Natural', 'Ser', 200, 30, 1),
+(5, 'Queso Cremoso', 'Cremón', 450, 20, 1),
+(6, 'Gaseosa Cola', 'Coca-Cola', 250, 92, 2),
+(7, 'Jugo de Naranja', 'Cepita', 180, 60, 2),
+(8, 'Vino Tinto', 'Trapiche', 850, 35, 2),
+(9, 'Carne Picada', 'La Estancia', 900, 25, 3),
+(10, 'Pechuga de Pollo', 'Granja Tres Arroyos', 700, 35, 3),
+(11, 'Chorizo', 'Paladini', 600, 15, 3),
+(12, 'Pan de Molde', 'Bimbo', 200, 80, 5),
+(13, 'Medialunas', 'La Casa del Alfajor', 300, 50, 5),
+(14, 'Facturas', 'Confitería del Sol', 400, 40, 5),
+(15, 'Manzanas', 'Del Valle', 150, 60, 6),
+(16, 'Bananas', 'Tropical', 100, 70, 6),
+(17, 'Tomates', 'Huerta Fresca', 120, 90, 6),
+(18, 'Lechuga', 'Campo Verde', 80, 75, 6),
+(19, 'Zanahorias', 'El Ranchito', 110, 65, 6),
+(20, 'Cerveza Rubia', 'Quilmes', 300, 120, 2),
+(21, 'Salchichas', 'Vienísima', 400, 55, 3);
 
 -- --------------------------------------------------------
 

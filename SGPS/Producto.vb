@@ -4,8 +4,8 @@
     Public Property _marca As String
     Public Property _precio As Double
     Public Property _cantidad As Integer
-    Public Property _categoria As String
-    Public Sub New(codigo As String, nombre As String, marca As String, precio As Double, cantidad As Integer, categoria As String)
+    Public Property _categoria As Integer
+    Public Sub New(codigo As String, nombre As String, marca As String, precio As Double, cantidad As Integer, categoria As Integer)
         _codigo = codigo
         _nombre = nombre
         _marca = marca
