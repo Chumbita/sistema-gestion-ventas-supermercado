@@ -102,6 +102,9 @@
     Private Sub cbPorCategoria_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbPorCategoria.SelectedIndexChanged
         FiltrarProductos()
     End Sub
+    Private Sub tbStockMinimo_TextChanged(sender As Object, e As EventArgs) Handles tbStockMinimo.TextChanged
+        FiltrarProductos()
+    End Sub
     Public Sub ResetearTextBox()
         adTbNombre.Text = ""
         adTbCodigo.Text = ""
@@ -279,57 +282,42 @@
     Private Sub FiltrarProductos()
         Dim buscarTexto As String = tbBuscar.Text.ToLower()
         Dim categoriaTexto As String = cbPorCategoria.Text.ToLower()
+        Dim stockMinimo As Integer
+        Dim filtrarPorStock As Boolean = Integer.TryParse(tbStockMinimo.Text, stockMinimo)
 
         For Each fila As DataGridViewRow In DGVAdmin.Rows
-            'no procesa la fila de nueva fila
-            If Not fila.IsNewRow Then
-                Dim mostrarFila As Boolean = True
+            If fila.IsNewRow Then Continue For
 
-                ' Filtra por categoría
-                If Not String.IsNullOrEmpty(categoriaTexto) Then 'verifica si hay un texto de categoria por filtrar
-                    Dim celdaCategoria As DataGridViewCell = fila.Cells("Column6")
-                    If celdaCategoria.Value Is Nothing OrElse Not celdaCategoria.Value.ToString().ToLower().Contains(categoriaTexto) Then
-                        mostrarFila = False
-                    End If
-                End If
+            ' Inicializa la visibilidad como True
+            Dim mostrarFila As Boolean = True
 
-                ' Filtra por código o nombre
-                If mostrarFila AndAlso Not String.IsNullOrEmpty(buscarTexto) Then
-                    If rbPorCodigo.Checked Then
-                        Dim celdaCodigo As DataGridViewCell = fila.Cells("Column1")
-                        If celdaCodigo.Value Is Nothing OrElse Not celdaCodigo.Value.ToString().ToLower().Equals(buscarTexto) Then
-                            mostrarFila = False
-                        End If
-                    ElseIf rbPorNombre.Checked Then
-                        Dim celdaNombre As DataGridViewCell = fila.Cells("Column2")
-                        If celdaNombre.Value Is Nothing OrElse Not celdaNombre.Value.ToString().ToLower().Contains(buscarTexto) Then
-                            mostrarFila = False
-                        End If
-                    End If
-                End If
-
-                'Stock mínimo
-                If mostrarFila AndAlso Not String.IsNullOrEmpty(tbStockMinimo.Text) Then
-                    Dim stockMinimo As Integer
-
-                    If Integer.TryParse(tbStockMinimo.Text, stockMinimo) Then
-                        Dim celdaCantidad As DataGridViewCell = fila.Cells("Column5")
-                        Dim cantidad As Integer = Convert.ToInt32(celdaCantidad.Value)
-                        If cantidad >= stockMinimo Then
-                            mostrarFila = False
-                        End If
-                    Else
-                        MessageBox.Show("Por favor, ingrese un valor numérico válido.")
-                        tbStockMinimo.Text = ""
-                    End If
-                End If
-
-                fila.Visible = mostrarFila
+            ' Filtrar por categoría
+            If Not String.IsNullOrEmpty(categoriaTexto) Then
+                Dim celdaCategoria As DataGridViewCell = fila.Cells("Column6")
+                mostrarFila = mostrarFila AndAlso celdaCategoria.Value IsNot Nothing AndAlso celdaCategoria.Value.ToString().ToLower().Contains(categoriaTexto)
             End If
+
+            ' Filtrar por código o nombre
+            If mostrarFila AndAlso Not String.IsNullOrEmpty(buscarTexto) Then
+                If rbPorCodigo.Checked Then
+                    Dim celdaCodigo As DataGridViewCell = fila.Cells("Column1")
+                    mostrarFila = mostrarFila AndAlso celdaCodigo.Value IsNot Nothing AndAlso celdaCodigo.Value.ToString().ToLower().Equals(buscarTexto)
+                ElseIf rbPorNombre.Checked Then
+                    Dim celdaNombre As DataGridViewCell = fila.Cells("Column2")
+                    mostrarFila = mostrarFila AndAlso celdaNombre.Value IsNot Nothing AndAlso celdaNombre.Value.ToString().ToLower().Contains(buscarTexto)
+                End If
+            End If
+
+            ' Filtrar por stock mínimo
+            If mostrarFila AndAlso filtrarPorStock Then
+                Dim celdaCantidad As DataGridViewCell = fila.Cells("Column5")
+                If celdaCantidad.Value IsNot Nothing Then
+                    mostrarFila = mostrarFila AndAlso Convert.ToInt32(celdaCantidad.Value) < stockMinimo
+                End If
+            End If
+
+            fila.Visible = mostrarFila
         Next
     End Sub
 
-    Private Sub tbStockMinimo_TextChanged(sender As Object, e As EventArgs) Handles tbStockMinimo.TextChanged
-        FiltrarProductos()
-    End Sub
 End Class
