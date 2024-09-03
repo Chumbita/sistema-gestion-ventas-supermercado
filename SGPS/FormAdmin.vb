@@ -1,6 +1,5 @@
 ﻿Public Class FormAdmin
     Private operacion As String
-    Dim adm As Administrador
     Private Sub FormAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'Se cargan los productos de la base de datos al supermercado
         cargadorDatos.CargaDeProductos()
@@ -11,7 +10,6 @@
         cargadorDatos.MostrarCategorias(adCBCategoria)
         cargadorDatos.MostrarCategorias(cbCategoria)
         'Se instancia el Administrador
-        adm = miSupermercado._usuarios(0)
         DGVAdmin.ClearSelection()
     End Sub
     Private Sub DGVAdmin_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVAdmin.CellClick
@@ -171,7 +169,7 @@
             End If
         Next
         Dim producto As Producto = New Producto(adTbCodigo.Text, adTbNombre.Text, adTbMarca.Text, adTbPrecio.Text, adTbCantidad.Text, idCategoria)
-        adm.AgregarProducto(producto)
+        _administrador.AgregarProducto(producto)
         miSupermercado.AgregarProducto(adCBCategoria.Text, producto)
     End Sub
     Public Sub Eliminar()
@@ -181,7 +179,7 @@
                 For Each producto As Producto In categoria._productos
                     If producto._codigo = codigoProducto Then
                         miSupermercado.EliminarProducto(categoria, producto)
-                        adm.EliminarProducto(producto._codigo)
+                        _administrador.EliminarProducto(producto._codigo)
                         DGVAdmin.Rows.RemoveAt(DGVAdmin.SelectedRows(0).Index)
                         Exit For
                     End If
@@ -202,7 +200,7 @@
                         producto._marca = adTbMarca.Text
                         producto._precio = adTbPrecio.Text
                         producto._cantidad = adTbCantidad.Text
-                        adm.EditarProducto(producto)
+                        _administrador.EditarProducto(producto)
                         DGVAdmin.Rows(rowIndex).Cells("Column2").Value = adTbNombre.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column3").Value = adTbMarca.Text
                         DGVAdmin.Rows(rowIndex).Cells("Column4").Value = adTbPrecio.Text
@@ -225,7 +223,7 @@
                 For Each producto As Producto In categoria._productos
                     If producto._codigo = codigoProducto Then
                         producto._cantidad = producto._cantidad + Integer.Parse(adTbCantidad.Text)
-                        adm.Restockear(producto)
+                        _administrador.Restockear(producto)
                         DGVAdmin.Rows(rowIndex).Cells("Column5").Value = producto._cantidad
                         ResetearTextBox()
                         Exit For
@@ -248,7 +246,7 @@
             Dim idCategoria As Integer = miSupermercado._categorias(miSupermercado._categorias.Count - 1)._id + 1
             Dim nuevaCategoria = New Categoria(idCategoria, textoCategoria)
             miSupermercado.AgregarCategoria(nuevaCategoria)
-            adm.AgregarCategoria(nuevaCategoria)
+            _administrador.AgregarCategoria(nuevaCategoria)
             MsgBox("Nueva categoria agregada con éxito", MsgBoxStyle.Information, miSupermercado._nombre)
         Else
             MsgBox("La categoria que deseas crear ya existe", MsgBoxStyle.Information, miSupermercado._nombre)
@@ -260,7 +258,7 @@
         For Each categoria As Categoria In miSupermercado._categorias
             If categoria._nombre.ToLower() = textoCategoria.ToLower() Then
                 miSupermercado.EliminarCategoria(categoria)
-                adm.EliminarCategoria(categoria)
+                _administrador.EliminarCategoria(categoria)
                 MsgBox("Categoria eliminada con éxito", MsgBoxStyle.Information, miSupermercado._nombre)
                 Exit For
             End If

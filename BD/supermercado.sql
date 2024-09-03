@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-09-2024 a las 01:28:41
+-- Tiempo de generación: 03-09-2024 a las 02:52:35
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.0.30
 
@@ -44,6 +44,20 @@ INSERT INTO `categorias` (`id`, `nombre`) VALUES
 (5, 'Panadería'),
 (6, 'Frutas y Verduras'),
 (7, 'Limpieza');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `compras`
+--
+
+CREATE TABLE `compras` (
+  `id` int(11) NOT NULL,
+  `fk_usuarios` int(11) NOT NULL,
+  `fk_productos` int(11) NOT NULL,
+  `fecha` date NOT NULL,
+  `cantidad` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_spanish2_ci;
 
 -- --------------------------------------------------------
 
@@ -105,7 +119,6 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `contraseña`) VALUES
-(0, 'admin', 'Administrador', 'admin'),
 (1, 'santicaldera', 'Santiago Calderón', 'santicaldera'),
 (3, 'mextre', 'matias morebo', '420957'),
 (4, 'chumbitaluciano', 'Luciano Chumbita', '321456987'),
@@ -121,6 +134,12 @@ INSERT INTO `usuarios` (`id`, `usuario`, `nombre`, `contraseña`) VALUES
 -- Indices de la tabla `categorias`
 --
 ALTER TABLE `categorias`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `compras`
+--
+ALTER TABLE `compras`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -144,6 +163,12 @@ ALTER TABLE `usuarios`
 --
 ALTER TABLE `categorias`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `compras`
+--
+ALTER TABLE `compras`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `productos`

@@ -14,16 +14,13 @@ Public Class CargadorDeDatos
             reader = cmd.ExecuteReader()
 
             While reader.Read()
+                Dim id As Integer = reader.GetInt32(0)
                 Dim usuario As String = reader.GetString(1)
                 Dim nombre As String = reader.GetString(2)
                 Dim contraseña As String = reader.GetString(3)
                 Dim nuevoUsuario As Usuario
 
-                If reader.GetInt16(0) = 0 Then
-                    nuevoUsuario = New Administrador(usuario, nombre, contraseña)
-                Else
-                    nuevoUsuario = New Cliente(usuario, nombre, contraseña)
-                End If
+                nuevoUsuario = New Cliente(id, usuario, nombre, contraseña)
 
                 miSupermercado.AgregarUsuario(nuevoUsuario)
             End While

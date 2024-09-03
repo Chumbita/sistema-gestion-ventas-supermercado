@@ -43,6 +43,8 @@
         Dim resumenCompra As String
         If MessageBox.Show("¿Finalizar Compra?", "Finalizar Compra", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) = DialogResult.Yes Then
             resumenCompra = _cliente.FinalizarCompra()
+            Dim fechaActual As Date = Date.Today
+            _cliente.CargarCompra(fechaActual)
             MsgBox(resumenCompra)
             _cliente.VaciarCarrito()
             _cliente._carrito.MostrarCarrito(DGVCarrito)

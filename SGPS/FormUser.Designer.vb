@@ -276,9 +276,8 @@ Partial Class FormUser
         lbCarrito.AutoSize = True
         lbCarrito.Location = New Point(638, 84)
         lbCarrito.Name = "lbCarrito"
-        lbCarrito.Size = New Size(57, 20)
+        lbCarrito.Size = New Size(0, 20)
         lbCarrito.TabIndex = 13
-        lbCarrito.Text = "Carrito:"
         ' 
         ' FormUser
         ' 

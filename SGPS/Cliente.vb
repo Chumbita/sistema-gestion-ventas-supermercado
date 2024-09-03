@@ -3,8 +3,8 @@ Imports MySql.Data.MySqlClient
 Public Class Cliente
     Inherits Usuario
     Property _carrito As Carrito
-    Public Sub New(usuario As String, nombre As String, contraseña As String)
-        MyBase.New(usuario, nombre, contraseña)
+    Public Sub New(id As Integer, usuario As String, nombre As String, contraseña As String)
+        MyBase.New(id, usuario, nombre, contraseña)
         _carrito = New Carrito()
     End Sub
     Public Overrides Sub AgregarProducto(producto As Producto)
@@ -62,12 +62,13 @@ Public Class Cliente
         Next
         conexion.Close()
 
+
         Dim total As Double = 0
         Dim sb As New StringBuilder()
 
         ' Añadir encabezado de la factura
         sb.AppendLine("Nombre" & vbTab & vbTab & "Marca" & vbTab & vbTab & "Cantidad" & vbTab & "Precio")
-            sb.AppendLine(New String("-"c, 60))  ' Línea separadora
+        sb.AppendLine(New String("-"c, 60))  ' Línea separadora
 
         ' Añadir los productos a la factura
         For Each producto As Producto In Me._carrito._productos
@@ -84,4 +85,26 @@ Public Class Cliente
 
         Return sb.ToString()
     End Function
+
+    Public Sub CargarCompra(fecha As Date)
+        Dim conexion As MySqlConnection
+        Dim cmd As MySqlCommand
+
+        conexion = New MySqlConnection("Server=localhost;Database=supermercado;Uid=root;Pwd=;")
+        conexion.Open()
+        Try
+            For Each producto As Producto In Me._carrito._productos
+                Dim query As String = "INSERT INTO compras (fk_usuarios, fk_productos, fecha, cantidad) VALUES (@fk_usuarios, @fk_productos, @fecha, @cantidad)"
+                cmd = New MySqlCommand(query, conexion)
+                cmd.Parameters.AddWithValue("@fk_usuarios", Me._id)
+                cmd.Parameters.AddWithValue("@fk_productos", producto._codigo)
+                cmd.Parameters.AddWithValue("@fecha", fecha)
+                cmd.Parameters.AddWithValue("@cantidad", producto._cantidad)
+                cmd.ExecuteNonQuery()
+            Next
+        Catch ex As Exception
+            MsgBox(ex.ToString)
+        End Try
+
+    End Sub
 End Class

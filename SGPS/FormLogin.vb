@@ -5,6 +5,8 @@
         cargadorDatos = New CargadorDeDatos()
         'Se cargan los usuarios registrados en la base de datos en el supermercado.
         cargadorDatos.CargaDeUsuarios()
+        _administrador = New Administrador(0, "admin", "Administrador", "admin")
+        miSupermercado.AgregarUsuario(_administrador)
     End Sub
     Private Sub btnLogin_Click(sender As Object, e As EventArgs) Handles btnLogin.Click
         Dim nombreUsuario As String = lgTbUsuario.Text
@@ -48,7 +50,8 @@
         Next
 
         If puedeRegistrarse Then
-            Dim nuevoUsuario As New Cliente(nombreUsuarioNuevo, nombreCompleto, contrasenaNueva)
+            Dim idUsuario As Integer = miSupermercado._usuarios(miSupermercado._usuarios.Count - 1)._id + 1
+            Dim nuevoUsuario As New Cliente(idUsuario, nombreUsuarioNuevo, nombreCompleto, contrasenaNueva)
             miSupermercado.RegistrarUsuario(nuevoUsuario)
             MsgBox("Usuario creado con éxito", MsgBoxStyle.Information, miSupermercado._nombre)
 

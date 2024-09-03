@@ -1,8 +1,8 @@
 ﻿Imports MySql.Data.MySqlClient
 Public Class Administrador
     Inherits Usuario
-    Public Sub New(usuario As String, nombre As String, contraseña As String)
-        MyBase.New(usuario, nombre, contraseña)
+    Public Sub New(id As Integer, usuario As String, nombre As String, contraseña As String)
+        MyBase.New(id, usuario, nombre, contraseña)
     End Sub
     Public Overrides Sub AgregarProducto(producto As Producto)
         Dim conexion As MySqlConnection
