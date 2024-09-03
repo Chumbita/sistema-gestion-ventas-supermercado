@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\SGPS.vbproj": {}
+    "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO\\sistema-gestion-ventas-supermercado\\SGPS\\SGPS.vbproj": {}
   },
   "projects": {
-    "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\SGPS.vbproj": {
+    "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO\\sistema-gestion-ventas-supermercado\\SGPS\\SGPS.vbproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\SGPS.vbproj",
+        "projectUniqueName": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO\\sistema-gestion-ventas-supermercado\\SGPS\\SGPS.vbproj",
         "projectName": "SGPS",
-        "projectPath": "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\SGPS.vbproj",
-        "packagesPath": "C:\\Users\\chumb\\.nuget\\packages\\",
-        "outputPath": "D:\\Universidad\\Tercer Año\\Programación II\\Teoría\\Proyecto\\SGVS\\SGPS\\obj\\",
+        "projectPath": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO\\sistema-gestion-ventas-supermercado\\SGPS\\SGPS.vbproj",
+        "packagesPath": "C:\\Users\\carli\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\carli\\OneDrive\\Escritorio\\uni\\3er año 2024\\PRG II\\PROYECTO\\sistema-gestion-ventas-supermercado\\SGPS\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\chumb\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\carli\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -69,7 +74,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
