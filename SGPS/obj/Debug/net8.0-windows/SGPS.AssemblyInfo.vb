@@ -16,7 +16,7 @@ Imports System.Reflection
 <Assembly: System.Reflection.AssemblyCompanyAttribute("SGPS"),  _
  Assembly: System.Reflection.AssemblyConfigurationAttribute("Debug"),  _
  Assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0"),  _
- Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f3a1ac88ddc61145455c31ab02b5266d447aba45"),  _
+ Assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea9d4f8a4d72f198269e010fd8fba96a492670d4"),  _
  Assembly: System.Reflection.AssemblyProductAttribute("SGPS"),  _
  Assembly: System.Reflection.AssemblyTitleAttribute("SGPS"),  _
  Assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0"),  _
