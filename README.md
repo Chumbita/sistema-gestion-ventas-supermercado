@@ -21,7 +21,7 @@ La sección dirigida a los clientes incluye características para una experienci
 
 ## Cómo Descargar y Ejecutar
 
-1. **Descarga**: [Descarga el archivo ZIP del proyecto](https://github.com/Chumbita/sistema-gestion-ventas-supermercado/releases/download/v1.2/SGVSv1.2-Ejecutable.zip) directamente desde el enlace.
+1. **Descarga**: [Descarga el archivo ZIP del proyecto](https://github.com/Chumbita/sistema-gestion-ventas-supermercado/releases/download/v1.2/SGICSv1.2-Ejecutable.zip) directamente desde el enlace.
 2. **Preparación de la Base de Datos**:
    - Inicia el servidor de bases de datos con XAMPP y abre PHPMyAdmin.
    - Crea una nueva base de datos con el nombre `supermercado`.
