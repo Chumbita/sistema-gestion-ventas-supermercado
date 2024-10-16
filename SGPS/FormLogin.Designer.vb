@@ -56,6 +56,7 @@ Partial Class FormLogin
         lgTbContraseña.Name = "lgTbContraseña"
         lgTbContraseña.Size = New Size(231, 27)
         lgTbContraseña.TabIndex = 1
+        lgTbContraseña.UseSystemPasswordChar = True
         ' 
         ' Label1
         ' 
@@ -161,6 +162,7 @@ Partial Class FormLogin
         rgTbContraseña.Name = "rgTbContraseña"
         rgTbContraseña.Size = New Size(206, 27)
         rgTbContraseña.TabIndex = 5
+        rgTbContraseña.UseSystemPasswordChar = True
         ' 
         ' gbRegistrar
         ' 
